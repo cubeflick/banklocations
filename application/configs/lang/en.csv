@@ -1,0 +1,156 @@
+?# English 
+login;Login
+language;language
+Italian;Italian
+English;English
+Submitting;Submitting
+Welcome;Welcome
+Event notifications;Event notifications
+Message list table;Message list table
+Message list;Message list
+Print Fault;Print Fault
+Registrar General Reports;Registrar General Reports
+Error;Error
+Empty email or password;Empty email or password
+Login failed;Login failed
+Your account is not active. Please contact the application administrator;Your account is not active. Please contact the application administrator
+Total Active Users (logged In Users);Total Active Users (logged In Users)
+Month;Month
+Active Users;Active Users
+Monthly View;Monthly View
+Report Dashboard;Report Dashboard
+User Management;User Management
+Add User;Add User
+Loading Data;Loading Data
+Do you really want to delete this record?;Do you really want to delete this record?
+An error occurred. Action could not be completed successfully. Please try again later;An error occurred. Action could not be completed successfully. Please try again later
+Do you really want to Un-delete this record?;Do you really want to Un-delete this record?
+Name;Name
+Email;Email
+Role;Role
+Edit;Edit
+Status;Status
+Add Location;Add Location
+Location Management;Location Management
+Add Department;Add Department
+Department Management;Department Management
+File not found;File not found
+Location Management - Add Location;Location Management - Add Location
+Please enter a location name;Please enter a location name
+Location Name;Location Name
+Submit;Submit
+Location added successfully;Location added successfully
+Location Management - Edit Location;Location Management - Edit Location
+Location modified successfully;Location modified successfully
+User Management - Add User;User Management - Add User
+Please enter user name;Please enter user name
+First Name;First Name
+Last Name;Last Name
+Middle Name;Middle Name
+Email;Email
+Password;Password
+Confirm Password;Confirm Password
+Role;Role
+Employee;Employee
+Manager;Manager
+Department Name;Department Name
+Please select a location first;Please select a location first
+No department added for this location;No department added for this location
+* Please enter user name;* Please enter user name
+* Please enter email;* Please enter email
+* Please enter role;* Please enter role
+* Please enter department;* Please enter department
+* Please enter location;* Please enter location
+* Please enter password;* Please enter password
+* Please enter last name;* Please enter last name
+User added successfully;User added successfully
+User Management - Edit User;User Management - Edit User
+User record updated successfully;User record updated successfully
+Registrar General Reports;Registrar General Reports
+Number;Number
+Event Date;Event Date
+Short description of the event;Short description of the event
+Department;Department
+Indicator;Indicator
+(Place where the event took place);(Place where the event took place)
+(He / she who makes the report a fault / accident / reporting);(He / she who makes the report a fault / accident / reporting)
+Turn;Turn
+Event Type;Event Type
+Accident;Accident
+Failure to injury;Failure to injury
+Major accident;Major accident
+Dressing;Dressing
+Near miss;Near miss
+Detour. environmental;Detour. environmental
+Accident;Accident
+Anomaly;Anomaly
+N ° days infort.;N ° days infort.
+Accident while traveling;Accident while traveling
+No. of days inf.itinere;No. of days inf.itinere
+Injury to contractors;Injury to contractors
+Dumping;Dumping
+Dangerous?;Dangerous?
+Substances;Substances
+Equip.;Equip.
+Save;Save
+Search;Search
+Search Result;Search Result
+Action;Action
+Modification;Modification
+Results;Results
+Of;Of
+In total Records;In total Records
+Number of page;Number of page
+Page;Page
+Data analysis;Data analysis
+Level evaluation;Level evaluation
+5perchè;5perchè
+Fishbone;Fishbone
+FMEA;FMEA
+RCA;RCA
+HAZOP;HAZOP
+ANALYSIS TO INDEX;ANALYSIS TO INDEX
+ANALYSIS ABC;ANALYSIS ABC
+More;More
+Causes identified;Causes identified
+Critical system;Critical system
+Closing date;Closing date
+Corrective Action;Corrective Action
+To do within;To do within
+Responsible action;Responsible action
+Closing date;Closing date
+Check effectiveness;Check effectiveness
+Printed;Printed
+Likely danger;Likely danger
+Frequency exposure;Frequency exposure
+Nro.persone;Nro.persone
+Gravity;Gravity
+BBS;BBS
+Hazard ratio (IR);Hazard ratio (IR)
+Record;Record
+Number;Number
+Event Date;Event Date
+Last Message;Last Message
+Registrar General Reports;Registrar General Reports
+Department;Department
+Indicator;Indicator
+(Place where the event took place);(Place where the event took place)
+(He / she who makes the report a fault / accident / reporting);(He / she who makes the report a fault / accident / reporting)
+Turn;Turn
+Event Type;Event Type
+Incident;Incident
+Failure to injury;Failure to injury
+Major accident;Major accident
+Medication;Medication
+Near miss;Near miss
+Detour. environmental;Detour. environmental
+Casualty;Casualty
+Anomaly;Anomaly
+N ° days infort.;N ° days infort.
+Accident while traveling;Accident while traveling
+No. of days in transit;No. of days in transit
+Injury to contractors;Injury to contractors
+Dumping;Dumping
+Dangerous?;Dangerous?
+Substances;Substances
+Equip.;Equip.

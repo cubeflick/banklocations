@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title><?php echo $this->translate($this->constant->TITLE) . ' :: ' . $this->translate($this->PageHead); ?></title>
+        <?php
+        echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/style.css');
+        echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/jquery-ui-1.9.2.custom.css');
+        echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/validationEngine.jquery.css');
+        echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/jquery.fancybox-1.3.4.css');
+        echo $this->headScript()->appendFile($this->constant->JSPATH . '/jquery-1.7.min.js')
+                ->appendFile($this->constant->JSPATH . '/jquery.validationEngine.js')
+                ->appendFile($this->constant->JSPATH . '/jquery-ui-1.9.2.custom.min.js')
+                ->appendFile($this->constant->JSPATH . '/jquery.fancybox-1.3.4.pack.js')
+                ->appendFile($this->constant->JSPATH . '/jquery.validationEngine-en.js');
+        ?>
+    </head>
+    <body>
+        <div class="page">
+            <div class="header">
+                <div class="logo"><a href="<?php echo $this->constant->HOSTPATH;?>"><img src="<?php echo $this->constant->IMAGEPATH;?>/logo.png" width="278" height="58" border="0" /></a></div>
+                <div class="right_search">
+                    <div class="search"><input id="Search Bank " class="text-bar" type="text" value="Search Bank" onblur="if (value == '') {value = 'Search Bank'}" onfocus="if (value == 'Search Bank') {value =''}" name="Search Bank"></div>
+                    <div class="search_icon"><a href="#"><img src="<?php echo $this->constant->IMAGEPATH;?>search.png" width="40" height="35" border="0" /></a></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="menu-wrap">
+                <div class="nav">
+                    <ul id="menu">
+                        <li><a href="#">Home</a></li>
+
+                        <li>
+                            <a href="#">Search By Bank Name</a>
+                        </li>
+                        <li>
+                            <a href="#">Search For Branch Name</a>
+                        </li>
+                        <li><a href="#">Search IFSC Code</a></li>
+                        <li><a href="#">Search By MICR Code</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <?php echo $this->layout()->content ?>
+            <div class="footer">
+                <div class="footer_in">
+                    <div class="footer_link">
+                        <div class="footer_heading">Corporate Information</div>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_link1">
+                        <div class="footer_heading">Services</div>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_link2">
+                        <div class="footer_heading">Customer Care</div>
+                        <ul>
+                            <li><a href="#">Help & FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_link3">
+                        <div class="footer_heading">Contact Us</div>
+                        <ul>
+                            <li>Email Id - info@demo.com</li>
+                            <li>Phone  - 0000-000-000</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="copy">©2013 Demo.com. All rights reserved. </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="<?php echo $this->constant->JSPATH; ?>/common.js"></script>
+    </body>
+</html>

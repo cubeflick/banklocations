@@ -1,0 +1,306 @@
+?# Italian
+(He / she who makes the report a fault / accident / reporting);(Colui/colei che emette il rapporto di anomalia/infortunio/segnalazione)
+(Place where the event took place);(Luogo dove è avvenuto l'evento)
+* Please enter department;* Inserisci il tuo reparto
+* Please enter email;* Inserisci il tuo indirizzo email
+* Please enter last name;* Inserisci il tuo cognome
+* Please enter location;* Inserisci il tuo percorso
+* Please enter password;* Si prega di inserire la password
+* Please enter role;* Inserisci il tuo ruolo
+* Please enter user name;* Inserisci il tuo nome utente
+5 Why;5perchè
+Accident while traveling;Infortunio in itinere
+Accident;Incidente
+Accident;Infortunio
+Action and Results;Apparec.
+Action;Azione
+Active Users;Utenti attivi
+Add Department;Aggiungi Dipartimento
+Add Location;Aggiungi Posizione
+Add User;Aggiungi utente
+An error occurred. Action could not be completed successfully. Please try again later;È verificato un errore. L'azione non è stata completata con successo. Si prega di riprovare più tardi.
+ANALYSIS ABC;ANALISI ABC
+Analysis Date;Data analisi
+ANALYSIS TO INDEX;ANALISI AD INDICI
+Anomaly;Anomalia
+BBS;BBS
+Casualty;Infortunio
+Causes identified;Cause identificate
+Check effectiveness;Verifica efficacia
+Closing date;Data chiusura
+Confirm Password;Conferma password
+Corrective Action;Azione correttiva
+Criteria PDF file name;Criteri nome file PDF
+Critical system;Sistema critico
+Dangerous;Pericoloso
+Dangerous?;Pericoloso
+Department added successfully;Dipartimento aggiunto con successo
+Department Management - Add Department;Dipartimento di Management - Aggiungi Dipartimento
+Department Management - Edit Department;Dipartimento di Management - Modifica Dipartimento
+Department Management;Dipartimento Gestione
+Department modified successfully;Dipartimento modificato con successo
+Department Name;Nome del reparto
+Department;Reparto
+Detour. environmental;Deviaz. ambientale
+Do you really want to delete this record?;Sei sicuro di voler eliminare questo record?
+Do you really want to Un-delete this record?;Vuoi davvero a UN-eliminare questo record?
+Dressing;Medicazione
+Dumping;Sversamento
+Edit;Modifica
+Email;Email
+Email;E-mail
+Employee;dipendente
+Empty email or password;E-mail o la password vuota
+English;Inglese
+Error;Errore
+Event Date;Data evento
+event Description;Descrizione evento
+Event Description;Descrizione evento
+Event notifications;Segnalazioni evento
+Event Type;Tipo Di Evento
+Failure to injury;Mancato infortunio
+File not found;File non trovato
+First Name;Nome
+Fishbone;Fishbone
+FMEA;FMEA
+Frequency exposure;Frequenza esposizione
+Gravity;Gravità
+Hazard ratio (IR);Indice di rischio (IR)
+HAZOP;HAZOP
+HSE System;Sistema HSE
+In total Records;in totale Records
+Incident;Incidente
+Indicator;Segnalatore
+Injury to contractors;Infortunio ad appaltatori
+Italian;Italiano
+language;lingua
+Last Message;Ultima segnalazione
+Last Name;cognome
+Level evaluation;Livello valutazione
+Level Rating;Livello valutazione
+Likely danger;Probabilità pericolo
+Loading Data;Caricamento dei dati
+Location added successfully;Posizione aggiunta con successo
+Location Management - Add Location;Il Management - Aggiungi posizione
+Location Management - Edit Location;Il Management - Modifica località
+Location Management;Management del Territorio
+Location modified successfully;Posizione modificato con successo
+Location Name;Nome Località
+Login failed;Accesso non riuscito
+login;Accesso
+Major accident;Incidente rilevante
+Manager;direttore
+Medication;Medicazione
+Message list table;Elenco segnalazioni - tavolo
+Message list;Elenco segnalazioni
+Middle Name;secondo nome
+Modification;Modifica
+Month;Mese
+Monthly View;Vista Mensile
+More;Altro
+N ° days infort.;N° gg infort.
+Name;Nome
+Near miss;Quasi incidente
+No department added for this location;Nessun dipartimento aggiunto per questa posizione
+No. of days in transit;N° giorni in itinere
+No. of days inf. commuting;N° giorni inf.itinere
+No. of days inf.itinere;N° giorni inf.itinere
+Nro.persone;Nro.persone
+Number of page;Numero di pagina
+Number;Numero
+Of;di
+Other;Altro
+Page;pagina
+Part No. people;Nro.persone
+Password;password
+Please enter a department name;Si prega di inserire il nome reparto;
+Please enter a location name;Ti preghiamo di inserire un nome di posizione
+Please enter user name;Inserisci il tuo nome utente
+Please select a location first;Si prega di selezionare una prima posizione
+Print Fault;Stampa Anomalia
+Printed;Stampato
+RCA;RCA
+Record;Record
+Registrar General Reports;Registro Generale Segnalazioni
+Report Dashboard;Segnala Dashboard
+Responsible action;Responsabile azione
+Results;Risultati
+Role;Ruolo
+Save;Salva
+Search Result;Risultato della ricerca
+Search;Cerca
+Select;selezionare
+severity;Gravità
+Short description of the event;Breve descrizione evento
+Spill;Sversamento
+Status;Stato
+Submit;presentare
+Submitting;Invio
+Substances;Sostanze
+To do within;Da fare entro
+Total Active Users (logged In Users);Totale Utenti attivi (utenti registrati)
+Turn;Turno
+User added successfully;Utente aggiunto con successo
+User Management - Add User;Gestione degli utenti - Aggiungi utente
+User Management - Edit User;Gestione utenti - Modifica utente
+User Management;Gestione degli utenti
+User record updated successfully;Registrazione utente aggiornato correttamente
+Welcome;Benvenuto
+Your account is not active. Please contact the application administrator;Il tuo account non è attivo. Si prega di contattare l'amministratore di applicazione
+Add Event Type;Aggiungi Tipo di evento
+Edit Event Type;Modifica tipo di evento
+Event Type Management;Tipo di evento di gestione
+Event Type Management - Add;Event Management Tipo - Aggiungi
+Please enter an event type;Ti preghiamo di inserire un tipo di evento
+Event Type Details;Tipo di evento Dettagli
+Record added successfully;Record aggiunto correttamente
+Record added successfully;Record aggiunto correttamente
+Accident;Incidente
+Failure to injury;Mancato infortunio
+Major accident;Incidente rilevante
+Medication;Medicazione
+Near miss;Quasi incidente
+Detour. environmental;Deviaz. ambientale
+Casualty;Infortunio
+Anomaly;Anomalia
+An extraordinary event that could turn into a major accident but that this was not due to active and passive protection in place and / or rapid intervention and / or appropriate company personnel.;Un evento straordinario che avrebbe potuto trasformarsi in incidente rilevante ma che tale non è stato grazie alle protezioni attive e passive in essere e/o all’intervento rapido e/o adeguato del personale aziendale.
+Examples;Esempi
+Accidental breakage of a pipe with leakage of toxic substance that spreads over a limited area outdoors without effect for any operator and without affecting the area outside the site, the event is dammed by the emergency team that shall stop the flow and to reduce the enlargement of the puddle by adsorption with inert material;Rottura accidentale di una tubazione con fuoriuscita di sostanza tossica che si sparge su un’area limitata all’aperto senza effetti per nessun operatore e senza interessare l’area esterna al sito tale evento viene arginato dalla squadra di emergenza che provvede a interrompere la fuoriuscita ed a ridurre l’allargamento della pozza mediante assorbimento con materiale inerte
+Principle of fire of a plastic tubing, due to the presence of flammable vapors and of a localized overheating, and its quick quenching by the emergency team;Principio di incendio di una tubazione di plastica, causa la presenza di vapori infiammabili e di un surriscaldamento localizzato, e suo rapido spegnimento da parte della squadra di emergenza
+An event that could have caused the injury, but also that he did not because the consequences of the event have been limited or restricted by the absence or random people in the event you want to stand in the way of fortuitous things to protect the people present who have protected them from the consequences of the event;Un evento che avrebbe potuto provocare anche delle lesioni alle persone ma che non l’ha fatto poiché le conseguenze dell’evento sono state limitate o circoscritte o per l’assenza casuale di persone nell’area dell’evento vuoi per il frapporsi fortuito di cose a protezione delle persone eventualmente presenti che le hanno protette dalle conseguenze dell’evento
+An operator is touched by an object falling from a scaffold or the same object falls dall'impalcato in a normally silent but in which, at that time, the staff is absent because he was busy with other activities;Un operatore è sfiorato da un oggetto in caduta da un impalcato oppure lo stesso oggetto cade dall’impalcato in un’area normalmente presidiata ma nella quale, in quel momento, il personale è assente perché impegnato in altre attività
+A toxic or flammable accidentally pours from a pipe in the area of ​​work for which they are temporarily absent because he was busy with other activities;Una sostanza tossica o infiammabile si riversa accidentalmente da una tubazione su un’area di lavorazione nella quale il personale è temporaneamente assente perché impegnato in altre attività
+Falls from materials;Cadute dall’alto di materiali
+slips;Scivolamenti
+Broken;Rotture
+Malfunctions of security organs;Malfunzionamenti di organi di sicurezza
+Lack of protection of moving parts;Mancanza di protezioni di organi in moto
+Incorrect use of chemical material;Errato utilizzo di materiale chimico
+An event such as emission, fire or explosion of great magnitude, resulting from uncontrolled developments that occur during the operation of any establishment in art. 2, paragraph 1, and leading to serious danger, immediate or delayed, on human health or the environment, inside or outside the establishment, and involving one or more dangerous substances (D. Decree 334/99).;Un evento quale un’emissione, un incendio o un’esplosione di grande entità, dovuto a sviluppi incontrollati che si verificano durante l’attività di uno stabilimento di cui all’art. 2, comma 1, e che dia luogo ad un pericolo grave, immediato o differito, per la salute umana o per l’ambiente, all’interno o all’esterno dello stabilimento, e in cui intervengano una o più sostanze pericolose (D.Lgs. 334/99).
+Lesion that does not cause the abandonment of the workplace.;Lesione che non provoca l’abbandono del posto di lavoro.
+An extraordinary event that did not involve or property damage or personal injury but under different circumstances would develop consequences that would result in an accident;Un evento straordinario che non ha comportato né danni alle cose né lesioni alle persone ma che in circostanze diverse avrebbe sviluppato conseguenze tali da provocare un incidente
+Anomaly of product: training unexpected and unwanted substances and / or mixtures which may, in turn, alter the hazardous properties of the product, etc..;Anomalia di prodotto: formazione inattesa ed indesiderata di sostanze e/o miscele pericolose che possono, a loro volta, alterare le caratteristiche di pericolosità del prodotto, ecc.
+Anomaly of process: unexpected leakage of material from a reactor, uncontrolled development of gaseous substances, decomposition of a reaction mass etc..;Anomalia di processo: fuoriuscita inattesa di materiale da un reattore, sviluppo incontrollato di sostanze gassose, decomposizione di una massa di reazione, ecc.
+Malfunction of system: lack of electricity, mains pressure insufficient air, irregular supply of nitrogen, lack or excess flow of fluid heating or cooling.;Anomalia di impianto: mancanza di energia elettrica, pressione di rete aria insufficiente, irregolare erogazione di azoto, assenza o eccesso di portata di fluidi di riscaldamento o di raffreddamento.
+An event or condition accidentally generated by operating outside of operating range and / or environmental conditions, which does not cause damage to property and / or personal injury and caused or could cause an environmental impact or a fault in the System Management environment.;Un evento o condizione generata operando accidentalmente al di fuori di range operativi e/o condizioni ambientali standard, che non provoca danni a cose e/o lesioni a persone e che ha causato o potrebbe causare un impatto ambientale o un’anomalia nel Sistema di Gestione Ambientale.
+Loss of chemical;Perdite di materiali chimici
+Runoff;Percolamenti
+Strange odor;Odori anomali
+Repetitive faults in systems or equipment;Anomalie ripetitive su impianti o strumentazione
+Valri analytical abnormal;Valri analitici anomali
+Operating conditions very different from the standard;Condizioni operative molto diverse dallo standard
+Procedures or non-compliance with environmental regulations;Non conformità a procedure o a regolamenti in campo ambientale
+Environmental emergencies;Emergenze ambientali
+An accident which causes a lesion more or less serious human organism.;Un incidente che provoca una lesione più o meno grave dell’organismo umano.
+The injury may cause;L’infortunio può provocare
+A slight injury that does not result in the abandonment of the workplace;una  lesione  lieve che non determina l’abbandono del posto di lavoro
+An injury that results in the abandonment of the workplace with prognosis> of £ 1 day to 3 days;una lesione che determina l’abbandono del posto di lavoro con prognosi  > di 1 gg £ a 3 gg
+An injury that results in the abandonment of the workplace with prognosis> 3 days;una lesione che determina l’abbandono del posto di lavoro con prognosi  >  di 3 gg
+Each fuorisuscita of solid, liquid or gaseous (vapor or gas) from the container (bottle, bag, barrel, small tank, tank, reactor, pump, tubing, etc..) in which it was immediately before being spilled, regardless of the cause (human error, malfunction, accident, etc..) and by the fact that it is mitigated by some human intervention (for example, the emergency response team) or technological (for example, a containment basin).;ogni fuorisuscita di materiale solido, liquido o aeriforme (vapore o gas) dal contenitore (bottiglia, sacco, fusto, cisternetta, serbatoio, reattore, pompa, tubazione, ecc.) nel quale si trovava immediatemente prima di esserne fuoriuscito, indipendentemente dalla causa (errore umano, malfunzionamento, incidente, ecc.) e da fatto che sia mitigato da un qualche intervento umano (ad esempio, la squadra di pronto intervento) o tecnologico (ad esempio, un bacino di contenimento).
+There are two possibilities;Ci sono due possibilità
+Because the substance involved is dangerous.;Perché la sostanza coinvolta è pericolosa
+A substance or a mixture fulfilling the criteria relating to physical hazards, health or the environment dictated Annex I of the CLP, is dangerous.;Una sostanza o una miscela che soddisfa i criteri relativi ai pericoli fisici, per la salute o per l’ambiente dettati nell’Allegato I del CLP, è pericolosa.
+PHYSICAL DANGERS:;PERICOLI FISICI:
+explosives;Esplosivi
+flammable gases;Gas infiammabili
+flammable aerosols;Aerosol infiammabili
+oxidizing gases;Gas comburenti
+Gases under pressure;Gas sotto pressione
+flammable liquids;Liquidi infiammabili
+flammable solids;Solidi infiammabili
+Reactive substances and mixtures;Sostanze e miscele autoreattive
+pyrophoric liquids;Liquidi piroforici
+pyrophoric solids;Solidi piroforici
+Substances and mixtures;Sostanze e miscele autoriscaldanti
+Substances and mixtures which, in contact with water, emit flammable gases;Sostanze e miscele che, a contatto con l’acqua, sviluppano gas infiammabili
+oxidising liquids;Liquidi comburenti
+oxidising solids;Solidi comburenti
+organic peroxides;Perossidi organici
+Corrosive to metals;Sostanze o miscele corrosive per i metalli
+HEALTH HAZARDS;PERICOLI PER LA SALUTE
+acute toxicity;Tossicità acuta
+Corrosion / irritation;Corrosione/irritazione della pelle
+Serious eye damage / eye irritation;Gravi lesioni oculari/irritazione oculare
+Respiratory sensitization or skin;Sensibilizzazione delle vie respiratorie o della pelle
+Germ cell mutagenicity;Mutagenicità sulle cellule germinali
+carcinogenicity;Cancerogenicità
+Reproductive toxicity;Tossicità per la riproduzione
+Specific target organ toxicity (single exposure);Tossicità specifica per organi bersaglio (esposizione singola)
+Specific target organ toxicity (repeated exposure);Tossicità specifica per organi bersaglio (esposizione ripetuta)
+Aspiration hazard;Pericolo in caso di aspirazione
+HAZARDS FOR THE ENVIRONMENT;PERICOLI PER L’AMBIENTE
+Hazardous to the aquatic environment;Pericoloso per l’ambiente acquatico
+HAZARD CLASS ADDITIONAL FOR THE EUROPEAN UNION;CLASSE DI PERICOLO SUPPLEMENTARE PER L’UNIONE EUROPEA
+Because the condition in which the substance is involved determines a danger (for example, a spreading of water on switchboards).;Perchè la condizione in cui è coinvolta la sostanza determina un pericolo (ad esempio, uno spandimento di acqua su quadri elettrici).
+Dangerous for the ozone layer;Pericoloso per lo strato di ozono
+Do you really want to delete this file?;Sei sicuro di voler cancellare questo file?
+View File;Visualizza file
+Delete File;Elimina file
+Record updated successfully;Record aggiornato correttamente
+List of Action Log Report: Analysis Of Cause And Corrective Action;Elenco Action Log Segnalazioni: Analisi Delle Cause  E Azione Correttive
+Analysis;Analisi
+Open;Aperte
+Closed;Chiuso
+Any;Qualsiasi
+Date;Data
+Other analysis;Altri analisi
+Event cause;Causa evento
+Responsible;Responsabile
+Updating Record;Aggiornamento Record
+Total Records;Totale segnalazioni
+Analysis of cause closed;Analisi cause chiuse
+Analysis of cause open;Analisi cause aperte
+Data;Dati
+Index;Indice
+Graphs;Grafici
+HR data;Dati HR
+Consolidated Data;Dati Consolidati
+Year/Month From;Anno / Mese Da
+Year/Month To;Anno / Mese A
+Year / Month; Anno / Mese
+Total hours worked;Totale ore lavorate
+Days Injury;
+Days Injury;Giorni infortunio
+Total Injury;Totale infortunio
+Commuting Injury;Infortunio Itinere
+Injury Contractors;Infortunio Appaltatori
+Environmental Deviation;Deviazione ambientale
+Detail;Dettaglio
+Detail of Record;Dettaglio di Record
+Detail of Month;Dettaglio di Mese
+Year;Anno
+Work Hours;Ore Lavorate
+No. Employees;No. Addetti
+Add Record;Aggiungi record
+Delete Record;Elimina record
+frequency
+Frequency;Frequenza
+Combined;Combinato
+Spills;Sversamenti
+Group;Gruppo
+Best Site;Miglior sito
+Frequency charts;Grafici Frequenza
+Injury frequency rate;Indice di frequenza infortuni
+Consolidated;Consolidati
+Gravity graphs;Grafici Gravita
+Injury severity rate;Indice Di Gravita Infortuni
+Index Combined Injury;Indice Combinato Infortuni
+Spills graphs;Grafici Sversamenti
+Year / Week;Anno / Settimana
+Consolidated;Consolidati
+Login to application;Login per l'applicazione
+In order to relate the PDF file for each report must comply with the following rule:;Per poter relazionare i file PDF ad ogni segnalazione bisogna rispettare la seguente regola:
+The PDF file must be saved in the folder where the file access The name of the file should be written the with the first three letters indicating the characteristic;I file PDF devono essere salvati nella cartella dove si trova il file access Il nome del file deve essere scrito con le tre prime lettere che indicano la caratteristica
+DE_: Event Description;DE_: Descrizione evento
+CA_: Causes identified;CA_: Cause identificate
+V1_: Corrective Action 1;V1_: Azione correttiva 1
+V2_: Corrective Action 2;V2_: Azione correttiva 2
+V3_: Corrective Action 3;V3_: Azione correttiva 3
+V4_: Corrective Action 4;V4_: Azione correttiva 4
+follows the message number;segue il numero della segnalazione
+Example: "DE_5.PDF" PDF file that corresponds to the description of the event number 5;Esempio: "DE_5.PDF"  file PDF che corrisponde alla descrizione dell'evento numero 5
+Empty;Vuoto
+Not Empty;Non vuoto
+Duplicate record found for this year, month and location. Please enter unique data;Duplicare record trovato per questo anno, il mese e la posizione. Inserisci i dati univoci
+Edit Record;Modifica Record
+No record found;Nessun record trovato
