@@ -19,29 +19,24 @@
         <div class="page">
             <div class="header">
                 <div class="logo"><a href="<?php echo $this->constant->HOSTPATH;?>"><img src="<?php echo $this->constant->IMAGEPATH;?>/logo.png" width="278" height="58" border="0" /></a></div>
-                <div class="right_search">
-                    <div class="search">
-                        <input id="Search Bank " class="text-bar" type="text" value="Search Bank" onblur="if (value == '') {value = 'Search Bank'}" onfocus="if (value == 'Search Bank') {value =''}" name="Search Bank"/>
-                    </div>
-                    <div class="search_icon"><a href="#"><img src="<?php echo $this->constant->IMAGEPATH;?>/search.png" width="40" height="35" border="0" /></a></div>
-                    <div class="clear"></div>
+                <div id="top_add">
+                    <?php echo $this->GoogleAddScript['top_add'];?>
                 </div>
                 <div class="clear"></div>
             </div>
             <div id="menu-wrap">
                 <div class="nav">
                     <ul id="menu">
-                        <li class="menuItems active"><a href="<?php echo $this->constant->HOSTPATH;?>">Home</a></li>
+                        <li class="menuItems <?php echo  ($this->navId =='home')?'active':''; ?>"><a href="<?php echo $this->constant->HOSTPATH;?>">Home</a></li>
 
+                       
                         <li class="menuItems">
-                            <a href="javascript:void(0)" id="bank_search">Search By Bank Name</a>
+                            <a href="<?php echo $this->constant->HOSTPATH;?>searchbycity" id="branch_search">Search By City Name</a>
                         </li>
-                        <li class="menuItems">
-                            <a href="javascript:void(0)" id="branch_search">Search For Branch Name</a>
-                        </li>
-                        <li class="menuItems"><a href="javascript:void(0)" id="ifsc_search">Search IFSC Code</a></li>
-                        <li class="menuItems"><a href="javascript:void(0)" id="micr_search">Search By MICR Code</a></li>
-                        <li class="menuItems"><a href="<?php echo $this->constant->HOSTPATH;?>content/index/helpadnfaq">Help</a></li>
+                        <li class="menuItems"><a href="<?php echo $this->constant->HOSTPATH;?>ifsc" id="ifsc_search">Search IFSC Code</a></li>
+                        <li class="menuItems"><a href="<?php echo $this->constant->HOSTPATH;?>searchmicr" id="micr_search">Search MICR Code</a></li>
+                        <li class="menuItems <?php echo  ($this->navId =='atm')?'active':''; ?>" ><a href="<?php echo $this->constant->HOSTPATH;?>atm">Search ATMs</a></li>
+                       <li  class="menuItems <?php echo  ($this->navId =='help')?'active':''; ?>"><a  href="<?php echo $this->constant->HOSTPATH;?>content/index/helpadnfaq">Help</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,21 +46,21 @@
                     <div class="footer_link">
                         <div class="footer_heading">Corporate Information</div>
                         <ul>
-                            <li><a href="<?php echo $this->constant->HOSTPATH;?>content/index/aboutus">About Us</a></li>
-                            <li><a href="<?php echo $this->constant->HOSTPATH;?>content/index/contactus">Contact Us</a></li>
+                            <li><a href="<?php echo $this->constant->HOSTPATH;?>aboutus">About Us</a></li>
+                            <li><a href="<?php echo $this->constant->HOSTPATH;?>contactus">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="footer_link1">
                         <div class="footer_heading">Services</div>
                         <ul>
-                            <li><a href="<?php echo $this->constant->HOSTPATH;?>content/index/privacypolicy">Privacy Policy</a></li>
-                            <li><a href="<?php echo $this->constant->HOSTPATH;?>content/index/termsandcondition">Terms & Conditions</a></li>
+                            <li><a href="<?php echo $this->constant->HOSTPATH;?>privacypolicy">Privacy Policy</a></li>
+                            <li><a href="<?php echo $this->constant->HOSTPATH;?>termsandcondition">Terms & Conditions</a></li>
                         </ul>
                     </div>
                     <div class="footer_link2">
                         <div class="footer_heading">Customer Care</div>
                         <ul>
-                            <li><a href="<?php echo $this->constant->HOSTPATH;?>content/index/helpadnfaq">Help & FAQs</a></li>
+                            <li><a href="<?php echo $this->constant->HOSTPATH;?>helpadnfaq">Help & FAQs</a></li>
                         </ul>
                     </div>
                     <div class="footer_link3">
@@ -80,6 +75,7 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="<?php echo $this->constant->JSPATH; ?>/common.js"></script>
+        <script type="text/javascript" src="<?php echo $this->constant->JSPATH; ?>/common.js" ></script>
+
     </body>
 </html>

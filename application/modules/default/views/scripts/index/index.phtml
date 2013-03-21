@@ -1,9 +1,14 @@
 <div class="main">
     <div class="banner">
-        <div class="banner_in"><img src="images/banner.png" width="978" height="299" /></div>
+        <div class="banner_in">
+        <div id="banner_add"> <?php echo $this->GoogleAddScript['banner_add'];?></div>
+        <img  src="<?php echo $this->constant->IMAGEPATH;?>/banner.png" width="978" height="299" />
+       
+        </div>
+        
     </div>
     <div class="search_color">
-        <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."default/index/search/";?>">
+        <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."search/";?>">
             <div class="search_bg">
                 <div class="Search_Bank_text">Search Bank</div>
                 <div><img src="images/border.png" width="322" height="1" style="margin:5px 0 0 0;" /></div>
@@ -22,6 +27,7 @@
                         </select>
                     </div>
                     <div class="clear"></div>
+                   
                 </div>
                 <div class="search_bank1" id="stateNameHolder">
                     <div class="text">State :</div>
@@ -51,43 +57,43 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <div class="search_bank1 mainoptions" id="branchNameHolder" style="display:none">
-                    <div class="text">Branch:</div>
-                    <div class="select_box">
-                        <select id="branch_name" name="branch_name">
-                            <option>Select Bank Above First</option>
-                        </select>
-                    </div>
-                    <div class="clear"></div>
-                </div>
+                
 
-                <div class="search_bank1 mainoptions" id="ifscNameHolder" style="display:none">
-                    <div class="text">IFSC Code:</div>
-                    <div class="select_box">
-                        <input type="text" name="ifsc_code"/>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="search_bank1 mainoptions" id="micrNameHolder" style="display:none">
-                    <div class="text">MICR Code:</div>
-                    <div class="select_box">
-                        <input type="text" name="micr_code"/>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <div style="margin:15px 0 0 108px;"><a id="submit_link" href="javascript:void(0)"><img src="images/search_button.png" width="104" height="31" border="0" /></a></div>
+                <div style="margin:15px 0 0 108px;"><a id="submit_link" href="javascript:void(0)"><img src="<?php echo $this->constant->IMAGEPATH;?>/search_button.png" width="104" height="31" border="0" /></a></div>
             </div>
         </form>
     </div>
     <div class="bg_color">
-        <div class="bg_color_in"><img src="images/tabs.png" width="933" height="45"  /></div>
+        <div class="bg_color_in"><div id="banks" class="links active" style="float: left;"><a id="top_banks_link" href="javascript:void(0)"> Top Banks</a></div>
+         <div id="states" class="links" style="float: right;"><a id="top_states_link" href="javascript:void(0)">Search Bank By state</a></div></div>
     </div>
-    <div class="img">
-        <img src="images/img.jpg" width="215" height="66" style="margin-left:0px;" /><img src="images/img.jpg" width="215" height="66" /><img src="images/img.jpg" width="215" height="66" /><img src="images/img.jpg" width="215" height="66" /><img src="images/img.jpg" width="215" height="66" style="margin-left:0px;"  /><img src="images/img.jpg" width="215" height="66" /><img src="images/img.jpg" width="215" height="66" /><img src="images/img.jpg" width="215" height="66" /><img style="margin-left:0px;"  src="images/img.jpg" width="215" height="66" /><img src="images/img.jpg" width="215" height="66" /><img src="images/img.jpg" width="215" height="66" /><img src="images/img.jpg" width="215" height="66" />
+    <div id="top_banks" class="img">
+       <a href="javascript:void(0)" id="State Bank Of India" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/sbi.jpg" width="210" height="66" style="margin-left:0px;" /></a>
+       <a href="javascript:void(0)" id="State Bank Of Mysore" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/sbm.jpg" width="210" height="66" /></a>
+        <a href="javascript:void(0)" id="Bank Of India" onclick="getVal(this.id)" class="top_bank_search"><img src="<?php echo $this->constant->IMAGEPATH;?>/boi.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="AXIS Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/axis.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="Kotak Mahindra Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/kotak.jpg" width="210" height="66" style="margin-left:0px;"  /></a>
+       <a href="javascript:void(0)" id="Union Bank Of India" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/union_bank.jpg" width="210" height="66" /></a>
+        <a href="javascript:void(0)" id="Punjab National Bank" onclick="getVal(this.id)" class="top_bank_search"><img src="<?php echo $this->constant->IMAGEPATH;?>/pnb.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="Bank Of Baroda" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/bob.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="IDBI Bank" onclick="getVal(this.id)" class="top_bank_search" > <img style="margin-left:0px;"  src="<?php echo $this->constant->IMAGEPATH;?>/idbi.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="Canara Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/canara_bank.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="ICICI Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/icici.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="HDFC Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/hdfc.jpg" width="210" height="66" /></a>
     </div>
+    <div id="top_states" style="display:none; width:978px; margin:auto"> 
+    					 <ul id="states_list">
+                            <?php
+                            if(isset($this->States) && count($this->States) > 0){
+                                foreach($this->States as $key=>$value){
+                                    echo '<li id="'.$value['state'].'" onclick="getval(this.id)" >'.$value['state'].'</li>';
+                                }
+                            }
+                            ?>
+                            </ul></div>
+                            <div style="clear: both"></div>
     <div class="add_banner">
-        <div><img src="images/add_banner.png" width="976" height="122" style="margin-top:25px;" /></div>
+        <div style="margin-top:25px; width: 976px; height: 122px;"> <?php echo $this->GoogleAddScript['home_add'];?></div>
     </div>
 </div>
 <script type="text/javascript">
@@ -197,5 +203,19 @@
     $('#submit_link').click(function(){
         $('#search_form').submit();
     });
-    
+
+
+     function getVal(value)
+    {
+    	$('#bank_name').val(value);
+        $('#search_form').submit();
+     }
+     
+    function getval(value1)
+    {
+    	$('#state_name').empty();
+    	$('#state_name').append('<option>'+value1+'</option>');
+        $('#search_form').submit();
+     }
+  
 </script>

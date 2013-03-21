@@ -1,0 +1,164 @@
+<div class="main">
+    <div class="banner">
+        <div class="banner_in">
+        <div id="banner_add"> <?php echo $this->GoogleAddScript['banner_add'];?></div>
+        <img  src="<?php echo $this->constant->IMAGEPATH;?>/banner.png" width="978" height="299" />
+       
+        </div>
+        
+    </div>
+    <div class="search_color">
+        <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."search/";?>">
+            <div class="search_bg">
+                <div class="Search_Bank_text">Search Bank By City</div>
+                <div><img src="images/border.png" width="322" height="1" style="margin:5px 0 0 0;" /></div>
+                <div class="search_bank1"  id="bankNameHolder">
+                    <div class="text">Bank:</div>
+                    <div class="select_box">
+                        <select id="bank_name" name="bank_name">
+                            <option>Select Bank Name</option>
+                            <?php
+                            if(isset($this->BankNames) && count($this->BankNames) > 0){
+                                foreach($this->BankNames as $key=>$value){
+                                    echo '<option>'.$value['bank_name'].'</option>';
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                   
+                </div>
+                <div class="search_bank1" id="stateNameHolder">
+                    <div class="text">State :</div>
+                    <div class="select_box">
+                        <select id="state_name" name="state_name">
+                            <option>Select Bank Above First</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+               
+                <div class="search_bank1 mainoptions"  id="cityNameHolder" >
+                    <div class="text">City :</div>
+                    <div class="select_box">
+                        <select  id="city_name" name="city_name">
+                            <option>Select Bank Above First</option>
+                        </select>
+                        <input name="limitPage" type="hidden" value="1"/>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                
+
+              <div style="margin:15px 0 0 108px;"><a id="submit_link" href="javascript:void(0)"><img src="<?php echo $this->constant->IMAGEPATH;?>/search_button.png" width="104" height="31" border="0" /></a></div>
+            </div>
+        </form>
+    </div>
+    <div class="bg_color">
+        <div class="bg_color_in"><div id="banks" class="links active" style="float: left;"><a id="top_banks_link" href="javascript:void(0)"> Top Banks</a></div>
+         <div id="states" class="links" style="float: right;"><a id="top_states_link" href="javascript:void(0)">Search Bank By state</a></div></div>
+    </div>
+    <div id="top_banks" class="img">
+       <a href="javascript:void(0)" id="State Bank Of India" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/sbi.jpg" width="210" height="66" style="margin-left:0px;" /></a>
+       <a href="javascript:void(0)" id="State Bank Of Mysore" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/sbm.jpg" width="210" height="66" /></a>
+        <a href="javascript:void(0)" id="Bank Of India" onclick="getVal(this.id)" class="top_bank_search"><img src="<?php echo $this->constant->IMAGEPATH;?>/boi.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="AXIS Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/axis.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="Kotak Mahindra Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/kotak.jpg" width="210" height="66" style="margin-left:0px;"  /></a>
+       <a href="javascript:void(0)" id="Union Bank Of India" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/union_bank.jpg" width="210" height="66" /></a>
+        <a href="javascript:void(0)" id="Punjab National Bank" onclick="getVal(this.id)" class="top_bank_search"><img src="<?php echo $this->constant->IMAGEPATH;?>/pnb.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="Bank Of Baroda" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/bob.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="IDBI Bank" onclick="getVal(this.id)" class="top_bank_search" > <img style="margin-left:0px;"  src="<?php echo $this->constant->IMAGEPATH;?>/idbi.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="Canara Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/canara_bank.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="ICICI Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/icici.jpg" width="210" height="66" /></a>
+       <a href="javascript:void(0)" id="HDFC Bank" onclick="getVal(this.id)" class="top_bank_search" > <img src="<?php echo $this->constant->IMAGEPATH;?>/hdfc.jpg" width="210" height="66" /></a>
+    </div>
+    <div id="top_states" style="display:none; width:978px; margin:auto"> 
+    					 <ul id="states_list">
+                            <?php
+                            if(isset($this->States) && count($this->States) > 0){
+                                foreach($this->States as $key=>$value){
+                                    echo '<li id="'.$value['state'].'" onclick="getval(this.id)" >'.$value['state'].'</li>';
+                                }
+                            }
+                            ?>
+                            </ul></div>
+                            <div style="clear: both"></div>
+    <div class="add_banner">
+        <div style="margin-top:25px; width: 976px; height: 122px;"> <?php echo $this->GoogleAddScript['home_add'];?></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#bank_name').change(function(){        
+        if($("#bank_name option:selected").text() == 'Select Bank Name'){
+            $("select#state_name").html('<option>Select Bank Above First</option>');
+            $('select#state_name').effect("highlight", {}, 3000);
+            $("select#district_name").html('<option>Select Bank Above First</option>');
+            $("select#city_name").html('<option>Select Bank Above First</option>');
+        }else{
+            $('#submit_link').hide();
+            $("select#state_name").html('<option>Loading...</option>');
+            $.getJSON("<?php echo $this->constant->HOSTPATH.'default/index/getstatejson' ?>",{bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
+              var options = '';
+              if(j.length > 0){
+                  options += '<option value="">Please Select</option>';
+                  for (var i = 0; i < j.length; i++) {
+                    options += '<option value="' + j[i].state + '">' + j[i].state + '</option>';
+                  }
+              }else{
+                  options += '<option value="">No Branch Information Available</option>';
+              }
+              $("select#state_name").html(options);
+              $('select#state_name').effect("highlight", {}, 3000);
+                $("select#district_name").html('<option>Select State Above First</option>');
+                $("select#city_name").html('<option>Select District Above First</option>');
+                $('#submit_link').show();
+            })
+        }
+    });
+
+    
+
+    $('#state_name').change(function(){
+    
+        if($("#state_name option:selected").text() == 'Please Select'){
+            $("select#city_name").html('<option>Select District Above First</option>');
+            $('select#city_name').effect("highlight", {}, 3000);
+        }else{
+            $('#submit_link').hide();
+            $("select#city_name").html('<option>Loading...</option>');
+            $.getJSON("<?php echo $this->constant->HOSTPATH.'default/index/getcityjson' ?>",{district_name: $("#district_name option:selected").text(),state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
+              var options = '';
+              if(j.length > 0){
+                  options += '<option value="">Please Select</option>';
+                  for (var i = 0; i < j.length; i++) {
+                    options += '<option value="' + j[i].city + '">' + j[i].city + '</option>';
+                  }
+              }else{
+                  options += '<option value="">No City Information Available</option>';
+              }
+              $("select#city_name").html(options);
+              $('select#city_name').effect("highlight", {}, 3000);
+              $('#submit_link').show();
+            })
+        }
+    });
+    $('#submit_link').click(function(){
+        $('#search_form').submit();
+    });
+
+
+     function getVal(value)
+    {
+    	$('#bank_name').val(value);
+        $('#search_form').submit();
+     }
+     
+    function getval(value1)
+    {
+    	$('#state_name').empty();
+    	$('#state_name').append('<option>'+value1+'</option>');
+        $('#search_form').submit();
+     }
+  
+</script>

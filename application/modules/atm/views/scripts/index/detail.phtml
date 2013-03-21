@@ -1,0 +1,89 @@
+<div class="main">
+    <div class="inner_container">
+        <div class="about_container">
+            <div class="About_Us"><?php if($this->Records !=''){echo $this->Records['bank_name']." :: ".$this->Records['area'];} ?> ATM Detail</div>
+            <div class="text_about">
+                Note:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
+                 we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
+
+                 <div style="margin-top: 10px;" >
+                     <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table" style="margin-bottom: 10px;border:1px solid #95BCE2">
+                        <tr>
+                             <td class="header">Bank Name</td>
+                             <td class="row"><?php echo $this->Records['bank_name']; ?></td>
+                        </tr>
+                        <tr>
+                             <td class="header">Area</td>
+                             <td class="row"><?php echo $this->Records['area']; ?></td>
+                        </tr>
+                        <tr>
+                             <td class="header">Address</td>
+                             <td class="row"><?php echo $this->Records['address']; ?></td>
+                        </tr>
+                        <tr>
+                             <td class="header">City</td>
+                             <td class="row"><?php echo $this->Records['city']; ?></td>
+                        </tr>
+                        <tr>
+                             <td class="header">District</td>
+                             <td class="row"><?php echo $this->Records['district']; ?></td>
+                        </tr>
+                        <tr>
+                             <td class="header">State</td>
+                             <td class="row"><?php echo $this->Records['state']; ?></td>
+                        </tr>
+                       
+                     </table>
+                     <div id="pagingStateContainer">
+                         <?php echo $this->pagination;?>
+                     </div>
+                 </div>
+            </div>
+            <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>            
+        </div>
+        <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
+        <div class="clear"></div>
+    </div>
+
+</div>
+<form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."default/index/search/";?>">
+    <input type="hidden" value="<?php echo $this->params['bank_name']?>" name="bank_name"/>
+    <input type="hidden" value="<?php echo $this->params['state_name']?>" name="state_name"/>
+    <input type="hidden" value="<?php echo $this->params['district_name']?>" name="district_name"/>
+    <input type="hidden" value="<?php echo $this->params['city_name']?>" name="city_name"/>
+    <input type="hidden" value="<?php echo $this->params['limitPage']?>" name="limitPage" id="limitPage"/>
+</form>
+<script type="text/javascript">
+function setPage(pageNo){
+    $('#limitPage').val(pageNo);
+    $('#search_form').submit();
+}
+var ZebraTable = {
+	bgcolor: '',
+	classname: '',
+	stripe: function(el) {
+		//if (!$(el)) return;
+		var rows = $('#result_table>tr');
+		for (var i=1,len=rows.length;i<len;i++) {
+			if (i % 2 == 0) rows[i].className = 'alt';
+			Event.add(rows[i],'mouseover',function() { ZebraTable.mouseover(this); });
+			Event.add(rows[i],'mouseout',function() { ZebraTable.mouseout(this); });
+		}
+	},
+	mouseover: function(row) {
+		this.bgcolor = row.style.backgroundColor;
+		this.classname = row.className;
+		addClassName(row,'over');
+	},
+	mouseout: function(row) {
+		removeClassName(row,'over');
+		addClassName(row,this.classname);
+		row.style.backgroundColor = this.bgcolor;
+	}
+}
+
+window.onload = function() {
+	ZebraTable.stripe();
+}
+
+</script>

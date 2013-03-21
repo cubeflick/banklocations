@@ -24,6 +24,7 @@ class Content_IndexController extends App_Controller_Modules_Content_Contentbase
     }
     public function helpadnfaqAction() {
         $this->view->PageHead = "Help and FAQs";
+        $this->view->navId = 'help';
     }
     public function servicesAction() {
         $this->view->PageHead = "Help and FAQs";

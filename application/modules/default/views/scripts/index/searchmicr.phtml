@@ -1,0 +1,102 @@
+<style type="text/css">
+
+
+
+</style>
+<div class="main">
+    <div class="inner_container">
+        <div class="about_container">
+            <div class="About_Us"><?php if($this->BankName !=''){echo $this->BankName." :: ";} ?>Search Result</div>
+            <div class="text_about">
+                Note:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
+                 we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
+
+                 
+                 <div style="margin-top: 10px;" >
+                     <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table">
+                         <tr>
+                         
+                             <th>Bank Name</th>
+                             <th>Branch Name</th>
+                             <th>City </th>
+                             <th>MICR Code</th>
+                         </tr>
+                         <?php
+                         if(count($this->Records) > 0){
+                             foreach($this->Records as $key=>$value){
+                                 ?>
+                                    <tr>
+                                    
+                                    
+                                         <td><?php echo $value['bank_name']; ?></td>
+                                        
+                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'detail/'?><?php echo $value['id']; ?>_<?php echo str_replace(' ', '-', $value['bank_name']); ?>-<?php echo str_replace(' ', '-', $value['branch_name']); ?>-Branch"><?php echo $value['branch_name']; ?></a></td>
+                                         <td><?php echo $value['city']; ?></td>
+                                        
+                                                 <td><?php echo $value['micr_code']; ?></td>
+                                            
+                                         
+                                     </tr>
+                                <?php
+                             }
+                         }
+                         ?>
+                     </table>
+                     <div id="pagingStateContainer">
+                         <?php echo $this->pagination;?>
+                     </div>
+                 </div>
+            </div>
+            <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>            
+        </div>
+        <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
+        <div class="clear"></div>
+    </div>
+
+</div>
+
+<form id="search_form_micr" method="get" action="<?php echo $this->constant->HOSTPATH."micr/search";?>">
+    <input type="hidden" value="<?php if(isset($this->params)){echo ($this->params['bank_name']);}?>" name="bank_name"/>
+    <input type="hidden" value="<?php echo ($this->params['state_name'])?$this->params['state_name']:''?>" name="state_name"/>
+    
+    <input type="hidden" value="<?php echo ($this->params['city_name'])?$this->params['city_name']:''?>" name="city_name"/>
+    
+    
+    
+    <input type="hidden" value="<?php echo ($this->params['limitPage'])?$this->params['limitPage']:'1'?>" name="limitPage" id="limitPage"/>
+</form>
+
+<script type="text/javascript">
+function setPage(pageNo){
+    $('#limitPage').val(pageNo);
+    $('#search_form_micr').submit();
+}
+var ZebraTable = {
+	bgcolor: '',
+	classname: '',
+	stripe: function(el) {
+		//if (!$(el)) return;
+		var rows = $('#result_table>tr');
+		for (var i=1,len=rows.length;i<len;i++) {
+			if (i % 2 == 0) rows[i].className = 'alt';
+			Event.add(rows[i],'mouseover',function() { ZebraTable.mouseover(this); });
+			Event.add(rows[i],'mouseout',function() { ZebraTable.mouseout(this); });
+		}
+	},
+	mouseover: function(row) {
+		this.bgcolor = row.style.backgroundColor;
+		this.classname = row.className;
+		addClassName(row,'over');
+	},
+	mouseout: function(row) {
+		removeClassName(row,'over');
+		addClassName(row,this.classname);
+		row.style.backgroundColor = this.bgcolor;
+	}
+}
+
+window.onload = function() {
+	ZebraTable.stripe();
+}
+
+</script>

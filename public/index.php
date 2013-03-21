@@ -21,8 +21,6 @@ set_include_path(implode(PATH_SEPARATOR, array(
     realpath(ROOT_PATH),
     get_include_path(),
 )));
-date_default_timezone_set('Europe/Malta');
-error_reporting(E_ALL);
 
 function asd($arr, $doNotDie = false)
 {

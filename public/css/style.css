@@ -58,7 +58,7 @@ clear:both;
 	}
 .nav
 {
-width:978px;
+width:900px;
 margin:auto;
 }
 	#menu-wrap {
@@ -259,6 +259,7 @@ height:300px;
 {
 width:978px;
 margin:auto;
+position: relative;
 }
 .search_bg
 {
@@ -300,6 +301,12 @@ width:199px;
 margin:0 15px 0 0;
 height:29px;
 }
+.select_box input
+{
+	 height: 22px;
+    width: 192px;
+
+	}
 .select_box select
 {
 background:transparent;
@@ -330,11 +337,45 @@ height:75px;
 {
 width:978px;
 margin:auto;
+
 }
-.bg_color_in img
+
+
+.bg_color_in #banks
 {
-margin:30px 0 0 25px;
+	font: bold 18px Arial,Helvetica;
+margin:30px 0 0 90px;
+text-align: center;
+    width: 250px;
+    height: 35px;
+    padding-top: 10px;
 }
+.bg_color_in #states
+{
+	font: bold 18px Arial,Helvetica;
+margin:30px 90px 0 0px;
+text-align: center;
+    width: 250px;
+    height: 35px;
+    padding-top: 10px;
+}
+.bg_color_in div a 
+{
+	text-decoration: none;
+}
+
+.bg_color_in .first
+{
+	background: #fff;
+}
+
+.bg_color_in .active
+{
+	background: #fff;
+}
+
+
+
 .img
 {
 width:978px;
@@ -595,3 +636,75 @@ margin:10px 0 0 0;
 .result_table .row{
     font-weight: bold;  
 }
+
+#google_add_script > div 
+{
+	margin: 10px 20px;
+}
+#google_add_script .add_script_input
+{
+	height: 60px;
+	width: 500px;
+}
+#google_add_script .add_script_text
+{
+	font: bold 14px Arial,Helvetica;
+	margin: 5px 0;
+}
+#google_add_script .google_add_submit
+{
+background: none repeat scroll 0 0 #004889;
+    color: white;
+    font: 14px Arial,Helvetica;
+    margin: 5px 20px;
+}
+
+#top_add
+{
+width: 468px;
+height: 60px;
+border: 1px solid blue;
+float: right;
+}
+#banner_add
+{
+	  border: 1px solid blue;
+   right: 0px;
+   top: 10px;
+    height: 250px;
+    width: 300px;
+    position: absolute;
+}
+#states_list li
+{
+	float: left;
+    cursor: pointer;
+    margin-left: 75px;
+    margin-right: 44px;
+    width: 190px;
+    font: 14px Arial,Helvetica;
+}
+#states_list li:hover
+{
+	
+}
+
+body a
+{
+	text-decoration: none;
+	color: blue;
+}
+
+body a:HOVER
+{
+	color: red;
+	
+}
+
+
+
+
+
+
+
+

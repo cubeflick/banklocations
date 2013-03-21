@@ -15,6 +15,7 @@
                  <div style="margin-top: 10px;" >
                      <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table">
                          <tr>
+                         
                              <th>Bank Name</th>
                              <th>Branch Name</th>
                              <th>City </th>
@@ -34,8 +35,11 @@
                              foreach($this->Records as $key=>$value){
                                  ?>
                                     <tr>
+                                    
+                                    
                                          <td><?php echo $value['bank_name']; ?></td>
-                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'index/detail/id/'?><?php echo $value['id']; ?>/<?php echo $value['bank_name']; ?> <?php echo $value['branch_name']; ?> Branch"><?php echo $value['branch_name']; ?></a></td>
+                                        
+                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'detail/'?><?php echo $value['id']; ?>_<?php echo str_replace(' ', '-', $value['bank_name']); ?>-<?php echo str_replace(' ', '-', $value['branch_name']); ?>-Branch"><?php echo $value['branch_name']; ?></a></td>
                                          <td><?php echo $value['city']; ?></td>
                                          <?php
                                              if(isset($this->params['ifsc_code']) && $this->params['ifsc_code'] !=''){ ?>
@@ -64,16 +68,16 @@
     </div>
 
 </div>
-<form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."default/index/search/";?>">
-    <input type="hidden" value="<?php echo $this->params['bank_name']?>" name="bank_name"/>
-    <input type="hidden" value="<?php echo $this->params['state_name']?>" name="state_name"/>
-    <input type="hidden" value="<?php echo $this->params['district_name']?>" name="district_name"/>
-    <input type="hidden" value="<?php echo $this->params['city_name']?>" name="city_name"/>
-    <input type="hidden" value="<?php echo $this->params['branch_name']?>" name="branch_name"/>
-    <input type="hidden" value="<?php echo $this->params['ifsc_code']?>" name="ifsc_code"/>
-    <input type="hidden" value="<?php echo $this->params['micr_code']?>" name="micr_code"/>
-    <input type="hidden" value="<?php echo $this->params['limitPage']?>" name="limitPage" id="limitPage"/>
+
+<form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."search/";?>">
+    <input type="hidden" value="<?php if(isset($this->params)){echo ($this->params['bank_name']);}?>" name="bank_name"/>
+    <input type="hidden" value="<?php echo ($this->params['state_name'])?$this->params['state_name']:''?>" name="state_name"/>
+    <input type="hidden" value="<?php echo ($this->params['district_name'])?$this->params['district_name']:''?>" name="district_name"/>
+    <input type="hidden" value="<?php echo ($this->params['city_name'])?$this->params['city_name']:''?>" name="city_name"/>
+    
+    <input type="hidden" value="<?php echo ($this->params['limitPage'])?$this->params['limitPage']:'1'?>" name="limitPage" id="limitPage"/>
 </form>
+
 <script type="text/javascript">
 function setPage(pageNo){
     $('#limitPage').val(pageNo);

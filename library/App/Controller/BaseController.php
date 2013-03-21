@@ -110,6 +110,14 @@ class App_Controller_BaseController extends Zend_Controller_Action {
         $escObj = new App_Plugins_Escape();
         $this->view->setEscape(array($escObj, 'NewEscape'));
         $this->view->PageHead = "Home";
+        
+        /**
+         * This function is used to fetch the scripts saved in database for google adds
+         */
+        $this->ModelDefault = new Default_Model_Default();
+        $result = $this->ModelDefault -> getValues();
+        $this->view->GoogleAddScript = $result[0];
+        
     }
 
     /**
