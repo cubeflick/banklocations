@@ -5,21 +5,51 @@
     </div>
     <div style="clear: both"></div>
     <div class="search_color inner">
-        <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."search/";?>">
+        <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."ifsc/search/";?>">
             <div class="search_bg">
-                <div class="Search_Bank_text">Search Bank</div>
+                <div class="Search_Bank_text">Search IFSC Code</div>
                 <div><img src="images/border.png" width="322" height="1" style="margin:5px 0 0 0;width: 395px;" /></div>
                 
                 
                       
-
-                <div class="search_bank1 mainoptions" id="ifscNameHolder">
-                    <div class="text">IFSC Code:</div>
+  <div class="search_bank1"  id="bankNameHolder">
+                    <div class="text">Bank:</div>
                     <div class="select_box">
-                        <input type="text" name="ifsc_code"/>
+                        <select id="bank_name" name="bank_name">
+                            <option>Select Bank Name</option>
+                            <?php
+                            if(isset($this->BankNames) && count($this->BankNames) > 0){
+                                foreach($this->BankNames as $key=>$value){
+                                    echo '<option>'.$value['bank_name'].'</option>';
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                   
+                </div>
+                <div class="search_bank1" id="stateNameHolder">
+                    <div class="text">State :</div>
+                    <div class="select_box">
+                        <select id="state_name" name="state_name">
+                            <option>Select Bank Above First</option>
+                        </select>
                     </div>
                     <div class="clear"></div>
                 </div>
+               
+                <div class="search_bank1 mainoptions"  id="cityNameHolder" >
+                    <div class="text">City :</div>
+                    <div class="select_box">
+                        <select  id="city_name" name="city_name">
+                            <option>Select Bank Above First</option>
+                        </select>
+                        <input name="limitPage" type="hidden" value="1"/>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                
                
 
                 <div style="margin:15px 0 0 108px;"><a id="submit_link" href="javascript:void(0)"><img src="<?php echo $this->constant->IMAGEPATH;?>/search_button.png" width="104" height="31" border="0" /></a></div>
@@ -62,60 +92,11 @@
         }
     });
 
-    $('#state_name').change(function(){
-        if($("#branch_search").parent().hasClass('active')){
-            if($("#state_name option:selected").text() == 'Please Select'){
-                $("select#branch_name").html('<option>Select State Above First</option>');
-                $('select#branch_name').effect("highlight", {}, 3000);
-            }else{
-                $('#submit_link').hide();
-                 $("select#branch_name").html('<option>Loading...</option>');
-                $.getJSON("<?php echo $this->constant->HOSTPATH.'default/index/getbranchjson' ?>",{state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
-                  var options = '';
-                  if(j.length > 0){
-                      options += '<option value="">Please Select</option>';
-                      for (var i = 0; i < j.length; i++) {
-                        options += '<option value="' + j[i].branch_name + '">' + j[i].branch_name + '</option>';
-                      }
-                  }else{
-                      options += '<option value="">No Branch Information Available</option>';
-                  }
-                  $("select#branch_name").html(options);
-                  $('select#branch_name').effect("highlight", {}, 3000);
-                  $('#submit_link').show();
-                })
-            }
-        }else{
-            if($("#state_name option:selected").text() == 'Please Select'){
-                $("select#district_name").html('<option>Select State Above First</option>');
-                $('select#district_name').effect("highlight", {}, 3000);
-                $("select#city_name").html('<option>Select State Above First</option>');
-            }else{
-                $('#submit_link').hide();
-                $("select#district_name").html('<option>Loading...</option>');
-                $.getJSON("<?php echo $this->constant->HOSTPATH.'default/index/getdistrictjson' ?>",{state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
-                  var options = '';
-                  if(j.length > 0){
-                      options += '<option value="">Please Select</option>';
-                      for (var i = 0; i < j.length; i++) {
-                        options += '<option value="' + j[i].district + '">' + j[i].district + '</option>';
-                      }
-                  }else{
-                      options += '<option value="">No District Information Available</option>';
-                  }
-                  $("select#district_name").html(options);
-                  $('select#district_name').effect("highlight", {}, 3000);
-
-                    $("select#city_name").html('<option>Select District Above First</option>');
-                    $('#submit_link').show();
-                })
-            }
-        }
-    });
-
-    $('#district_name').change(function(){
     
-        if($("#district_name option:selected").text() == 'Please Select'){
+
+    $('#state_name').change(function(){
+    
+        if($("#state_name option:selected").text() == 'Please Select'){
             $("select#city_name").html('<option>Select District Above First</option>');
             $('select#city_name').effect("highlight", {}, 3000);
         }else{
