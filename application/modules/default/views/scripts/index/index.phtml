@@ -1,3 +1,4 @@
+
 <div class="main">
     <div class="banner">
         <div class="banner_in">
@@ -86,7 +87,7 @@
                             <?php
                             if(isset($this->States) && count($this->States) > 0){
                                 foreach($this->States as $key=>$value){
-                                    echo '<li id="'.$value['state'].'" onclick="getval(this.id)" >'.$value['state'].'</li>';
+                                    echo '<li><a href="javascript:getval(\''.$value['state'].'\')">'.$value['state'].'</a></li>';
                                 }
                             }
                             ?>
