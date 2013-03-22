@@ -56,6 +56,10 @@ body {
 	padding: 0;
 	list-style: none;
 }
+.nav{
+	width:900px;
+	margin: auto;
+}
 .search_bg
 {
 background:#FFFFFF;
