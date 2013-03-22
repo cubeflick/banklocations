@@ -272,6 +272,16 @@ border-radius: 5px 5px 0 0; /* Opera 10.5+, future browsers, and now also Intern
 position:absolute;
 top:26px;
 }
+.inner .search_bg
+{
+position: static;
+width: 400px;
+}
+.inner #search_form
+{
+	float: left;
+}
+
 .search_color
 {
 width:978px;
@@ -300,6 +310,10 @@ background:url(../images/select_box.png) no-repeat;
 width:199px;
 margin:0 15px 0 0;
 height:29px;
+}
+.inner .select_box
+{
+	height:  35px;
 }
 .select_box input
 {

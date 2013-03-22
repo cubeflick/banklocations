@@ -55,7 +55,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         		'searchIfsc', new Zend_Controller_Router_Route('/ifsc', array('module'=>'default','controller'=>'index','action'=>'ifsc'))
         );
         $router->addRoute(
-        		'searchMicr', new Zend_Controller_Router_Route('/searchmicr', array('module'=>'default','controller'=>'index','action'=>'micr'))
+        		'searchMicr', new Zend_Controller_Router_Route('/micr', array('module'=>'default','controller'=>'index','action'=>'micr'))
         );
         $router->addRoute(
         		'searchofMicr', new Zend_Controller_Router_Route('/micr/search', array('module'=>'default','controller'=>'index','action'=>'searchmicr'))
