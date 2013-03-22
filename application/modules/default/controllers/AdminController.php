@@ -7,7 +7,7 @@ class AdminController extends App_Controller_BaseController {
         $this->Model = new Default_Model_Default();
     }
 
-public function indexAction() {
+	public function indexAction() {
         $validators = array();
         $objRequest = $this->getRequest();
         if ($objRequest->isPost()) {

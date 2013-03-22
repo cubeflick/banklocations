@@ -578,7 +578,6 @@ margin:auto;
 .text_about {
 	font-family: Arial, Helvetica, sans-serif;
 	color: #393939;
-	min-height: 572px;
 	line-height: 24px;
 }
 
@@ -699,18 +698,12 @@ margin:auto;
 }
 
 #top_add {
-	width: 468px;
-	height: 60px;
-	border: 1px solid blue;
 	float: right;
 }
 
 #banner_add {
-	border: 1px solid blue;
 	right: 0px;
-	top: 10px;
-	height: 250px;
-	width: 300px;
+	top: 25px;
 	position: absolute;
 }
 

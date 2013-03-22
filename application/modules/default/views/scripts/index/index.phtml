@@ -2,11 +2,14 @@
 <div class="main">
     <div class="banner">
         <div class="banner_in">
-        <div id="banner_add"> <?php echo $this->GoogleAddScript['banner_add'];?></div>
+        <div id="banner_add"> 
+        <?php 
+        	echo html_entity_decode($this->GoogleAddScript['banner_add']);
+        ?>
+        </div>
         <img  src="<?php echo $this->constant->IMAGEPATH;?>/banner.png" width="978" height="299" />
        
         </div>
-        
     </div>
     <div class="search_color">
         <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."search/";?>">
@@ -93,8 +96,8 @@
                             ?>
                             </ul></div>
                             <div style="clear: both"></div>
-    <div class="add_banner">
-        <div style="margin-top:25px; width: 976px; height: 122px;"> <?php echo $this->GoogleAddScript['home_add'];?></div>
+    <div class="add_banner ptb20">
+        <?php echo html_entity_decode($this->GoogleAddScript['home_add']);?>
     </div>
 </div>
 <script type="text/javascript">
