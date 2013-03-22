@@ -20,7 +20,7 @@
             <div class="header">
                 <div class="logo"><a href="<?php echo $this->constant->HOSTPATH;?>"><img src="<?php echo $this->constant->IMAGEPATH;?>/logo.png" width="278" height="58" border="0" /></a></div>
                 <div id="top_add">
-                    <?php echo html_entity_decode($this->GoogleAddScript['top_add']);?>
+                    <?php echo html_entity_decode(stripcslashes($this->GoogleAddScript['top_add']));?>
                 </div>
                 <div class="clear"></div>
             </div>

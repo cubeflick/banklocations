@@ -4,7 +4,7 @@
         <div class="banner_in">
         <div id="banner_add"> 
         <?php 
-        	echo html_entity_decode($this->GoogleAddScript['banner_add']);
+        	echo html_entity_decode(stripcslashes($this->GoogleAddScript['banner_add']));
         ?>
         </div>
         <img  src="<?php echo $this->constant->IMAGEPATH;?>/banner.png" width="978" height="299" />
@@ -97,7 +97,7 @@
                             </ul></div>
                             <div style="clear: both"></div>
     <div class="add_banner ptb20">
-        <?php echo html_entity_decode($this->GoogleAddScript['home_add']);?>
+        <?php echo html_entity_decode(stripcslashes($this->GoogleAddScript['home_add']));?>
     </div>
 </div>
 <script type="text/javascript">
