@@ -700,6 +700,8 @@ margin:auto;
 
 #top_add {
 	float: right;
+	 text-align: center;
+    width: 550px;
 }
 
 #banner_add {
