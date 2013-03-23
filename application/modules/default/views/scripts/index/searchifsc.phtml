@@ -30,7 +30,7 @@
                                     
                                          <td><?php echo $value['bank_name']; ?></td>
                                         
-                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'detail/'?><?php echo $value['id']; ?>_<?php echo str_replace(' ', '-', $value['bank_name']); ?>-<?php echo str_replace(' ', '-', $value['branch_name']); ?>-Branch"><?php echo $value['branch_name']; ?></a></td>
+                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'detail/'?><?php echo $value['id']; ?>_<?php echo str_replace(' ', '-', $value['bank_name']); ?>-<?php echo str_replace(' ', '-', $value['branch_name']); ?>-Branch<?php if($value['ifsc_code'] != ''){echo '-'; echo $value['ifsc_code'];} ?>"><?php echo $value['branch_name']; ?></a></td>
                                          <td><?php echo $value['city']; ?></td>
                                         
                                                  <td><?php echo $value['ifsc_code']; ?></td>
