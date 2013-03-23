@@ -708,6 +708,8 @@ margin:auto;
 	right: 0px;
 	top: 25px;
 	position: absolute;
+	width: 380px;
+	text-align: center;
 }
 
 #top_states,#top_banks{
