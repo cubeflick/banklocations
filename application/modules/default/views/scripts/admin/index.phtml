@@ -2,23 +2,23 @@
 <form id="google_add_script" method="post" action="<?php echo $this->constant->HOSTPATH."default/admin/index/";?>" >
 <div>
 <div class="add_script_text">Script For Home Page Add</div>
-<textarea name="home_add_script" class="add_script_input" id="home_add_script" ><?php echo $this->Details['home_add'];?></textarea>
+<textarea name="home_add_script" class="add_script_input" id="home_add_script" ><?php echo html_entity_decode(stripcslashes($this->Details['home_add']));?></textarea>
 </div>
 <div>
 <div class="add_script_text">Script For Bottom Add</div>
-<textarea name="bottom_add_script" class="add_script_input" id="bottom_add_script"><?php echo $this->Details['bottom_add'];?></textarea>
+<textarea name="bottom_add_script" class="add_script_input" id="bottom_add_script"><?php echo html_entity_decode(stripcslashes($this->Details['bottom_add']));?></textarea>
 </div>
 <div>
 <div class="add_script_text">Script For Right Add</div>
-<textarea name="right_add_script" class="add_script_input" id="right_add_script" ><?php echo $this->Details['right_add'];?></textarea>
+<textarea name="right_add_script" class="add_script_input" id="right_add_script" ><?php echo html_entity_decode(stripcslashes($this->Details['right_add']));?></textarea>
 </div>
 <div>
 <div class="add_script_text">Script For Top Add</div>
-<textarea name="top_add_script" class="add_script_input" id="top_add_script" ><?php echo $this->Details['top_add'];?></textarea>
+<textarea name="top_add_script" class="add_script_input" id="top_add_script" ><?php echo html_entity_decode(stripcslashes($this->Details['top_add']));?></textarea>
 </div>
 <div>
 <div class="add_script_text">Script For Banner Add</div>
-<textarea name="banner_add_script" class="add_script_input" id="banner_add_script" ><?php echo $this->Details['banner_add'];?></textarea>
+<textarea name="banner_add_script" class="add_script_input" id="banner_add_script" ><?php echo html_entity_decode(stripcslashes($this->Details['banner_add']));?></textarea>
 </div>
 <input class="google_add_submit" type="submit" value="submit">
 
