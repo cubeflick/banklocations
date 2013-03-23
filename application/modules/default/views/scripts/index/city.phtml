@@ -4,9 +4,10 @@
     <div class="inner_bg_img">
         <div class="inner_banner"><img src="<?php echo $this->constant->IMAGEPATH;?>/inner_banner.png" width="977" height="215" /></div>
     </div>
-    <div style="clear: both"></div>
+    <div class="inner_container">
     <div class="search_color inner">
     <div class="breadcrumb pt20"><a href="/">Home</a> <span> &rsaquo; Search Bank By City</span></div>
+    <div class="about_container">
         <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."search/";?>">
             <div class="search_bg">
             
@@ -53,10 +54,15 @@
 
               <div style="margin:15px 0 0 108px;"><a id="submit_link" href="javascript:void(0)"><img src="<?php echo $this->constant->IMAGEPATH;?>/search_button.png" width="104" height="31" border="0" /></a></div>
               
-    			<?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>          
+    			          
             </div>
+            
         </form>
-        <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
+        <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>
+         </div>
+        
+    </div>
+    <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
     </div>
     
     
