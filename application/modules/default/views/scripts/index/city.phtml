@@ -102,12 +102,12 @@
     $('#state_name').change(function(){
     
         if($("#state_name option:selected").text() == 'Please Select'){
-            $("select#city_name").html('<option>Select District Above First</option>');
+            $("select#city_name").html('<option>Select State Above First</option>');
             $('select#city_name').effect("highlight", {}, 3000);
         }else{
             $('#submit_link').hide();
             $("select#city_name").html('<option>Loading...</option>');
-            $.getJSON("<?php echo $this->constant->HOSTPATH.'default/index/getcityjson' ?>",{district_name: $("#district_name option:selected").text(),state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
+            $.getJSON("<?php echo $this->constant->HOSTPATH.'default/index/getcityjson' ?>",{state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
               var options = '';
               if(j.length > 0){
                   options += '<option value="">Please Select</option>';
