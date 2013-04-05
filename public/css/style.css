@@ -701,8 +701,9 @@ margin:auto;
 
 #top_add {
 	float: right;
-	 text-align: center;
+	text-align: center;
     width: 550px;
+	padding-top:35px;
 }
 
 #banner_add {
