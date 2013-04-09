@@ -25,6 +25,7 @@ class IndexController extends App_Controller_BaseController {
     
     public function cityAction()
     {
+    	$this->view->PageHead = "searchbycity";
     	$this->Model = new Default_Model_Default();
     	$this->view->SectionHeading = "Dashboard";
     	$this->view->BankNames = $this->Model->GetBankNames();
