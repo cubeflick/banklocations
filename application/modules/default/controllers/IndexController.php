@@ -33,6 +33,7 @@ class IndexController extends App_Controller_BaseController {
     }
     public function ifscAction()
     {
+    	$this->view->PageHead = "ifsccode";
     	$this->Model = new Default_Model_Default();
     	$this->view->SectionHeading = "Dashboard";
     	$this->view->BankNames = $this->Model->GetBankNames();
@@ -42,6 +43,7 @@ class IndexController extends App_Controller_BaseController {
     
     public function micrAction()
     {
+    	$this->view->PageHead = "micrcode";
     	$this->Model = new Default_Model_Default();
     	$this->view->SectionHeading = "Dashboard";
     	$this->view->BankNames = $this->Model->GetBankNames();
@@ -203,7 +205,7 @@ class IndexController extends App_Controller_BaseController {
     }
     
     public function searchmicrAction() {
-    	$this->view->PageHead = "Search";
+    	$this->view->PageHead = "micrSearch";
     	$objRequest = $this->getRequest();
     	$Params = $objRequest->getParams();
     	$this->view->params = $Params;
@@ -311,7 +313,7 @@ class IndexController extends App_Controller_BaseController {
     }
     
     public function searchifscAction() {
-    	$this->view->PageHead = "Search";
+    	$this->view->PageHead = "ifscSearch";
     	$objRequest = $this->getRequest();
     	$Params = $objRequest->getParams();
     	$this->view->params = $Params;
