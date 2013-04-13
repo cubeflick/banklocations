@@ -105,7 +105,27 @@ class IndexController extends App_Controller_BaseController {
     	
         $this->view->PageHead = "Search";
         $objRequest = $this->getRequest();
-        $Params = $objRequest->getParams();        
+        $Params = $objRequest->getParams();
+
+        if(array_key_exists('bank_name', $Params))
+        {
+        	$Params['bank_name'] = strtolower(str_replace("_"," ",$Params['bank_name']));
+        }	
+        if(array_key_exists('state_name', $Params))
+        {
+        	$Params['state_name'] = strtolower(str_replace("_"," ",$Params['state_name']));
+        }
+        if(array_key_exists('district_name', $Params))
+        {
+        	$Params['district_name'] = strtolower(str_replace("_"," ",$Params['district_name']));
+        }
+        if(array_key_exists('city_name', $Params))
+        {
+        	$Params['city_name'] = strtolower(str_replace("_"," ",$Params['city_name']));
+        }
+        
+        
+        
         $this->view->params = $Params;
         $total_pages = $this->Model->getTotalCount($Params);
         $adjacents = 3;
@@ -215,6 +235,11 @@ class IndexController extends App_Controller_BaseController {
     	$this->view->PageHead = "micrSearch";
     	$objRequest = $this->getRequest();
     	$Params = $objRequest->getParams();
+    	
+    	
+    	$input=$Params->bank_name;
+    	$Params->bank_name= str_replace('_', ' ', $input);
+    	
     	$this->view->params = $Params;
     	$total_pages = $this->Model->getTotalCount($Params);
     	$adjacents = 3;
