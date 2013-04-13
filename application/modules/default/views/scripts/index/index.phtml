@@ -213,24 +213,27 @@
     	 if($("#state_name option:selected").text() == 'Please Select')
         	 {
     		 var str = $('#bank_name option:selected').text();
-    		 window.location.href = str.toUpperCase();
+    		 str2 = str.replace(/ /g,"_");
+    		 window.location.href = str2.toUpperCase();
         	 }
     	 else{
         	  if($("#district_name option:selected").text() == 'Please Select')
     	 {
 		 var str = $('#bank_name option:selected').text() +"/"+ $('#state_name option:selected').text();
-		 window.location.href = str.toUpperCase();
+		 str2 = str.replace(/ /g,"_");
+		 window.location.href = str2.toUpperCase();
 	    	 }
         	  else{
         		  if($("#city_name option:selected").text() == 'Please Select')
         	    	 {
         			var str = $('#bank_name option:selected').text() +"/"+ $('#state_name option:selected').text() +"/"+ $("#district_name option:selected").text();
-        			 window.location.href = str.toUpperCase();
+        			str2 = str.replace(/ /g,"_");
+        			 window.location.href = str2.toUpperCase();
         	    	 }
         		  else{
         			  var str=$('#bank_name option:selected').text() +"/"+ $('#state_name option:selected').text() +"/"+ $("#district_name option:selected").text() +"/"+ $("#city_name option:selected").text()  ;;
-        			  
-        	    	window.location.href = str.toUpperCase();
+        			  str2 = str.replace(/ /g,"_");
+        	    	window.location.href = str2.toUpperCase();
         		  }
        	    	 }
     	 }
