@@ -98,6 +98,9 @@ class IndexController extends App_Controller_BaseController {
     }
 
     public function searchAction() {
+    	
+    	
+    	
         $this->view->PageHead = "Search";
         $objRequest = $this->getRequest();
         $Params = $objRequest->getParams();        
