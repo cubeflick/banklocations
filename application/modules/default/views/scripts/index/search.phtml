@@ -10,7 +10,8 @@
                  
                  <div style="margin-top: 10px;" >
                      <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table">
-                         <tr>
+                     <thead>
+                         <tr class="result">
                          
                              <th>Bank Name</th>
                              <th>Branch Name</th>
@@ -26,11 +27,13 @@
                              }
                              ?>
                          </tr>
+                     </thead>
+                     <tbody>    
                          <?php
                          if(count($this->Records) > 0){
                              foreach($this->Records as $key=>$value){
                                  ?>
-                                    <tr>
+                                    <tr class="result">
                                     
                                     
                                          <td><?php echo $value['bank_name']; ?></td>
@@ -51,10 +54,41 @@
                              }
                          }
                          ?>
+                        </tbody> 
                      </table>
-                     <div id="pagingStateContainer">
-                          <?php echo $this->pagination;?> 
-                     </div>
+                     
+                     
+                     
+		          <script langauge="javascript" type="text/javascript">
+	                         
+	
+	                                      	$('table.result_table').each(function() {
+	                                      	    var currentPage = 0;
+	                                      	    var numPerPage = 10;
+	                                      	    var $table = $(this);
+	                                      	    $table.bind('repaginate', function() {
+	                                      	        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+	                                      	    });
+	                                      	    $table.trigger('repaginate');
+	                                      	    var numRows = $table.find('tbody tr').length;
+	                                      	    var numPages = Math.ceil(numRows / numPerPage);
+	                                      	    var $pager = $('<div id="Pagination" class="pagination"></div>');
+	                                      	    for (var page = 0; page < numPages; page++) {
+	                                      	        $('<a class="page-number"></a>').text(page + 1).bind('click', {
+	                                      	            newPage: page
+	                                      	        }, function(event) {
+	                                      	            currentPage = event.data['newPage'];
+	                                      	            $table.trigger('repaginate');
+	                                      	            $(this).addClass('active').siblings().removeClass('active');
+	                                      	        }).appendTo($pager).addClass('clickable');
+	                                      	    }
+	                                      	    $pager.insertAfter($table).find('span.page-number:first').addClass('active');
+	                                      	});
+	                         
+	                     </script>            
+                              
+                     <div id="Pagination"></div>
+        			 <br style="clear:both;" />
                  </div>
             </div>
             <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>            
