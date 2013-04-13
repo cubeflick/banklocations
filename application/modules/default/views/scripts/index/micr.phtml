@@ -13,39 +13,13 @@
             	<h2 class="page-title">Search MICR Code</h2>
 
                 <div><img src="images/border.png" width="322" height="1" style="margin:5px 0 0 0;width: 395px;" /></div>
-                <div class="search_bank1"  id="bankNameHolder">
-                    <div class="text">Bank:</div>
-                    <div class="select_box">
-                        <select id="bank_name" name="bank_name">
-                            <option>Select Bank Name</option>
-                            <?php
-                            if(isset($this->BankNames) && count($this->BankNames) > 0){
-                                foreach($this->BankNames as $key=>$value){
-                                    echo '<option>'.$value['bank_name'].'</option>';
-                                }
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="clear"></div>
-                   
-                </div>
-                <div class="search_bank1" id="stateNameHolder">
-                    <div class="text">State :</div>
-                    <div class="select_box">
-                        <select id="state_name" name="state_name">
-                            <option>Select Bank Above First</option>
-                        </select>
-                    </div>
-                    <div class="clear"></div>
-                </div>
+               
+               
                
                 <div class="search_bank1 mainoptions"  id="cityNameHolder" >
-                    <div class="text">City :</div>
+                    <div class="text">MICR Code :</div>
                     <div class="select_box">
-                        <select  id="city_name" name="city_name">
-                            <option>Select Bank Above First</option>
-                        </select>
+                       <input name="micr_code" type="text"/>
                         <input name="limitPage" type="hidden" value="1"/>
                     </div>
                     <div class="clear"></div>
