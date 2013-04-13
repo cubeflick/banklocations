@@ -19,6 +19,8 @@ class IndexController extends App_Controller_BaseController {
         $objRequest = $this->getRequest();
         $action = $objRequest->getparam('actionName');
         $this->view->action = $action;
+        $records = $objRequest->getParam();
+       $this->view->Records = $records;
         
         
     }
@@ -107,6 +109,7 @@ class IndexController extends App_Controller_BaseController {
         $this->view->params = $Params;
         $total_pages = $this->Model->getTotalCount($Params);
         $adjacents = 3;
+       
         
         unset($Params['module']);
         unset($Params['controller']);

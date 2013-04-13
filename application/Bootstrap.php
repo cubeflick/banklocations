@@ -20,7 +20,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $router = $frontController->getRouter();
 
         $router->addRoute(
-        		'searchOfIndex', new Zend_Controller_Router_Route(':bankname/:statename', array('module'=>'default','controller'=>'index','action'=>'search','bankname'=>'','statename'=>''))
+        		'searchOfIndex', new Zend_Controller_Router_Route(':bank_name/:state_name/:district_name/:city_name/:limitPage', array('module'=>'default','controller'=>'index','action'=>'search','bank_name'=>'','state_name'=>'','district_name'=>'','city_name'=>'','limitPage'=>'1'))
         );
         $router->addRoute(
         		'indexOfHome', new Zend_Controller_Router_Route('/', array('module'=>'default','controller'=>'index','action'=>'index'))
@@ -66,6 +66,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         );
         $router->addRoute(
         		'searchofIfsc', new Zend_Controller_Router_Route('/ifsc/search', array('module'=>'default','controller'=>'index','action'=>'searchifsc'))
+        );
+        $router->addRoute(
+        		'statejson', new Zend_Controller_Router_Route('/getstatejson', array('module'=>'default','controller'=>'index','action'=>'getstatejson'))
+        );
+        $router->addRoute(
+        		'branchjson', new Zend_Controller_Router_Route('/getbranchjson', array('module'=>'default','controller'=>'index','action'=>'getbranchjson'))
+        );
+        $router->addRoute(
+        		'districtjson', new Zend_Controller_Router_Route('/getdistrictjson', array('module'=>'default','controller'=>'index','action'=>'getdistrictjson'))
+        );
+        $router->addRoute(
+        		'cityjson', new Zend_Controller_Router_Route('/getcityjson', array('module'=>'default','controller'=>'index','action'=>'getcityjson'))
         );
     }
 }
