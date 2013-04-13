@@ -229,11 +229,12 @@ class Default_Model_Default extends App_Model_BaseModel
         $select = $this->_db->select()
                         ->from('bank_detail')
                         ->where($where);
-        if (isset($params['limitPage'])) {
-            $select->limitPage($params['limitPage'], 10);
-        } else {
-            $select->limitPage(1, 10);
-        }
+        
+//         if (isset($params['limitPage'])) {
+//             $select->limitPage($params['limitPage'], 10);
+//         } else {
+//             $select->limitPage(1, 10);
+//         }
 
         $select->order($order_by);
         $select->order('district');

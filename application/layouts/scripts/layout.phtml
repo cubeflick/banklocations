@@ -7,12 +7,15 @@
         echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/style.css');
         echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/jquery-ui-1.9.2.custom.css');
         echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/validationEngine.jquery.css');
-        echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/jquery.fancybox-1.3.4.css');
+        echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/validationEngine.jquery.css');
+        echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/pagination.css');
         echo $this->headScript()->appendFile($this->constant->JSPATH . '/jquery-1.7.min.js')
                 ->appendFile($this->constant->JSPATH . '/jquery.validationEngine.js')
                 ->appendFile($this->constant->JSPATH . '/jquery-ui-1.9.2.custom.min.js')
                 ->appendFile($this->constant->JSPATH . '/jquery.fancybox-1.3.4.pack.js')
+                ->appendFile($this->constant->JSPATH . '/jquery.pagination.js')
                 ->appendFile($this->constant->JSPATH . '/jquery.validationEngine-en.js');
+        
         ?>
     </head>
     <body>
