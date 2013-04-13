@@ -20,7 +20,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $router = $frontController->getRouter();
 
         $router->addRoute(
-        		'searchOfIndex', new Zend_Controller_Router_Route(':bank_name/:state_name/:district_name/:city_name/:limitPage', array('module'=>'default','controller'=>'index','action'=>'search','bank_name'=>'','state_name'=>'','district_name'=>'','city_name'=>'','limitPage'=>'1'))
+        		'searchOfIndex', new Zend_Controller_Router_Route(':bank_name/:state_name/:district_name/:city_name', array('module'=>'default','controller'=>'index','action'=>'search','bank_name'=>'','state_name'=>'','district_name'=>'','city_name'=>''))
         );
         $router->addRoute(
         		'indexOfHome', new Zend_Controller_Router_Route('/', array('module'=>'default','controller'=>'index','action'=>'index'))
@@ -62,10 +62,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         		'searchMicr', new Zend_Controller_Router_Route('/micr', array('module'=>'default','controller'=>'index','action'=>'micr'))
         );
         $router->addRoute(
-        		'searchofMicr', new Zend_Controller_Router_Route('/micr/search', array('module'=>'default','controller'=>'index','action'=>'searchmicr'))
+        		'searchofMicr', new Zend_Controller_Router_Route('/micr/:micr_code', array('module'=>'default','controller'=>'index','action'=>'searchmicr'))
         );
         $router->addRoute(
-        		'searchofIfsc', new Zend_Controller_Router_Route('/ifsc/search', array('module'=>'default','controller'=>'index','action'=>'searchifsc'))
+        		'searchofIfsc', new Zend_Controller_Router_Route('/ifsc/:ifsc_code', array('module'=>'default','controller'=>'index','action'=>'searchifsc'))
         );
         $router->addRoute(
         		'statejson', new Zend_Controller_Router_Route('/getstatejson', array('module'=>'default','controller'=>'index','action'=>'getstatejson'))

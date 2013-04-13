@@ -19,8 +19,7 @@ class IndexController extends App_Controller_BaseController {
         $objRequest = $this->getRequest();
         $action = $objRequest->getparam('actionName');
         $this->view->action = $action;
-        $records = $objRequest->getParam();
-       $this->view->Records = $records;
+       
         
         
     }
@@ -106,7 +105,34 @@ class IndexController extends App_Controller_BaseController {
         $this->view->PageHead = "Search";
         $objRequest = $this->getRequest();
         $Params = $objRequest->getParams();
+        
+        $referer = $objRequest->getHeader('referer');
 
+        if($referer == $this->constant->HOSTPATH."searchbycity")
+        {
+        	$Params['city_name'] = $Params['district_name'];
+        	$Params['district_name'] = "";
+        }	
+        elseif ($referer == $this->constant->HOSTPATH)
+        {
+        	
+        	$states = $this->Model->GetStatesNames();
+        	
+        	$tempStates = array();
+        	
+        	foreach($states as $statekey => $statevalue)
+        	{
+        		$tempStates[] = strtolower($statevalue['state']);
+        	}	
+        	$needle = str_replace("_", " ",$Params['bank_name']);
+        	
+        	if(in_array(strtolower($needle),$tempStates))
+        	{
+        		$Params['state_name'] = $Params['bank_name'];
+        		$Params['bank_name'] = "";
+        	}
+        }
+        
         if(array_key_exists('bank_name', $Params))
         {
         	$Params['bank_name'] = strtolower(str_replace("_"," ",$Params['bank_name']));
@@ -345,6 +371,7 @@ class IndexController extends App_Controller_BaseController {
     }
     
     public function searchifscAction() {
+    	
     	$this->view->PageHead = "ifscSearch";
     	$objRequest = $this->getRequest();
     	$Params = $objRequest->getParams();

@@ -245,14 +245,19 @@
      function getVal(value)
     {
     	$('#bank_name').val(value);
-        $('#search_form').submit();
+    	 var str = $('#bank_name option:selected').text();
+		 str2 = str.replace(/ /g,"_");
+		 window.location.href = str2.toUpperCase();
      }
      
     function getval(value1)
     {
+    	
     	$('#state_name').empty();
     	$('#state_name').append('<option>'+value1+'</option>');
-        $('#search_form').submit();
+    	var str = $('#state_name option:selected').text();
+		 str2 = str.replace(/ /g,"_");
+		 window.location.href = str2.toUpperCase();
      }
 
 

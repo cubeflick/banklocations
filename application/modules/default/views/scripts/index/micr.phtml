@@ -19,7 +19,7 @@
                 <div class="search_bank1 mainoptions"  id="cityNameHolder" >
                     <div class="text">MICR Code :</div>
                     <div class="select_box">
-                       <input name="micr_code" type="text"/>
+                       <input name="micr_code" id= "micr_code" type="text"/>
                         <input name="limitPage" type="hidden" value="1"/>
                     </div>
                     <div class="clear"></div>
@@ -96,7 +96,7 @@
         }
     });
     $('#submit_link').click(function(){
-        $('#search_form').submit();
+    	window.location.href = "/micr/"+$('#micr_code').val();
     });
 
 

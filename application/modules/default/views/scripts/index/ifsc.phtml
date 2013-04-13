@@ -20,7 +20,7 @@
                 <div class="search_bank1 mainoptions"  id="cityNameHolder" >
                     <div class="text">IFSC Code :</div>
                     <div class="select_box">
-                       <input name="ifsc_code" type="text"/>
+                       <input name="ifsc_code" id="ifsc_code" type="text"/>
                         
                     </div>
                     <div class="clear"></div>
@@ -98,7 +98,7 @@
         }
     });
     $('#submit_link').click(function(){
-        $('#search_form').submit();
+    	window.location.href = "/ifsc/"+$('#ifsc_code').val();
     });
 
 
