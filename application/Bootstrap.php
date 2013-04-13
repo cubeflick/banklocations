@@ -18,11 +18,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         Zend_Controller_Action_HelperBroker::addHelper($aclHelper);        
         $frontController = Zend_Controller_Front::getInstance();
         $router = $frontController->getRouter();
+
         $router->addRoute(
-            'detailOfIndex', new Zend_Controller_Router_Route('/detail/:id', array('module'=>'default','controller'=>'index','action'=>'detail'))
+        		'searchOfIndex', new Zend_Controller_Router_Route(':bankname/:statename', array('module'=>'default','controller'=>'index','action'=>'search','bankname'=>'','statename'=>''))
         );
         $router->addRoute(
-            'searchOfIndex', new Zend_Controller_Router_Route('/search', array('module'=>'default','controller'=>'index','action'=>'search'))
+        		'indexOfHome', new Zend_Controller_Router_Route('/', array('module'=>'default','controller'=>'index','action'=>'index'))
+        );
+        $router->addRoute(
+            'detailOfIndex', new Zend_Controller_Router_Route('/detail/:id', array('module'=>'default','controller'=>'index','action'=>'detail'))
         );
         $router->addRoute(
             'searchOfAtm', new Zend_Controller_Router_Route('/atm/search', array('module'=>'atm','controller'=>'index','action'=>'search'))
