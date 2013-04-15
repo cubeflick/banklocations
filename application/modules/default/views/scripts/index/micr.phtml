@@ -96,7 +96,15 @@
         }
     });
     $('#submit_link').click(function(){
+    	var myString = $('#micr_code').val();
+    	var length = myString.length;
+    	if (length != 9)
+    	{
+        	alert('Please Insert Correct MICR Code');
+    	}
+    	else{
     	window.location.href = "/micr/"+$('#micr_code').val();
+    	}
     });
 
 

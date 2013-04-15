@@ -86,16 +86,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         
         
         $router->addRoute(
-        		'statejson', new Zend_Controller_Router_Route('getstatejsonatm', array('module'=>'atm','controller'=>'index','action'=>'getstatejsonatm'))
+        		'statejsonatm', new Zend_Controller_Router_Route('getstatejsonatm', array('module'=>'atm','controller'=>'index','action'=>'getstatejsonatm'))
         );
         $router->addRoute(
-        		'branchjson', new Zend_Controller_Router_Route('getbranchjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getbranchjsonatm'))
+        		'branchjsonatm', new Zend_Controller_Router_Route('getbranchjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getbranchjsonatm'))
         );
         $router->addRoute(
-        		'districtjson', new Zend_Controller_Router_Route('getdistrictjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getdistrictjsonatm'))
+        		'districtjsonatm', new Zend_Controller_Router_Route('getdistrictjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getdistrictjsonatm'))
         );
         $router->addRoute(
-        		'cityjson', new Zend_Controller_Router_Route('getcityjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getcityjsonatm'))
+        		'cityjsonatm', new Zend_Controller_Router_Route('getcityjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getcityjsonatm'))
         );
     }
 }

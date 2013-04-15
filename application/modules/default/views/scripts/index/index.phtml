@@ -210,6 +210,10 @@
         }
     });
     $('#submit_link').click(function(){
+    	if($("#bank_name option:selected").text() == 'Select Bank Name'){
+        	alert('Please Select Bank First');
+        	}
+    	else{
     	 if($("#state_name option:selected").text() == 'Please Select')
         	 {
     		 var str = $('#bank_name option:selected').text();
@@ -237,7 +241,7 @@
         		  }
        	    	 }
     	 }
-    	 
+    	}
     	 
         });
 

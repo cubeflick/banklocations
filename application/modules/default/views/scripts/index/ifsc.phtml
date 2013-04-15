@@ -20,7 +20,7 @@
                 <div class="search_bank1 mainoptions"  id="cityNameHolder" >
                     <div class="text">IFSC Code :</div>
                     <div class="select_box">
-                       <input name="ifsc_code" id="ifsc_code" type="text"/>
+                       <input name="ifsc_code" id="ifsc_code" type="text" />
                         
                     </div>
                     <div class="clear"></div>
@@ -98,8 +98,16 @@
         }
     });
     $('#submit_link').click(function(){
+    	var myString = $('#ifsc_code').val();
+    	var length = myString.length;
+    	if (length != 11)
+    	{
+        	alert('Please Insert Correct IFSC Code');
+    	}
+    	else{
     	window.location.href = "/ifsc/"+$('#ifsc_code').val();
-    });
+    	}
+        });
 
 
      function getVal(value)
@@ -114,5 +122,8 @@
     	$('#state_name').append('<option>'+value1+'</option>');
         $('#search_form').submit();
      }
+
+   
+    
   
 </script>
