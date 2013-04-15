@@ -104,7 +104,7 @@
         }else{
             $('#submit_link').hide();
             $("select#state_name").html('<option>Loading...</option>');
-            $.getJSON("<?php echo $this->constant->HOSTPATH.'atm/index/getstatejsonatm' ?>",{bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
+            $.getJSON("<?php echo $this->constant->HOSTPATH.'getstatejsonatm' ?>",{bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
               var options = '';
               if(j.length > 0){
                   options += '<option value="">Please Select</option>';
@@ -131,7 +131,7 @@
             }else{
                 $('#submit_link').hide();
                  $("select#area").html('<option>Loading...</option>');
-                $.getJSON("<?php echo $this->constant->HOSTPATH.'atm/index/getdistrictjsonatm' ?>",{state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
+                $.getJSON("<?php echo $this->constant->HOSTPATH.'getdistrictjsonatm' ?>",{state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
                   var options = '';
                   if(j.length > 0){
                       options += '<option value="">Please Select</option>';
@@ -154,7 +154,7 @@
             }else{
                 $('#submit_link').hide();
                 $("select#district_name").html('<option>Loading...</option>');
-                $.getJSON("<?php echo $this->constant->HOSTPATH.'atm/index/getdistrictjsonatm' ?>",{state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
+                $.getJSON("<?php echo $this->constant->HOSTPATH.'getdistrictjsonatm' ?>",{state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
                   var options = '';
                   if(j.length > 0){
                       options += '<option value="">Please Select</option>';
@@ -182,7 +182,7 @@
         }else{
             $('#submit_link').hide();
             $("select#city_name").html('<option>Loading...</option>');
-            $.getJSON("<?php echo $this->constant->HOSTPATH.'atm/index/getcityjsonatm' ?>",{district_name: $("#district_name option:selected").text(),state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
+            $.getJSON("<?php echo $this->constant->HOSTPATH.'getcityjsonatm' ?>",{district_name: $("#district_name option:selected").text(),state_name: $("#state_name option:selected").text(),bank_name: $("#bank_name option:selected").text(), ajax: 'true'}, function(j){
               var options = '';
               if(j.length > 0){
                   options += '<option value="">Please Select</option>';

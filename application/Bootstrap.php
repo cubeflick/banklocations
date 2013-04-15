@@ -29,6 +29,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
             'detailOfIndex', new Zend_Controller_Router_Route('/detail/:id', array('module'=>'default','controller'=>'index','action'=>'detail'))
         );
         $router->addRoute(
+        		'searchAtm', new Zend_Controller_Router_Route('/atm', array('module'=>'atm','controller'=>'index','action'=>'index'))
+        );
+        $router->addRoute(
             'searchOfAtm', new Zend_Controller_Router_Route('/atm/search', array('module'=>'atm','controller'=>'index','action'=>'search'))
         );
         $router->addRoute(
@@ -61,6 +64,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $router->addRoute(
         		'searchMicr', new Zend_Controller_Router_Route('/micr', array('module'=>'default','controller'=>'index','action'=>'micr'))
         );
+        
         $router->addRoute(
         		'searchofMicr', new Zend_Controller_Router_Route('/micr/:micr_code', array('module'=>'default','controller'=>'index','action'=>'searchmicr'))
         );
@@ -78,6 +82,20 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         );
         $router->addRoute(
         		'cityjson', new Zend_Controller_Router_Route('/getcityjson', array('module'=>'default','controller'=>'index','action'=>'getcityjson'))
+        );
+        
+        
+        $router->addRoute(
+        		'statejson', new Zend_Controller_Router_Route('getstatejsonatm', array('module'=>'atm','controller'=>'index','action'=>'getstatejsonatm'))
+        );
+        $router->addRoute(
+        		'branchjson', new Zend_Controller_Router_Route('getbranchjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getbranchjsonatm'))
+        );
+        $router->addRoute(
+        		'districtjson', new Zend_Controller_Router_Route('getdistrictjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getdistrictjsonatm'))
+        );
+        $router->addRoute(
+        		'cityjson', new Zend_Controller_Router_Route('getcityjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getcityjsonatm'))
         );
     }
 }
