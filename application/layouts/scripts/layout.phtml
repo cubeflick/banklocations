@@ -1,7 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+    <title><?php echo $this->Detail['title'];?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="<?php echo $this->Detail['keywords'];?>">
+        <meta name="description" content="<?php echo $this->Detail['description'];?>">
         <title><?php echo $this->translate($this->constant->TITLE) . ' :: ' . $this->translate($this->PageHead); ?></title>
         <?php
         echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/style.css');

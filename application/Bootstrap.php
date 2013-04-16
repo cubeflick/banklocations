@@ -97,6 +97,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $router->addRoute(
         		'cityjsonatm', new Zend_Controller_Router_Route('getcityjsonatm', array('module'=>'atm','controller'=>'index','action'=>'getcityjsonatm'))
         );
+        $router->addRoute(
+        		'admin', new Zend_Controller_Router_Route('admin', array('module'=>'default','controller'=>'admin','action'=>'index'))
+        );
+        $router->addRoute(
+        		'adminmeta', new Zend_Controller_Router_Route('admin/metatag', array('module'=>'default','controller'=>'admin','action'=>'metatag'))
+        );
     }
 }
 

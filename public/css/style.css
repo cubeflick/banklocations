@@ -815,3 +815,28 @@ h2.page-title{
 }
 
 .pagination{margin:auto;margin-top:30px;}
+
+
+#meta_tag_script>div {
+	margin: 10px 20px;
+}
+
+#meta_tag_script .meta_tag_input {
+	height: 40px;
+	width: 400px;
+}
+
+#meta_tag_script .meta_tagt_text {
+	font: bold 14px Arial, Helvetica;
+	margin: 5px 0;
+}
+
+#meta_tag_script .meta_tag_submit {
+	background: none repeat scroll 0 0 #004889;
+	color: white;
+	font: 14px Arial, Helvetica;
+	margin: 5px 20px;
+}
+
+
+

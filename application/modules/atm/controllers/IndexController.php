@@ -13,6 +13,11 @@ class Atm_IndexController extends App_Controller_Modules_Content_ContentbaseCont
         $this->view->SectionHeading = "Dashboard";
         $this->view->BankNames = $this->Model->GetAtmNames(); 
         $this->view->States = $this->Model->GetStateNames();
+        
+        
+        $url['page_url'] = "/atm";
+        $result = $this->Model -> getMetaValues($url);
+        $this->view->Detail = $result[0];
     }
 
     public function getstatejsonatmAction() {

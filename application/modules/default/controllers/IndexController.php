@@ -19,9 +19,12 @@ class IndexController extends App_Controller_BaseController {
         $objRequest = $this->getRequest();
         $action = $objRequest->getparam('actionName');
         $this->view->action = $action;
+        
+        $url['page_url'] = "/";
+        $result = $this->Model -> getMetaValues($url);
+        $this->view->Detail = $result[0];
+        
        
-        
-        
     }
     
     public function cityAction()
@@ -32,6 +35,10 @@ class IndexController extends App_Controller_BaseController {
     	$this->view->BankNames = $this->Model->GetBankNames();
     	$this->view->navId = 'city';
     	$this->view->States = $this->Model->GetStatesNames();
+    	
+    	$url['page_url'] = "/searchbycity";
+    	$result = $this->Model -> getMetaValues($url);
+    	$this->view->Detail = $result[0];
     }
     public function ifscAction()
     {
@@ -41,6 +48,11 @@ class IndexController extends App_Controller_BaseController {
     	$this->view->BankNames = $this->Model->GetBankNames();
     	$this->view->navId = 'ifsc';
     	$this->view->States = $this->Model->GetStatesNames();
+    	
+    	$url['page_url'] = "/ifsc";
+    	$result = $this->Model -> getMetaValues($url);
+    	$this->view->Detail = $result[0];
+    	
     }
     
     public function micrAction()
@@ -51,6 +63,10 @@ class IndexController extends App_Controller_BaseController {
     	$this->view->BankNames = $this->Model->GetBankNames();
     	$this->view->navId = 'micr';
     	$this->view->States = $this->Model->GetStatesNames();
+    	
+    	$url['page_url'] = "/micr";
+    	$result = $this->Model -> getMetaValues($url);
+    	$this->view->Detail = $result[0];
     }
     
 

@@ -256,5 +256,67 @@ class Default_Model_Default extends App_Model_BaseModel
             $this->_db->insert("google_adds_details", $params);
             return $last_insert_id = $this->_db->lastInsertId();
         }
-    }   
+    }
+
+    public function getMetaValues($params = array()) {
+    $order_by = "id  asc";
+        $where =  " page_url = '" . $params['page_url'] . "'";
+
+        if (isset($params['order_by']) && $params['order_by'] != '') {
+            $order_by = $params['order_by'];
+        }
+        if (isset($params['id'])) {
+            $where .= ' and id=' . $params['id'];
+        }
+ 
+    	$select = $this->_db->select()
+    	->from('meta_tag')
+    	->where($where);
+    	return $this->_db->fetchAll($select);
+    }
+    
+    public function getallMetaValues($params = array()) {
+    	$order_by = "id  asc";
+    	$where = '1 = 1';
+    	
+    
+    	if (isset($params['order_by']) && $params['order_by'] != '') {
+    		$order_by = $params['order_by'];
+    	}
+    	if (isset($params['id'])) {
+    		$where .= ' and id=' . $params['id'];
+    	}
+    
+    	$select = $this->_db->select()
+    	->from('meta_tag')
+    	->where($where);
+    	return $this->_db->fetchAll($select);
+    }
+    
+    
+    public function saveMetaValues($params = array(),$where = null) {
+    	
+    	$where = '1 = 1';
+    	$select = $this->_db->select()
+    	->from('meta_tag',array('page_url'))
+    	->where($where)
+    	->group('page_url');
+    	$url = $this->_db->fetchAll($select);
+    	$tempurl = array();
+    	foreach($url as $urlkey => $urlvalue)
+    	{
+    		$tempurl[] = $urlvalue['page_url'];
+    	}
+    	$needle = $params['page_url'];
+    
+    	if(in_array($needle,$tempurl)) {
+    		$this->_db->update("meta_tag", $params, array('page_url = ?' =>  $params['page_url']));
+    		return $last_insert_id = $params['page_url'];
+    	}else {
+    		$this->_db->insert("meta_tag", $params);
+    		return $last_insert_id = $this->_db->lastInsertId();
+    	}
+    }
+    
+    
 }

@@ -44,4 +44,42 @@ class AdminController extends App_Controller_BaseController {
         $result = $this->Model -> getValues();
         $this->view->Details = $result[0];
     }
+    
+    
+    public function metatagAction() {
+    	$validators = array();
+    	$objRequest = $this->getRequest();
+    	if ($objRequest->isPost()) {
+    		$inputData = new Zend_Filter_Input($this->filters, $validators,$objRequest->getPost());
+    		if ($inputData->isValid()) {
+    			 
+    			$result = $this->Model->getallMetaValues();
+    			$data = $inputData->getEscaped();
+    			$dataInput = array();
+    
+    			$dataInput['page_url'] = $data['page_url'];
+    			$dataInput['title'] = $data['title'];
+    			$dataInput['keywords'] = $data['keywords'];
+    			$dataInput['description'] = $data['description'];
+    			
+    
+    			
+    			$eventId = $this->Model->saveMetaValues($dataInput);
+    
+    		} else {
+    
+    			 
+    			$data = $objRequest->getPost();
+    			$this->view->actionErrors = $this->getValidatorErrors(
+    					$inputData->getMessages());
+    			return false;
+    		}
+    		 
+    	}
+    	
+    }
+    
+    
+    
+    
 }
