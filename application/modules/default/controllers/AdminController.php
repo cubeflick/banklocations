@@ -49,6 +49,17 @@ class AdminController extends App_Controller_BaseController {
     public function metatagAction() {
     	$validators = array();
     	$objRequest = $this->getRequest();
+    	
+    	$referer = $objRequest->getHeader('referer');
+    	if($referer == $this->constant->HOSTPATH."admin/metatag/manage")
+    	{
+    	$id = $objRequest->getParam('id');
+        $id = explode('_', $id);
+        $records = $this->Model->getallMetatagValues(array('id'=> $id[0]));
+        $this->view->value = $records[0];
+    	}
+    	
+
     	if ($objRequest->isPost()) {
     		$inputData = new Zend_Filter_Input($this->filters, $validators,$objRequest->getPost());
     		if ($inputData->isValid()) {
@@ -77,8 +88,24 @@ class AdminController extends App_Controller_BaseController {
     		 
     	}
     	
+    	
+    	
     }
     
+    public function manageAction() {
+    	
+    	$this->view->Records = $this->Model->getMetatagValues();
+    
+    }
+    public function metatagdeleteAction() {
+    	
+    	$objRequest = $this->getRequest();
+    	$id = $objRequest->getParam('id');
+    	$id = explode('_', $id);
+    	$this->Model->metatagdelete($id[0]);
+    	$this->view->Records = $this->Model->getMetatagValues();
+    	
+    }
     
     
     

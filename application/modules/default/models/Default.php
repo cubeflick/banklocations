@@ -293,6 +293,29 @@ class Default_Model_Default extends App_Model_BaseModel
     	return $this->_db->fetchAll($select);
     }
     
+    public function getallMetatagValues($params) {
+    	$order_by = "id  asc";
+    	$where = " id = '" . $params['id'] . "'";
+    	 
+    
+    	$select = $this->_db->select()
+    	->from('meta_tag')
+    	->where($where);
+    	
+    	return $this->_db->fetchAll($select);
+    }
+    
+    public function getMetatagValues() {
+    	$order_by = "id  asc";
+    	$where = '1=1';
+    
+    
+    	$select = $this->_db->select()
+    	->from('meta_tag')
+    	->where($where);
+    	 
+    	return $this->_db->fetchAll($select);
+    }
     
     public function saveMetaValues($params = array(),$where = null) {
     	
@@ -316,6 +339,15 @@ class Default_Model_Default extends App_Model_BaseModel
     		$this->_db->insert("meta_tag", $params);
     		return $last_insert_id = $this->_db->lastInsertId();
     	}
+    }
+    
+    public function metatagdelete($id) {
+    	
+    	$db = $this->_db;
+    	$select = "DELETE  FROM meta_tag WHERE id = '$id' ";
+    	$stmt = $db->query($select);
+    	return $stmt;
+    	
     }
     
     

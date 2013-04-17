@@ -101,7 +101,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         		'admin', new Zend_Controller_Router_Route('admin', array('module'=>'default','controller'=>'admin','action'=>'index'))
         );
         $router->addRoute(
-        		'adminmeta', new Zend_Controller_Router_Route('admin/metatag', array('module'=>'default','controller'=>'admin','action'=>'metatag'))
+        		'adminmeta', new Zend_Controller_Router_Route('/admin/metatag/:id', array('module'=>'default','controller'=>'admin','action'=>'metatag','id'=>''))
+        );
+        $router->addRoute(
+        		'adminmetadelete', new Zend_Controller_Router_Route('/admin/metatag/deleted/:id', array('module'=>'default','controller'=>'admin','action'=>'metatagdelete','id'=>''))
+        );
+        $router->addRoute(
+        		'adminmetamanage', new Zend_Controller_Router_Route('admin/metatag/manage', array('module'=>'default','controller'=>'admin','action'=>'manage'))
         );
     }
 }

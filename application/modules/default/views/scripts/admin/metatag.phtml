@@ -2,7 +2,7 @@
 <form id="meta_tag_script" method="post" action="<?php echo $this->constant->HOSTPATH."admin/metatag";?>" >
 <div>
 <div class="meta_tag_text">URL (example /atm, and only / for home page)</div>
-<textarea name="page_url" class="meta_tag_input" id="page_url" ></textarea>
+<textarea name="page_url" class="meta_tag_input" id="page_url" ><?php if(isset($this->value['id'])){echo $this->value['page_url']; }?></textarea>
 </div>
 <div>
 <div class="meta_tag_text">Title</div>
