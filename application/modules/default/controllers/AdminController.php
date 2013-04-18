@@ -104,6 +104,7 @@ class AdminController extends App_Controller_BaseController {
     	$id = explode('_', $id);
     	$this->Model->metatagdelete($id[0]);
     	$this->view->Records = $this->Model->getMetatagValues();
+    	$this->_redirect('admin/metatag/manage');
     	
     }
     
