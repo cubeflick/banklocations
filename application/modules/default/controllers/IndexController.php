@@ -182,7 +182,7 @@ class IndexController extends App_Controller_BaseController {
         	$this->_redirect('/');
         }
         if ($objRequest->isGet()) {
-            $page = $Params['limitPage'];
+            $page = 2;
         } else {
             $page = 1;
 
