@@ -59,6 +59,11 @@ class AdminController extends App_Controller_BaseController {
     
     
     public function metatagAction() {
+    	
+   
+    	$auth = Zend_Auth::getInstance();
+    	if ($auth->hasIdentity()) {
+    	
     	$validators = array();
     	$objRequest = $this->getRequest();
     	
@@ -88,6 +93,9 @@ class AdminController extends App_Controller_BaseController {
     
     			
     			$eventId = $this->Model->saveMetaValues($dataInput);
+    			$this->_helper->FlashMessenger('Data saved successfully');
+    			$this->_redirect('admin/metatag/manage');
+    			
     
     		} else {
     
@@ -99,17 +107,32 @@ class AdminController extends App_Controller_BaseController {
     		}
     		 
     	}
+    	}
+    	else
+    	{
+    		$this->_redirect('login');
+    	}
     	
     	
     	
     }
     
     public function manageAction() {
+    	$auth = Zend_Auth::getInstance();
+    	if ($auth->hasIdentity()) {
     	
     	$this->view->Records = $this->Model->getMetatagValues();
+    	}
+    	else
+    	{
+    		$this->_redirect('login');
+    	}
     
     }
     public function metatagdeleteAction() {
+    	
+    	$auth = Zend_Auth::getInstance();
+    	if ($auth->hasIdentity()) {
     	
     	$objRequest = $this->getRequest();
     	$id = $objRequest->getParam('id');
@@ -117,6 +140,11 @@ class AdminController extends App_Controller_BaseController {
     	$this->Model->metatagdelete($id[0]);
     	$this->view->Records = $this->Model->getMetatagValues();
     	$this->_redirect('admin/metatag/manage');
+    	}
+    	else
+    	{
+    		$this->_redirect('login');
+    	}
     	
     }
     
