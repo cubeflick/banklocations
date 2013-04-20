@@ -3,8 +3,12 @@
 class AdminController extends App_Controller_BaseController {
 
     public function init() {
+
+    	
         parent::init();
         $this->Model = new Default_Model_Default();
+    	
+    	
     }
 
 	public function indexAction() {
