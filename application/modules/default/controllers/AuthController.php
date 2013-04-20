@@ -43,5 +43,11 @@ class AuthController extends App_Controller_BaseController
 		}
 					
 	}
-			
+	
+	public function logoutAction()
+	{	
+		$auth   = Zend_Auth::getInstance();
+		$auth->clearIdentity();
+		$this->_redirect('login');
+	}	
 }

@@ -112,6 +112,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $router->addRoute(
         		'login', new Zend_Controller_Router_Route('login', array('module'=>'default','controller'=>'auth','action'=>'login'))
         );
-    }
+        $router->addRoute(
+        		'logout', new Zend_Controller_Router_Route('logout', array('module'=>'default','controller'=>'auth','action'=>'logout'))
+        );
+   }
 }
 
