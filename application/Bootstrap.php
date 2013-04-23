@@ -115,6 +115,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $router->addRoute(
         		'logout', new Zend_Controller_Router_Route('logout', array('module'=>'default','controller'=>'auth','action'=>'logout'))
         );
+        $router->addRoute(
+        		'dashboard', new Zend_Controller_Router_Route('admin/dashboard', array('module'=>'default','controller'=>'admin','action'=>'dashboard'))
+        );
    }
 }
 

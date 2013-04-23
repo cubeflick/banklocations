@@ -152,6 +152,8 @@ class AdminController extends App_Controller_BaseController {
     	
     }
     
+    public function dashboardAction() {
     
+    }
     
 }
