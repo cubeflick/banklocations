@@ -274,6 +274,7 @@ class IndexController extends App_Controller_BaseController {
     }
     
     public function searchmicrAction() {
+    	
     	$this->view->PageHead = "micrSearch";
     	$objRequest = $this->getRequest();
     	$Params = $objRequest->getParams();
@@ -379,11 +380,22 @@ class IndexController extends App_Controller_BaseController {
     	$this->view->pagination = $pagination;
     
     	$this->view->Records = $this->Model->getBankValues($Params);
-    
     	$this->view->BankName = '';
     	if (isset($Params['bank_name']) && $Params['bank_name'] != '' && substr($Params['bank_name'] , 0, 6) != 'Select') {
     		$this->view->BankName = $Params['bank_name'];
     	}
+    	
+    	//set the meta tags for this page
+    	$micr = $this->Model->getBankValues($Params);
+    	$row = $micr[0];
+        $code = $row['micr_code']; 
+        $city = $row['city'];   
+    	$title['keywords'] = "MICR Code: $code,$city, Bank MICR codes, List of MICR codes";
+    	$title['description'] = "MICR Code:$code,$city. We help you find MICR Codes $code, Address $city, for NEFT, RTGS, ECS Transactions.";
+    	$title['title'] ="MICR Code $code,$city" ;
+    	
+    	$this->view->Detail = $title;
+    		
     }
     
     public function searchifscAction() {
@@ -493,6 +505,19 @@ class IndexController extends App_Controller_BaseController {
     	if (isset($Params['bank_name']) && $Params['bank_name'] != '' && substr($Params['bank_name'] , 0, 6) != 'Select') {
     		$this->view->BankName = $Params['bank_name'];
     	}
+    	
+    	//set the meta tags for this page
+    	$ifsc = $this->Model->getBankValues($Params);
+    	$row = $ifsc[0];
+    	$code = $row['ifsc_code'];
+    	$city = $row['city'];
+    	$title['keywords'] = "IFSC Code: $code,$city, Bank IFSC codes, List of IFSC codes";
+    	$title['description'] = "IFSC Code:$code,$city. We help you find IFSC Codes $code, Address $city, MICR,NEFT, RTGS, ECS Transactions.";
+    	$title['title'] ="IFSC Code $code,$city" ;
+    	 
+    	$this->view->Detail = $title;
+    	
+    	
     }
 
     public function detailAction() {
@@ -504,4 +529,47 @@ class IndexController extends App_Controller_BaseController {
         $this->view->Records = $records[0];
 
     }
+    
+    public function ifscdetailAction() {
+    	$this->view->PageHead = "Branch Detail";
+    	$objRequest = $this->getRequest();
+    	$id = $objRequest->getParam('id');
+    	$id = explode('_', $id);
+    	$records = $this->Model->getBankValues(array('id'=> $id[0]));
+    	$this->view->Records = $records[0];
+    	
+    	//set the meta tags for this page
+    	$row = $records[0];
+    	$code = $row['ifsc_code'];
+    	$city = $row['address'];
+    	$title['keywords'] = "IFSC Code: $code,$city, Bank IFSC codes, List of IFSC codes";
+    	$title['description'] = "IFSC Code:$code,$city. We help you find IFSC Codes $code, Address $city, MICR,NEFT, RTGS, ECS Transactions.";
+    	$title['title'] ="IFSC Code $code,$city" ;
+    	
+    	$this->view->Detail = $title;
+    
+    }
+    
+    public function micrdetailAction() {
+    	$this->view->PageHead = "Branch Detail";
+    	$objRequest = $this->getRequest();
+    	$id = $objRequest->getParam('id');
+    	$id = explode('_', $id);
+    	$records = $this->Model->getBankValues(array('id'=> $id[0]));
+    	$this->view->Records = $records[0];
+    	
+    	//set the meta tags for this page	
+    	$row = $records[0];
+    	$code = $row['micr_code'];
+    	$city = $row['address'];
+    	$title['keywords'] = "MICR Code: $code,$city, Bank MICR codes, List of MICR codes";
+    	$title['description'] = "MICR Code:$code,$city. We help you find MICR Codes $code, Address $city, for NEFT, RTGS, ECS Transactions.";
+    	$title['title'] ="MICR Code $code,$city" ;
+    	 
+    	$this->view->Detail = $title;
+    	
+    
+    }
+    
+    
 }

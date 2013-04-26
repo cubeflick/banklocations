@@ -29,6 +29,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
             'detailOfIndex', new Zend_Controller_Router_Route('/detail/:id', array('module'=>'default','controller'=>'index','action'=>'detail'))
         );
         $router->addRoute(
+        		'detailOfIFSC', new Zend_Controller_Router_Route('/IFSCdetail/:id', array('module'=>'default','controller'=>'index','action'=>'ifscdetail'))
+        );
+        $router->addRoute(
+        		'detailOfMICR', new Zend_Controller_Router_Route('/MICRdetail/:id', array('module'=>'default','controller'=>'index','action'=>'micrdetail'))
+        );
+        $router->addRoute(
         		'searchAtm', new Zend_Controller_Router_Route('/atm', array('module'=>'atm','controller'=>'index','action'=>'index'))
         );
         $router->addRoute(

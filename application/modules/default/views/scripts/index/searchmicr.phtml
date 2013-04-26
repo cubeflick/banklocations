@@ -25,7 +25,7 @@
                                     
                                          <td><?php echo $value['bank_name']; ?></td>
                                         
-                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'detail/'?><?php echo $value['id']; ?>_<?php echo str_replace(' ', '-', $value['bank_name']); ?>_<?php echo str_replace(' ', '-', $value['branch_name']); ?>-Branch<?php if($value['micr_code'] != ''){echo '-'; echo $value['micr_code'];} ?>"><?php echo $value['branch_name']; ?></a></td>
+                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'MICRdetail/'?><?php echo $value['id']; ?>_<?php echo str_replace(' ', '-', $value['bank_name']); ?>_<?php echo str_replace(' ', '-', $value['branch_name']); ?>-Branch<?php if($value['micr_code'] != ''){echo '-'; echo $value['micr_code'];} ?>"><?php echo $value['branch_name']; ?></a></td>
                                          <td><?php echo $value['city']; ?></td>
                                         
                                                  <td><?php echo $value['micr_code']; ?></td>
@@ -35,7 +35,18 @@
                                 <?php
                              }
                          }
+                         else{
                          ?>
+                         <tr>
+                            <td>Sorry no record found</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                         </tr>
+                          <?php
+                             }
+                             ?>
+                         
                      </table>
                      <div id="pagingStateContainer">
                          <?php echo $this->pagination;?>
