@@ -35,7 +35,7 @@ class AuthController extends App_Controller_BaseController
 			$result = $auth->authenticate($adapter);
 			
 			if ($result->isValid()) {
-				$this->_redirect('admin/metatag/manage');
+				$this->_redirect('admin/dashboard');
 			}else{
 				$this->_redirect('login');
 			}
