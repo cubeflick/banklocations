@@ -280,12 +280,13 @@ class IndexController extends App_Controller_BaseController {
     	$Params = $objRequest->getParams();
     	
     	
-    	$input=$Params->bank_name;
-    	$Params->bank_name= str_replace('_', ' ', $input);
+    	//$input=$Params->bank_name;
+    	//$Params->bank_name= str_replace('_', ' ', $input);
     	
     	$this->view->params = $Params;
     	$total_pages = $this->Model->getTotalCount($Params);
     	$adjacents = 3;
+    	$Params['limitPage'] = 1;
     
     	unset($Params['module']);
     	unset($Params['controller']);
@@ -406,7 +407,7 @@ class IndexController extends App_Controller_BaseController {
     	$this->view->params = $Params;
     	$total_pages = $this->Model->getTotalCount($Params);
     	$adjacents = 3;
-    
+    	$Params['limitPage'] = 1;
     	unset($Params['module']);
     	unset($Params['controller']);
     	unset($Params['action']);
@@ -541,7 +542,7 @@ class IndexController extends App_Controller_BaseController {
     	//set the meta tags for this page
     	$row = $records[0];
     	$code = $row['ifsc_code'];
-    	$city = $row['address'];
+    	$city = $row['city'];
     	$title['keywords'] = "IFSC Code: $code,$city, Bank IFSC codes, List of IFSC codes";
     	$title['description'] = "IFSC Code:$code,$city. We help you find IFSC Codes $code, Address $city, MICR,NEFT, RTGS, ECS Transactions.";
     	$title['title'] ="IFSC Code $code,$city" ;
@@ -561,7 +562,7 @@ class IndexController extends App_Controller_BaseController {
     	//set the meta tags for this page	
     	$row = $records[0];
     	$code = $row['micr_code'];
-    	$city = $row['address'];
+    	$city = $row['city'];
     	$title['keywords'] = "MICR Code: $code,$city, Bank MICR codes, List of MICR codes";
     	$title['description'] = "MICR Code:$code,$city. We help you find MICR Codes $code, Address $city, for NEFT, RTGS, ECS Transactions.";
     	$title['title'] ="MICR Code $code,$city" ;

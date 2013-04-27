@@ -225,7 +225,6 @@ class Default_Model_Default extends App_Model_BaseModel
             $where .= " and city = '" . $params['city_name'] . "'";
         }
 
-
         $select = $this->_db->select()
                         ->from('bank_detail')
                         ->where($where);

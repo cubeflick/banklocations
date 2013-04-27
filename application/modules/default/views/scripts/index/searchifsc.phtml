@@ -67,14 +67,7 @@
 </div>
 
 <form id="search_form_ifsc" method="get" action="<?php echo $this->constant->HOSTPATH."ifsc/search";?>">
-    <input type="hidden" value="<?php if(isset($this->params)){echo ($this->params['bank_name']);}?>" name="bank_name"/>
-    <input type="hidden" value="<?php echo ($this->params['state_name'])?$this->params['state_name']:''?>" name="state_name"/>
-    
-    <input type="hidden" value="<?php echo ($this->params['city_name'])?$this->params['city_name']:''?>" name="city_name"/>
-    
-    
-    
-    <input type="hidden" value="<?php echo ($this->params['limitPage'])?$this->params['limitPage']:'1'?>" name="limitPage" id="limitPage"/>
+   
 </form>
 
 <script type="text/javascript">
