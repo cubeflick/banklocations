@@ -1,0 +1,84 @@
+<div class="main">
+    
+     <div class="inner_bg_img">
+        <div class="inner_banner"><img src="<?php echo $this->constant->IMAGEPATH;?>/inner_banner.png" height="150" /></div>
+    </div>
+   <div class="inner_container " >
+    <div class="search_color inner">
+    <div class="breadcrumb pt20"><a href="/">Home</a> <span> &rsaquo; Site Map</span></div>
+    
+    <div class="sitemap_links"><ul>
+              <li><a href="/">Home</a></li>
+              <li>|</li>
+              <li><a href="<?php echo $this->constant->HOSTPATH;?>contactus">Contact Us</a></li>
+                            <li>|</li>
+             <li><a href="<?php echo $this->constant->HOSTPATH;?>aboutus">About Us</a></li>
+                            <li>|</li>
+              <li><a href="<?php echo $this->constant->HOSTPATH;?>privacypolicy">Privacy Policy</a></li>
+                            <li>|</li>
+              <li><a href="<?php echo $this->constant->HOSTPATH;?>helpadnfaq">Help & FAQs</a></li>
+                            <li>|</li>
+             <li><a href="<?php echo $this->constant->HOSTPATH;?>termsandcondition">Terms & Conditions</a></li>
+                     
+                            
+            </ul></div>
+    <div class="about_container sitemap_page">
+   
+    
+    <div id="banks_names" style="width:920px; margin:auto"> 
+     <div class="sitemap_heading">List of Banks in India</div>
+    					 <ul id="banks_list">
+                            <?php
+                            if(isset($this->BankNames) && count($this->BankNames) > 0){
+                                foreach($this->BankNames as $key=>$value){
+                                    echo '<li><a  href="javascript:getval(\''.$value['bank_name'].'\')">'.$value['bank_name'].'</a></li>';
+                                }
+                            }
+                            ?>
+                            </ul>
+    </div>
+     <div style="clear: both"></div>
+    
+    <div id="city_names" style="width:920px; margin:auto"> 
+     <div class="sitemap_heading">List of Cities in India</div>
+    					
+                            <?php
+                            if(isset($this->States) && count($this->States) > 0){
+                                foreach($this->States as $key=>$value){
+                                    echo '<div class="sitemap_heading"><a  href="javascript:getval(\''.$value['state'].'\')">'.$value['state'].'</a></div>';
+                                    echo'<div><img src="images/border.png" width="915" height="4" style="margin:5px 0 0 0;" /></div>';
+                       
+                                }
+                            }
+                            ?>
+                          
+    </div>
+    
+    
+    
+    
+       
+        <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>
+         </div>
+        
+    </div>
+    <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
+    </div>
+    
+                            <div style="clear: both"></div>
+</div>
+
+
+<script type="text/javascript">
+ function getval(value1)
+    {
+    	
+    	$('#state_name').empty();
+    	$('#state_name').append('<option>'+value1+'</option>');
+    	var str = value1;
+		 str2 = str.replace(/ /g,"_");
+		 window.location.href = str2.toUpperCase();
+     }
+     
+     
+     </script>

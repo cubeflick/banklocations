@@ -149,6 +149,26 @@ class IndexController extends App_Controller_BaseController {
         	}
         }
         
+        elseif ($referer == $this->constant->HOSTPATH."sitemap")
+        {
+        	 
+        	$states = $this->Model->GetStatesNames();
+        	 
+        	$tempStates = array();
+        	 
+        	foreach($states as $statekey => $statevalue)
+        	{
+        		$tempStates[] = strtolower($statevalue['state']);
+        	}
+        	$needle = str_replace("_", " ",$Params['bank_name']);
+        	 
+        	if(in_array(strtolower($needle),$tempStates))
+        	{
+        		$Params['state_name'] = $Params['bank_name'];
+        		$Params['bank_name'] = "";
+        	}
+        }
+        
         if(array_key_exists('bank_name', $Params))
         {
         	$Params['bank_name'] = strtolower(str_replace("_"," ",$Params['bank_name']));
@@ -568,9 +588,15 @@ class IndexController extends App_Controller_BaseController {
     	$title['title'] ="MICR Code $code,$city" ;
     	 
     	$this->view->Detail = $title;
-    	
-    
-    }
+    	 }
+    	 
+    	 public function sitemapAction() {
+    	 	$this->Model = new Default_Model_Default();
+    	 	$this->view->BankNames = $this->Model->GetBankNames();
+    	 	$this->view->States = $this->Model->GetStatesNames();
+    	 	
+    	 	
+    	 }
     
     
 }
