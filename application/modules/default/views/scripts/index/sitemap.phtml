@@ -57,8 +57,12 @@
 
 		   			echo "<ul id='cities_list'>";
 		   			foreach($cities as $keycity=>$valuecity){
-		   			
-		   				echo "<li><a  href='#'>$valuecity</a></li>";
+		   		
+						$stateUrl = str_replace(" ","_",strtoupper($value['state']));
+						$cityUrl = str_replace(" ","_",strtoupper($valuecity));
+
+						$host = $this->constant->HOSTPATH;
+		   				echo "<li><a  href='$host$stateUrl/$cityUrl'>$valuecity</a></li>";
 		   			
 		   			}
 		   			echo "</ul>";
