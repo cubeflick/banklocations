@@ -9,7 +9,6 @@ class Default_Model_Default extends App_Model_BaseModel
                     ->from('bank_detail',array('id','bank_name'))
                     ->where($where)
                     ->group('bank_name');
-                    
         return $this->_db->fetchAll($select);
    }
 
@@ -23,6 +22,18 @@ class Default_Model_Default extends App_Model_BaseModel
    
    	return $this->_db->fetchAll($select);
    }
+   
+   public function GetStatesNamesAndCity($params = array()){
+   	 
+   	$where = '1 = 1';
+   	$select = $this->_db->select()
+   	->from('bank_detail',array('state','city' => new Zend_Db_Expr('GROUP_CONCAT(city)')))
+   	->where($where)
+   	->group('state');
+
+   	return $this->_db->fetchAll($select);
+   }
+    
    
    public function GetCityNames($params = array()){
    	 

@@ -569,6 +569,11 @@ class IndexController extends App_Controller_BaseController {
         $records = $this->Model->getBankValues(array('id'=> $id[0]));
         $this->view->Records = $records[0];
 
+        $title['title'] = "Branch Name: ".$records[0]['bank_name']. "IFSC Code - ".$records['0']['ifsc_code']." - BanksofIndia";
+
+        $this->view->Detail = $title;
+         
+        
     }
     
     public function ifscdetailAction() {
@@ -608,43 +613,15 @@ class IndexController extends App_Controller_BaseController {
     	$title['title'] ="MICR Code $code,$city" ;
     	 
     	$this->view->Detail = $title;
+    	
     	 }
     	 
     	 public function sitemapAction() {
+    	 	
     	 	$this->Model = new Default_Model_Default();
     	 	$this->viw->Model = $this->Model;
-    	 	
-    	 	$state = $this->Model->GetStatesNames();
-    	 	$i = 0;
-    	 	$numRows = count($state);
-    	 	$this->view->rowcount = $numRows;
-    	 	 	foreach($state as $key=>$value)
-    	 	{
-   	 		if($i<$numRows)
-     	 		{
-    	 		$result = $this->Model->getallcity($value['state']);
-    	 		$this->view->result = $this->Model->getallcity($value['state']);
-    	 		
-     	 			$res = $state[$i];
-     	 			 echo '<div style="clear:both" class="sitemap_heading"><a  href="javascript:getval(\''.$res['state'].'\')">'.$res['state'].'</a></div>';
-    	 			
-     	 		foreach($result as $key=>$value)
-     	 		{
-    	 			
-     	 			//echo $value['city'];
-     	 			echo '<div class="sitemap_div"><li class="sitemap_li"><a  href="javascript:getvals(\''.$value['city'].'\')">'.$value['city'].'</a></li></div>';
-    	 			
-    	 			
-     	 		}
-     	 		
-     	 		$i++;
-     	 		}
-    	 		
-    	 	}
-    	 	
-    	 	
     	 	$this->view->BankNames = $this->Model->GetBankNames();
-    	 	$this->view->States = $this->Model->GetStatesNames();
+    	 	$this->view->States = $this->Model->GetStatesNamesAndCity();
     	 	
     	 }
     
