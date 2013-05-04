@@ -133,6 +133,7 @@ class AdminController extends App_Controller_BaseController {
     	}
     
     }
+    
     public function metatagdeleteAction() {
     	
     	$auth = Zend_Auth::getInstance();

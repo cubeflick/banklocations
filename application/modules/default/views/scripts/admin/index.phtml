@@ -1,27 +1,67 @@
-<div>
-<form id="google_add_script" method="post" action="<?php echo $this->constant->HOSTPATH."admin";?>" >
-<div>
-<div class="add_script_text">Script For Home Page Bottom Add</div>
-<textarea name="home_add_script" class="add_script_input" id="home_add_script" ><?php echo html_entity_decode(stripcslashes($this->Details['home_add']));?></textarea>
-</div>
-<div>
-<div class="add_script_text">Script For Inner Page Bottom Add</div>
-<textarea name="bottom_add_script" class="add_script_input" id="bottom_add_script"><?php echo html_entity_decode(stripcslashes($this->Details['bottom_add']));?></textarea>
-</div>
-<div>
-<div class="add_script_text">Script For Inner Page Right Add</div>
-<textarea name="right_add_script" class="add_script_input" id="right_add_script" ><?php echo html_entity_decode(stripcslashes($this->Details['right_add']));?></textarea>
-</div>
-<div>
-<div class="add_script_text">Script For Top Add</div>
-<textarea name="top_add_script" class="add_script_input" id="top_add_script" ><?php echo html_entity_decode(stripcslashes($this->Details['top_add']));?></textarea>
-</div>
-<div>
-<div class="add_script_text">Script For Home Page Banner Add</div>
-<textarea name="banner_add_script" class="add_script_input" id="banner_add_script" ><?php echo html_entity_decode(stripcslashes($this->Details['banner_add']));?></textarea>
-</div>
-<input class="google_add_submit" type="submit" value="submit">
+<div class="inner_container">
 
-</form>
+	<div class="breadcrumb">
+		<a href="/admin/dashboard">Dashboard</a><span> &rsaquo;
+			Manage Adsense Code</span>
+	</div>
 
+	<div style="font-size: 15px; text-align: right">
+		<a href="<?php echo $this->constant->HOSTPATH.'logout'?>">logout</a>
+	</div>
+
+	<div style="margin-top: 25px;">
+		<form id="google_add_script" method="post"
+			action="<?php echo $this->constant->HOSTPATH."admin";?>">
+			<div>
+				<div class="add_script_text">Script For Home Page Bottom Add</div>
+				<textarea name="home_add_script" class="add_script_input"
+					id="home_add_script"><?php echo html_entity_decode(stripcslashes($this->Details['home_add']));?></textarea>
+			</div>
+			<div>
+				<div class="add_script_text">Script For Inner Page Bottom Add</div>
+				<textarea name="bottom_add_script" class="add_script_input"
+					id="bottom_add_script"><?php echo html_entity_decode(stripcslashes($this->Details['bottom_add']));?></textarea>
+			</div>
+			<div>
+				<div class="add_script_text">Script For Inner Page Right Add</div>
+				<textarea name="right_add_script" class="add_script_input"
+					id="right_add_script"><?php echo html_entity_decode(stripcslashes($this->Details['right_add']));?></textarea>
+			</div>
+			<div>
+				<div class="add_script_text">Script For Top Add</div>
+				<textarea name="top_add_script" class="add_script_input"
+					id="top_add_script"><?php echo html_entity_decode(stripcslashes($this->Details['top_add']));?></textarea>
+			</div>
+			<div>
+				<div class="add_script_text">Script For Home Page Banner Add</div>
+				<textarea name="banner_add_script" class="add_script_input"
+					id="banner_add_script"><?php echo html_entity_decode(stripcslashes($this->Details['banner_add']));?></textarea>
+			</div>
+			<input class="google_add_submit" type="submit" value="Submit"> <input
+				class="google_add_submit" type="button" value="Reset"> <input
+				class="google_add_submit" type="button" value="Back">
+
+		</form>
+
+	</div>
 </div>
+
+
+<script language="javascript">
+
+	$(function(){
+
+		$("input[value^=Back]").click(function(){
+			window.location.href = "/admin/dashboard";
+			return false;
+		});
+
+
+		$("input[value^=Reset]").click(function(){
+			$(".add_script_input").val('');			
+		});
+		
+			
+	});
+
+</script>

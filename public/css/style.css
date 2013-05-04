@@ -679,7 +679,7 @@ margin:auto;
 }
 
 #google_add_script>div {
-	margin: 10px 20px;
+	margin: 10px 20px 0px 0px;
 }
 
 #google_add_script .add_script_input {
@@ -696,7 +696,7 @@ margin:auto;
 	background: none repeat scroll 0 0 #004889;
 	color: white;
 	font: 14px Arial, Helvetica;
-	margin: 5px 20px;
+	margin: 5px 20px 5px 0px;
 }
 
 #top_add {

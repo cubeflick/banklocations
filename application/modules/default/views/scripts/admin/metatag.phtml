@@ -1,4 +1,12 @@
-<div>
+<div class="inner_container">
+
+<div class="breadcrumb"><a href="/admin/dashboard">Dashboard</a> &rsaquo; <a href="/admin/metatag/manage">Manage Meta Tags</a> <span> &rsaquo; Add/Edit Meta Tag</span></div>
+
+<div style="font-size: 15px;text-align:right" >
+<a  href="<?php echo $this->constant->HOSTPATH.'logout'?>">logout</a>
+</div>
+
+<div style="margin-top: 25px;" >
 <form id="meta_tag_script" method="post" action="<?php echo $this->constant->HOSTPATH."admin/metatag";?>" >
 <div>
 <div class="meta_tag_text">URL (example /atm, and only / for home page)</div>
@@ -18,7 +26,29 @@
 </div>
 
 <input class="meta_tag_submit" type="submit" value="submit">
+<input class="meta_tag_submit" type="button" value="Reset">
+<input class="meta_tag_submit" type="button" value="Back">
 
 </form>
 
-</div>
+                     </div>
+                     </div>
+                     
+<script language="javascript">
+
+	$(function(){
+
+		$("input[value^=Back]").click(function(){
+			window.location.href = "/admin/metatag/manage";
+			return false;
+		});
+
+
+		$("input[value^=Reset]").click(function(){
+			$(".meta_tag_input").val('');			
+		});
+		
+			
+	});
+
+</script>                     
