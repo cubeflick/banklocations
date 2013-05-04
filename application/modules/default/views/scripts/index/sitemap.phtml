@@ -43,13 +43,32 @@
      <div class="sitemap_heading">List of Cities in India</div>
     					
                             <?php
-                            if(isset($this->States) && count($this->States) > 0){
-                                foreach($this->States as $key=>$value){
-                                    echo '<div class="sitemap_heading"><a  href="javascript:getval(\''.$value['state'].'\')">'.$value['state'].'</a></div>';
-                                    echo'<div><img src="images/border.png" width="915" height="4" style="margin:5px 0 0 0;" /></div>';
-                       
-                                }
-                            }
+//                             $i = 0;
+//                             $numRows = $this->rowcount;
+//                             $state= $this->States;
+//                            $result = $this->result;
+//                             foreach($state as $key=>$value)
+//                             {
+//                             	if($i<$numRows)
+//                             	{
+                            	
+//                             		//$this->view->result = $this->Model->getallcity($value['state']);
+                            
+//                             		$res = $state[$i];
+//                             		echo '<div class="sitemap_heading">'.$res['state'].'</div>';
+                            			
+//                             		foreach($result as $key=>$value)
+//                             		{
+                            				
+//                             			echo $value['city'];
+                            				
+                            				
+//                             		}
+//                             		echo '.............';
+//                             		$i++;
+//                             	}
+                            
+//                             }
                             ?>
                           
     </div>
@@ -58,7 +77,7 @@
     
     
        
-        <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>
+        <?php // echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>
          </div>
         
     </div>

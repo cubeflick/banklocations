@@ -854,6 +854,36 @@ h2.page-title{
 	padding: 12px;
 }
 
+
+.sitemap_li
+{
+	cursor: pointer;
+    display: inline;
+    margin-left: 40px;
+    margin-right: 5px;
+    padding-left: 12px;
+    width: 200px;
+     margin-bottom: 5px;
+     list-style: none outside none;
+}
+
+.sitemap_li a
+{
+	  font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    background: url("../images/arrow-nav.gif") no-repeat scroll left center transparent !important;
+	padding: 12px;
+   
+}
+
+.sitemap_div
+{
+	float:left;
+	width: 398px
+}
+
+
 .sitemap_page li
 {
 cursor: pointer;

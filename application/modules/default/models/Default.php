@@ -23,6 +23,17 @@ class Default_Model_Default extends App_Model_BaseModel
    
    	return $this->_db->fetchAll($select);
    }
+   
+   public function GetCityNames($params = array()){
+   	 
+   	$where = '1 = 1';
+   	$select = $this->_db->select()
+   	->from('bank_detail',array('city'))
+   	->where($where)
+   	->group('city');
+   	 
+   	return $this->_db->fetchAll($select);
+   }
     
    
    public function getstatejson($params = array()) {
@@ -117,6 +128,26 @@ class Default_Model_Default extends App_Model_BaseModel
         echo json_encode($records);
         exit;
     }
+    
+    public function getallcity($params)
+    {
+    	$where = '1 = 1';
+    	$order_by = "city asc"; 
+    	if (isset($params) ) {
+            $where .= " and state = '" . $params . "'";
+        }
+        $select = $this->_db->select()
+        ->from('bank_detail', array('city'))
+        ->where($where)
+        ->group('city')
+        ->order($order_by);
+        $records = $this->_db->fetchAll($select);
+       return $records;
+        
+    	
+    }
+    
+    
 
     public function getValues($params = array()) {
     

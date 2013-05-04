@@ -169,6 +169,26 @@ class IndexController extends App_Controller_BaseController {
         	}
         }
         
+        elseif ($referer == $this->constant->HOSTPATH."sitemap")
+        {
+        
+        	$city = $this->Model->GetCityNames();
+        
+        	$tempcity = array();
+        
+        	foreach($city as $citykey => $cityvalue)
+        	{
+        		$tempcity[] = strtolower($cityvalue['city']);
+        	}
+        	$needle = str_replace("_", " ",$Params['bank_name']);
+        
+        	if(in_array(strtolower($needle),$tempcity))
+        	{
+        		$Params['city_name'] = $Params['bank_name'];
+        		$Params['bank_name'] = "";
+        	}
+        }
+        
         if(array_key_exists('bank_name', $Params))
         {
         	$Params['bank_name'] = strtolower(str_replace("_"," ",$Params['bank_name']));
@@ -592,9 +612,39 @@ class IndexController extends App_Controller_BaseController {
     	 
     	 public function sitemapAction() {
     	 	$this->Model = new Default_Model_Default();
+    	 	$this->viw->Model = $this->Model;
+    	 	
+    	 	$state = $this->Model->GetStatesNames();
+    	 	$i = 0;
+    	 	$numRows = count($state);
+    	 	$this->view->rowcount = $numRows;
+    	 	 	foreach($state as $key=>$value)
+    	 	{
+   	 		if($i<$numRows)
+     	 		{
+    	 		$result = $this->Model->getallcity($value['state']);
+    	 		$this->view->result = $this->Model->getallcity($value['state']);
+    	 		
+     	 			$res = $state[$i];
+     	 			 echo '<div style="clear:both" class="sitemap_heading"><a  href="javascript:getval(\''.$res['state'].'\')">'.$res['state'].'</a></div>';
+    	 			
+     	 		foreach($result as $key=>$value)
+     	 		{
+    	 			
+     	 			//echo $value['city'];
+     	 			echo '<div class="sitemap_div"><li class="sitemap_li"><a  href="javascript:getval(\''.$value['city'].'\')">'.$value['city'].'</a></li></div>';
+    	 			
+    	 			
+     	 		}
+     	 		
+     	 		$i++;
+     	 		}
+    	 		
+    	 	}
+    	 	
+    	 	
     	 	$this->view->BankNames = $this->Model->GetBankNames();
     	 	$this->view->States = $this->Model->GetStatesNames();
-    	 	
     	 	
     	 }
     
