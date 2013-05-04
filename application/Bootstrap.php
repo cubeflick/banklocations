@@ -124,6 +124,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $router->addRoute(
         		'dashboard', new Zend_Controller_Router_Route('admin/dashboard', array('module'=>'default','controller'=>'admin','action'=>'dashboard'))
         );
+        $router->addRoute(
+        		'sitemap', new Zend_Controller_Router_Route('sitemap', array('module'=>'default','controller'=>'index','action'=>'sitemap'))
+        );
+        
    }
 }
 
