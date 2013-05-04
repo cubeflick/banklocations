@@ -632,7 +632,7 @@ class IndexController extends App_Controller_BaseController {
      	 		{
     	 			
      	 			//echo $value['city'];
-     	 			echo '<div class="sitemap_div"><li class="sitemap_li"><a  href="javascript:getval(\''.$value['city'].'\')">'.$value['city'].'</a></li></div>';
+     	 			echo '<div class="sitemap_div"><li class="sitemap_li"><a  href="javascript:getvals(\''.$value['city'].'\')">'.$value['city'].'</a></li></div>';
     	 			
     	 			
      	 		}

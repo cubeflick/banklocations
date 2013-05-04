@@ -3,11 +3,11 @@
      <div class="inner_bg_img">
         <div class="inner_banner"><img src="<?php echo $this->constant->IMAGEPATH;?>/inner_banner.png" height="150" /></div>
     </div>
-   <div class="inner_container " >
-    <div class="search_color inner">
-    <div class="breadcrumb pt20"><a href="/">Home</a> <span> &rsaquo; Site Map</span></div>
+   <div class="inner_container " style="width:auto; padding-right:220px" >
+    <div class="search_color inner" style="width:1200px">
+    <div class="breadcrumb pt20" style="margin-left:40px"><a href="/">Home</a> <span> &rsaquo; Site Map</span></div>
     
-    <div class="sitemap_links"><ul>
+    <div class="sitemap_links" style="margin-left:50px"><ul>
               <li><a href="/">Home</a></li>
               <li>|</li>
               <li><a href="<?php echo $this->constant->HOSTPATH;?>contactus">Contact Us</a></li>
@@ -98,6 +98,16 @@
 		 str2 = str.replace(/ /g,"_");
 		 window.location.href = str2.toUpperCase();
      }
-     
+
+ function getvals(value1)
+ {
+ 	
+ 	$('#city_name').empty();
+ 	$('#city_name').append('<option>'+value1+'</option>');
+ 	var str = value1;
+		 str2 = str.replace(/ /g,"_");
+		 window.location.href = str2.toUpperCase();
+  }
+  
      
      </script>
