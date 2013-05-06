@@ -32,8 +32,9 @@
                             <?php
                             if(isset($this->BankNames) && count($this->BankNames) > 0){
                                 foreach($this->BankNames as $key=>$value){
-                                    
-									echo '<li><a  href="javascript:getval(\''.$value['bank_name'].'\')">'.$value['bank_name'].'</a></li>';
+                                    $bankUrl = str_replace(" ","_",strtoupper($value['bank_name']));
+                                    $bankvalue = $value['bank_name'];
+									echo "<li><a  href='/$bankUrl'>$bankvalue</a></li>";
                                     
                                 }
                             }
@@ -49,7 +50,7 @@
            if(isset($this->States) && count($this->States) > 0){
 				foreach($this->States as $key=>$value){
 		   ?>
-		   		<div class="state_name"><?php echo $value['state'] . "</div><div class='cities'>"; 
+		   		<div class="state_name" ><?php echo $value['state'] . "</div><div class='cities'>"; 
 
 		   		if(isset($value['city']))
 		   		{	
@@ -62,7 +63,7 @@
 						$cityUrl = str_replace(" ","_",strtoupper($valuecity));
 
 						$host = $this->constant->HOSTPATH;
-		   				echo "<li><a  href='$host$stateUrl/$cityUrl'>$valuecity</a></li>";
+		   				echo "<li><a  href='/$stateUrl/$cityUrl'>$valuecity</a></li>";
 		   			
 		   			}
 		   			echo "</ul>";
@@ -92,25 +93,7 @@
 
 
 <script type="text/javascript">
- function getval(value1)
-    {
-    	
-    	$('#state_name').empty();
-    	$('#state_name').append('<option>'+value1+'</option>');
-    	var str = value1;
-		 str2 = str.replace(/ /g,"_");
-		 window.location.href = str2.toUpperCase();
-     }
-
- function getvals(value1)
- {
- 	
- 	$('#city_name').empty();
- 	$('#city_name').append('<option>'+value1+'</option>');
- 	var str = value1;
-		 str2 = str.replace(/ /g,"_");
-		 window.location.href = str2.toUpperCase();
-  }
+ 
   
      
      </script>

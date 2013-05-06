@@ -151,9 +151,22 @@ class IndexController extends App_Controller_BaseController {
         
         elseif ($referer == $this->constant->HOSTPATH."sitemap")
         {
+        	$states = $this->Model->GetStatesNames();
+        	 
+        	$tempStates = array();
+        	 
+        	foreach($states as $statekey => $statevalue)
+        	{
+        		$tempStates[] = strtolower($statevalue['state']);
+        	}
+        	$needle = str_replace("_", " ",$Params['bank_name']);
+        	 
+        	if(in_array(strtolower($needle),$tempStates))
+        	{
         	$Params['city_name'] = str_replace("_", " ",$Params['state_name']);
         	$Params['state_name'] = str_replace("_", " ",$Params['bank_name']);
         	$Params['bank_name'] = "";
+        	}
         }
         
         if(array_key_exists('bank_name', $Params))
