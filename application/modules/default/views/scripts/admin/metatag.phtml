@@ -14,15 +14,15 @@
 </div>
 <div>
 <div class="meta_tag_text">Title</div>
-<textarea name="title" class="meta_tag_input" id="title"></textarea>
+<textarea name="title" class="meta_tag_input" id="title"><?php if(isset($this->value['id'])){echo $this->value['title']; }?></textarea>
 </div>
 <div>
 <div class="meta_tag_text">Keywords</div>
-<textarea name="keywords" class="meta_tag_input" id="keywords" ></textarea>
+<textarea name="keywords" class="meta_tag_input" id="keywords" ><?php if(isset($this->value['id'])){echo $this->value['keywords']; }?></textarea>
 </div>
 <div>
 <div class="meta_tag_text">Description</div>
-<textarea name="description" class="meta_tag_input" id="description" ></textarea>
+<textarea name="description" class="meta_tag_input" id="description" ><?php if(isset($this->value['id'])){echo $this->value['description']; }?></textarea>
 </div>
 
 <input class="meta_tag_submit" type="submit" value="submit">
