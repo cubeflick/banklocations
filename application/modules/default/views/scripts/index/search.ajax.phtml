@@ -1,0 +1,154 @@
+<?php $paginationControl = $this->paginationControl($this->paginator, 'All', '_partials/paginator.phtml') ?>
+<?php 
+//die;
+?>
+<div class="main">
+    <div class="inner_container">
+    <div class="breadcrumb"><a href="/">Home</a> <span> &rsaquo; Search Results</span></div>
+        <div class="about_container">
+            <div class="About_Us"><?php if($this->BankName !=''){echo $this->BankName." :: ";} ?>Search Result</div>
+            <div class="text_about">
+                Note:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
+                 we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
+
+                 
+                 <div style="margin-top: 10px;" >
+                     <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table">
+                     <thead>
+                         <tr class="result">
+                         
+                             <th>Bank Name</th>
+                             <th>Branch Name</th>
+                             <th>City </th>
+                             <?php
+                             if(isset($this->params['ifsc_code']) && $this->params['ifsc_code'] !=''){
+                                 echo '<th>IFSC Code</th>';
+                             }
+                             ?>
+                             <?php
+                             if(isset($this->params['micr_code']) && $this->params['micr_code'] !=''){
+                                 echo '<th>MICR Code</th>';
+                             }
+                             ?>
+                         </tr>
+                     </thead>
+                     <tbody>    
+                         <?php
+                         if(count($this->paginator) > 0){
+                             foreach($this->paginator as $key=>$value){
+                                 ?>
+                                    <tr class="result">
+                                    
+                                    
+                                         <td><?php echo $value['bank_name']; ?></td>
+                                        
+                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'detail/'?><?php echo $value['id']; ?>_<?php echo str_replace(' ', '-', $value['bank_name']); ?>-<?php echo str_replace(' ', '-', $value['branch_name']); ?>-Branch"><?php echo $value['branch_name']; ?></a></td>
+                                         <td><?php echo $value['city']; ?></td>
+                                         <?php
+                                             if(isset($this->params['ifsc_code']) && $this->params['ifsc_code'] !=''){ ?>
+                                                 <td><?php echo $value['ifsc_code']; ?></td>
+                                             <?php } ?>
+                                         <?php
+                                             if(isset($this->params['micr_code']) && $this->params['micr_code'] !=''){ ?>
+                                                 <td><?php echo $value['micr_code']; ?></td>
+                                             <?php } ?>
+                                         
+                                     </tr>
+                                <?php
+                             }
+                         }
+                         ?>
+                        </tbody> 
+                     </table>
+                     
+                     
+                     
+		          <script langauge="javascript" type="text/javascript">
+	              /*           
+	
+	                                      	$('table.result_table').each(function() {
+	                                      	    var currentPage = 0;
+	                                      	    var numPerPage = 10;
+	                                      	    var $table = $(this);
+	                                      	    $table.bind('repaginate', function() {
+	                                      	        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+	                                      	    });
+	                                      	    $table.trigger('repaginate');
+	                                      	    var numRows = $table.find('tbody tr').length;
+	                                      	    var numPages = Math.ceil(numRows / numPerPage);
+	                                      	    var $pager = $('<div id="Pagination" class="pagination"></div>');
+	                                      	    for (var page = 0; page < numPages; page++) {
+	                                      	        $('<a class="page-number"></a>').text(page + 1).bind('click', {
+	                                      	            newPage: page
+	                                      	        }, function(event) {
+	                                      	            currentPage = event.data['newPage'];
+	                                      	            $table.trigger('repaginate');
+	                                      	            $(this).addClass('active').siblings().removeClass('active');
+	                                      	        }).appendTo($pager).addClass('clickable');
+	                                      	    }
+	                                      	    $pager.insertAfter($table).find('span.page-number:first').addClass('active');
+	                                      	});
+	                */         
+	                     </script>            
+                              
+                     <div id="Pagination"></div>
+
+<div class="pagination-control">
+    <?php echo $paginationControl ?>
+</div>
+                     
+                     
+        			 <br style="clear:both;" />
+                 </div>
+            </div>
+            <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>            
+        </div>
+        <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
+        <div class="clear"></div>
+    </div>
+
+</div>
+
+<form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."search/";?>">
+    <input type="hidden" value="<?php if(isset($this->params)){echo ($this->params['bank_name']);}?>" name="bank_name"/>
+    <input type="hidden" value="<?php echo ($this->params['state_name'])?$this->params['state_name']:''?>" name="state_name"/>
+    <input type="hidden" value="<?php echo ($this->params['district_name'])?$this->params['district_name']:''?>" name="district_name"/>
+    <input type="hidden" value="<?php echo ($this->params['city_name'])?$this->params['city_name']:''?>" name="city_name"/>
+    
+    
+</form>
+
+<script type="text/javascript">
+function setPage(pageNo){
+    $('#limitPage').val(pageNo);
+    window.location.href = $('#bank_name option:selected').text() +"/"+ $('#state_name option:selected').text() +"/"+ $("#district_name option:selected").text() +"/"+ $("#city_name option:selected").text()  ;
+}
+var ZebraTable = {
+	bgcolor: '',
+	classname: '',
+	stripe: function(el) {
+		//if (!$(el)) return;
+		var rows = $('#result_table>tr');
+		for (var i=1,len=rows.length;i<len;i++) {
+			if (i % 2 == 0) rows[i].className = 'alt';
+			Event.add(rows[i],'mouseover',function() { ZebraTable.mouseover(this); });
+			Event.add(rows[i],'mouseout',function() { ZebraTable.mouseout(this); });
+		}
+	},
+	mouseover: function(row) {
+		this.bgcolor = row.style.backgroundColor;
+		this.classname = row.className;
+		addClassName(row,'over');
+	},
+	mouseout: function(row) {
+		removeClassName(row,'over');
+		addClassName(row,this.classname);
+		row.style.backgroundColor = this.bgcolor;
+	}
+}
+
+window.onload = function() {
+	ZebraTable.stripe();
+}
+
+</script>
