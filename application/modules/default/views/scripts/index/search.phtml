@@ -1,7 +1,88 @@
 
-<div class="search-results">
-<?php echo $this->render('index/search.ajax.phtml') ?>
+<?php 
+//die;
+?>
+<div class="main">
+    <div class="inner_container">
+    <div class="breadcrumb"><a href="/">Home</a> <span> &rsaquo; Search Results</span></div>
+        <div class="about_container">
+            <div class="About_Us"><?php if($this->BankName !=''){echo $this->BankName." :: ";} ?>Search Result</div>
+            <div class="text_about">
+                Note:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
+                 we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
+
+                 
+                 <div style="margin-top: 10px;" >
+ 
+  
+				<div class="search-results">
+				<?php echo $this->render('index/search.ajax.phtml') ?>
+				</div>
+
+        			 <br style="clear:both;" />
+                 </div>
+            </div>
+            <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>            
+        </div>
+        <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
+        <div class="clear"></div>
+    </div>
+
 </div>
+
+<form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."search/";?>">
+    <input type="hidden" value="<?php if(isset($this->params)){echo ($this->params['bank_name']);}?>" name="bank_name"/>
+    <input type="hidden" value="<?php echo ($this->params['state_name'])?$this->params['state_name']:''?>" name="state_name"/>
+    <input type="hidden" value="<?php echo ($this->params['district_name'])?$this->params['district_name']:''?>" name="district_name"/>
+    <input type="hidden" value="<?php echo ($this->params['city_name'])?$this->params['city_name']:''?>" name="city_name"/>
+    
+    
+</form>
+
+<script type="text/javascript">
+function setPage(pageNo){
+    $('#limitPage').val(pageNo);
+    window.location.href = $('#bank_name option:selected').text() +"/"+ $('#state_name option:selected').text() +"/"+ $("#district_name option:selected").text() +"/"+ $("#city_name option:selected").text()  ;
+}
+var ZebraTable = {
+	bgcolor: '',
+	classname: '',
+	stripe: function(el) {
+		//if (!$(el)) return;
+		var rows = $('#result_table>tr');
+		for (var i=1,len=rows.length;i<len;i++) {
+			if (i % 2 == 0) rows[i].className = 'alt';
+			Event.add(rows[i],'mouseover',function() { ZebraTable.mouseover(this); });
+			Event.add(rows[i],'mouseout',function() { ZebraTable.mouseout(this); });
+		}
+	},
+	mouseover: function(row) {
+		this.bgcolor = row.style.backgroundColor;
+		this.classname = row.className;
+		addClassName(row,'over');
+	},
+	mouseout: function(row) {
+		removeClassName(row,'over');
+		addClassName(row,this.classname);
+		row.style.backgroundColor = this.bgcolor;
+	}
+}
+
+window.onload = function() {
+	ZebraTable.stripe();
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
 
 <script language="javascript">
 
