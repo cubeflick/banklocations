@@ -29,3 +29,96 @@
 	border-color:#999;
 	background:#fff;
 }
+
+
+/*
+ * Pagination Style One
+ */
+#paged-data-container {
+    border: 1px solid #666;
+    padding: 1em;
+    margin: 1em 0;
+    background-color: #eaeaea;
+    overflow: hidden;
+    position: relative;
+}
+
+.paged-data {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.paginator {
+    float: right;
+	margin-top:20px;
+}
+
+.paginator a {
+    text-decoration: none;
+}
+
+.paginator ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.paginator ol,
+.paginator li,
+.paginator-nav {
+    float: left;
+}
+
+.paginator-nav a,
+.paginator-nav span {
+    display: block;
+    width: 48px;
+    height: 48px;
+    text-indent: -9999em;
+    outline: none;
+}
+
+.paginator-nav a.paginator-next {
+    background-image: url(../images/next.png);
+}
+
+.paginator-nav span.paginator-next {
+    background-image: url(../images/next-disabled.png);
+}
+
+.paginator-nav a.paginator-prev {
+    background-image: url(../images/back.png);
+}
+
+.paginator-nav span.paginator-prev {
+    background-image: url(../images/back-disabled.png);
+}
+
+
+.paginator li a,
+.paginator li span {
+	display: block;
+	float: left;
+	padding: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	min-width: 1em;
+	text-align: center;
+	border: solid 1px #AAE;
+}
+
+.paginator li span {
+    font-weight: bold;
+}
+
+.paginator li a {
+    color: #3e83c9;
+}
+
+.paginator li a:hover {
+    text-decoration: underline;
+}
+
+
