@@ -1019,3 +1019,5 @@ h2.page-title {
 .cities{
 	padding-bottom:10px;
 }
+.search-results{min-height:200px;}
+.search-results img.loader{margin:100px 0px 0px 200px}

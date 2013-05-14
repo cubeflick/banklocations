@@ -5,6 +5,8 @@ class IndexController extends App_Controller_BaseController {
     public function init() {
         parent::init();
         $this->Model = new Default_Model_Default();
+        $this->_helper->ajaxContext->addActionContext('search', 'html')
+        ->initContext();
     }
 
     public function indexAction()
@@ -121,7 +123,7 @@ class IndexController extends App_Controller_BaseController {
         $this->view->PageHead = "Search";
         $objRequest = $this->getRequest();
         $Params = $objRequest->getParams();
-        
+
         $referer = $objRequest->getHeader('referer');
 
         if($referer == $this->constant->HOSTPATH."searchbycity")
@@ -186,108 +188,20 @@ class IndexController extends App_Controller_BaseController {
         	$Params['city_name'] = strtolower(str_replace("_"," ",$Params['city_name']));
         }
         
-        
-        
-//         $this->view->params = $Params;
-//         $total_pages = $this->Model->getTotalCount($Params);
-//         $adjacents = 3;
-       
-        
-//         unset($Params['module']);
-//         unset($Params['controller']);
-//         unset($Params['action']);
-//         $paramcount = count($Params);
-//         if($paramcount <= 0)
-//         {
-//         	$this->_redirect('/');
-//         }
-//         if ($objRequest->isGet()) {
-//             $page = 2;
-//         } else {
-//             $page = 1;
-
-//         }
-//         $limit = 10;
-//         if ($page)
-//             $start = ($page - 1) * $limit;
-//         else
-//             $start = 0;
-
-//         if ($page == 0){
-//             $page = 1;
-//         }
-//         $prev = $page - 1;
-//         $next = $page + 1;
-//         $lastpage = ceil($total_pages / $limit);
-//         $lpm1 = $lastpage - 1;
-
-//         $pagination = "";
-//         if ($lastpage > 1) {
-//             $pagination .= "<div class=\"pagination\">";
-//             if ($page > 1)
-//                 $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$prev')\">< previous</a>";
-//             else
-//                 $pagination.= "<span class=\"disabled\">< previous</span>";
-
-//             if ($lastpage < 7 + ($adjacents * 2)) {
-//                 for ($counter = 1; $counter <= $lastpage; $counter++) {
-//                     if ($counter == $page)
-//                         $pagination.= "<span class=\"current\">$counter</span>";
-//                     else
-//                         $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$counter')\">$counter</a>";
-//                 }
-//             }
-//             elseif ($lastpage > 5 + ($adjacents * 2)) {
-//                 if ($page < 1 + ($adjacents * 2)) {
-//                     for ($counter = 1; $counter < 4 + ($adjacents * 2); $counter++) {
-//                         if ($counter == $page)
-//                             $pagination.= "<span class=\"current\">$counter</span>";
-//                         else
-//                             $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$counter')\">$counter</a>";
-//                     }
-//                     $pagination.= "<span class=\"dots\">...</span>";
-//                     $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$lpm1')\">$lpm1</a>";
-//                     $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$lastpage')\">$lastpage</a>";
-//                 }
-//                 elseif ($lastpage - ($adjacents * 2) > $page && $page > ($adjacents * 2)) {
-//                     $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('1')\">1</a>";
-//                     $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('2')\">2</a>";
-//                     $pagination.= "<span class=\"dots\">...</span>";
-//                     for ($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++) {
-//                         if ($counter == $page)
-//                             $pagination.= "<span class=\"current\">$counter</span>";
-//                         else
-//                             $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$counter')\">$counter</a>";
-//                     }
-//                     $pagination.= "<span class=\"dots\">...</span>";
-//                     $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$lpm1')\">$lpm1</a>";
-//                     $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$lastpage')\">$lastpage</a>";
-//                 }
-//                 else {
-//                     $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('1')\">1</a>";
-//                     $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('2')\">2</a>";
-//                     $pagination.= "<span class=\"dots\">...</span>";
-//                     for ($counter = $lastpage - (2 + ($adjacents * 2)); $counter <= $lastpage; $counter++) {
-//                         if ($counter == $page)
-//                             $pagination.= "<span class=\"current\">$counter</span>";
-//                         else
-//                             $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$counter')\">$counter</a>";
-//                     }
-//                 }
-//             }
-
-//             if ($page < $counter - 1)
-//                 $pagination.= "<a href=\"javascript:void(0)\" onclick=\"setPage('$next')\">next ></a>";
-//             else
-//                 $pagination.= "<span class=\"disabled\">next ></span>";
-//             $pagination.= "</div>\n";
-//         }
-        
-//         $this->view->pagination = $pagination;
-
-        
-        
         $records = $this->Model->getBankValues($Params);
+        
+        /*
+         * Place the pagination
+         */
+        $paginator = Zend_Paginator::factory($records);
+        $paginator->setCurrentPageNumber($this->getRequest()->getParam('page', 1));
+        $paginator->setPageRange(10);
+        $paginator->setItemCountPerPage(20);
+        $this->view->paginator = $paginator;
+        
+        $this->view->host = $this->constant->HOSTPATH;
+
+        
         $this->view->Records = $records;
         $this->view->BankName = '';
         if (isset($Params['bank_name']) && $Params['bank_name'] != '' && substr($Params['bank_name'] , 0, 6) != 'Select') {

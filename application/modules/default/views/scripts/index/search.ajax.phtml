@@ -1,0 +1,52 @@
+<?php $paginationControl = $this->paginationControl($this->paginator, 'All', '_partials/paginator.phtml') ?>
+<table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table">
+                     <thead>
+                         <tr class="result">
+                         
+                             <th>Bank Name</th>
+                             <th>Branch Name</th>
+                             <th>City </th>
+                             <?php
+                             if(isset($this->params['ifsc_code']) && $this->params['ifsc_code'] !=''){
+                                 echo '<th>IFSC Code</th>';
+                             }
+                             ?>
+                             <?php
+                             if(isset($this->params['micr_code']) && $this->params['micr_code'] !=''){
+                                 echo '<th>MICR Code</th>';
+                             }
+                             ?>
+                         </tr>
+                     </thead>
+                     <tbody>    
+                         <?php
+                         if(count($this->paginator) > 0){
+                             foreach($this->paginator as $key=>$value){
+                                 ?>
+                                    <tr class="result">
+                                    
+                                    
+                                         <td><?php echo $value['bank_name']; ?></td>
+                                        
+                                         <td><a  href="<?php echo $this->constant->HOSTPATH.'detail/'?><?php echo $value['id']; ?>_<?php echo str_replace(' ', '-', $value['bank_name']); ?>-<?php echo str_replace(' ', '-', $value['branch_name']); ?>-Branch"><?php echo $value['branch_name']; ?></a></td>
+                                         <td><?php echo $value['city']; ?></td>
+                                         <?php
+                                             if(isset($this->params['ifsc_code']) && $this->params['ifsc_code'] !=''){ ?>
+                                                 <td><?php echo $value['ifsc_code']; ?></td>
+                                             <?php } ?>
+                                         <?php
+                                             if(isset($this->params['micr_code']) && $this->params['micr_code'] !=''){ ?>
+                                                 <td><?php echo $value['micr_code']; ?></td>
+                                             <?php } ?>
+                                         
+                                     </tr>
+                                <?php
+                             }
+                         }
+                         ?>
+                        </tbody> 
+                     </table>
+                     
+<div class="pagination-control">
+    <?php echo $paginationControl ?>
+</div>                     
