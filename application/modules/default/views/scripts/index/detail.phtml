@@ -4,7 +4,15 @@
         <div class="about_container">
             <div class="About_Us"><?php if($this->Records !=''){echo $this->Records['bank_name']." :: ".$this->Records['branch_name'];} ?> Branch Detail</div>
             <div class="text_about">
-                Note:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
+                <?php
+                $bank = $this->Records['bank_name'];
+                $bank = strtolower($bank);
+                $bank = str_replace(' ', '_', $bank);
+                  $file = file_get_contents( $this->constant->HOSTPATH."banks_content/$bank.txt");
+                echo $file;
+                 ?>
+					<br/>
+					 NOTE:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
                  we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
 
                  <div style="margin-top: 10px;" >
@@ -63,7 +71,8 @@
                      </div>
                  </div>
             </div>
-            <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>            
+            <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?> 
+                       
         </div>
         <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
         <div class="clear"></div>
