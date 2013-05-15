@@ -9,12 +9,12 @@
                 $bank = strtolower($bank);
                 $bank = str_replace(' ', '_', $bank);
                   $file = file_get_contents( $this->constant->HOSTPATH."banks_content/$bank.txt");
-                  $len = strlen($file);
                  
-                  if($len != 9451)
-                  {
+                  $filename ="banks_content/$bank.txt";
+                  
+                 if (file_exists($filename)) {
                   	echo $file;
-                  }
+                  } 
                   
                                 ?>
 					<br/>
