@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="<?php if(isset($this->Detail['keywords'])){echo $this->Detail['keywords'];}?>">
         <meta name="description" content="<?php if(isset($this->Detail['description'])){ echo $this->Detail['description'];}?>">
-        <title><?php echo $this->translate($this->constant->TITLE) . ' :: ' . $this->translate($this->PageHead); ?></title>
+       
         <?php
         echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/style.css');
         echo $this->headLink()->setStylesheet($this->constant->CSSPATH . '/jquery-ui-1.9.2.custom.css');

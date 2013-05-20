@@ -1,10 +1,11 @@
 <div class="main">
     <div class="inner_container">
+     <div class="breadcrumb pt20"><a href="/">Home</a> <span> &rsaquo; <a href="/micr"> MICR Code </a></span><span> &rsaquo; <?php echo $this->Records[0]['micr_code']; ?>  </span></div>
         <div class="about_container">
-            <div class="About_Us"><?php if($this->BankName !=''){echo $this->BankName." :: ";} ?>Search Result</div>
+            <div class="About_Us"><?php $bank = strtolower($this->Records[0]['bank_name']); echo ucwords($bank);  ?></div>
             <div class="text_about">
-                Note:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
-                 we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
+                Note:Based on MICR code - <?php echo $this->Records[0]['micr_code']; ?>  provided by you, we tried to provide <?php echo $this->Records[0]['bank_name']; ?>  contact details, address and IFSC code.
+               If you find any of the information displayed for <?php echo $this->Records[0]['micr_code']; ?>  incorrect, please write to us at admin@banksofindia.net.
 
                  
                  <div style="margin-top: 10px;" >

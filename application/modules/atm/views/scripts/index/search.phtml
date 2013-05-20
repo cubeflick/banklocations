@@ -1,12 +1,13 @@
 <div class="main">
     <div class="inner_container">
-    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/atm">Search ATM</a><span> &rsaquo; ATMs Search Result</span></div>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/atm">ATM Location</a><span> &rsaquo; <?php echo $this->Records[0]['bank_name']; ?></span></div>
         <div class="about_container">
-            <div class="About_Us"><?php if($this->BankName !=''){echo $this->BankName." :: ";} ?>ATMs Search Result</div>
+            <div class="About_Us"><?php $bank = strtolower($this->Records[0]['bank_name']); echo ucwords($bank);  ?> ATM in <?php echo $this->Records[0]['city']; ?> </div>
             <div class="text_about">
-                Note:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
-                 we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
-
+                Note:We took utmost care to collect and provide most updated list of  <?php echo $this->Records[0]['bank_name']; ?> ATM's in  <?php echo $this->Records[0]['city']; ?> listed below:
+</br>
+"If you find any of the information displayed for ATM Location incorrect, please write to us at 
+admin@banksofindia.net.
                  
                  <div style="margin-top: 10px;" >
                      <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table">

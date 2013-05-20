@@ -1,11 +1,11 @@
 <div class="main">
     <div class="inner_container">
-    <div class="breadcrumb"><a href="/">Home</a> <span> &rsaquo; ATM Details</span></div>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/atm">ATM Location</a><span> &rsaquo; <?php echo $this->Records['bank_name']; ?></span> <span> &rsaquo; <?php echo $this->Records['city']; ?></span></div>
         <div class="about_container">
-            <div class="About_Us"><?php if($this->Records !=''){echo $this->Records['bank_name']." :: ".$this->Records['area'];} ?> ATM Detail</div>
+            <div class="About_Us"><?php if($this->Records !=''){echo $this->Records['bank_name']." ATM in ".$this->Records['area'];} ?></div>
             <div class="text_about">
-                Note:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
-                 we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
+                Note:Get complete list of <?php echo $this->Records['bank_name']; ?> ATM's locations in <?php echo $this->Records['city']; ?>. Use below widget to find and locate <?php echo $this->Records['bank_name']; ?> ATM's in 
+<?php echo $this->Records['city']; ?>. All you need to provide is the Bank name and the location where you are looking for ATM
 
                  <div style="margin-top: 10px;" >
                      <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table" style="margin-bottom: 10px;border:1px solid #95BCE2">

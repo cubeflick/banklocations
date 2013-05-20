@@ -211,10 +211,18 @@ class IndexController extends App_Controller_BaseController {
         if(($Params['bank_name'] !="") && ($Params['state_name'] !="") && ($Params['district_name'] !="") &&
         		($Params['city_name'] !="") )
         {
-			$title['title'] = "Branch Name: ".$records[0]['bank_name']. " IFSC Code - ".$records['0']['ifsc_code']." - BanksofIndia";        	 
-        	$this->view->Detail = $title;        	
+			$title['title'] = $records[0]['bank_name'].": ".$records['0']['branch_name']."- Branch Details & Contact Numbers of " .$records[0]['bank_name']."," .$records[0]['branch_name'];        	 
+			$title['description'] = "Here you can find ".$records[0]['bank_name']. " branch details & contact numbers of ".$records[0]['branch_name']. " NEFT, RTGS, ESC";
+
+			
+			$this->view->Detail = $title;        	
         }
         
+        $title['title'] = $records[0]['bank_name'].": "."Address, Contact Details, Branch Locations, E-Mail ID of " .$records[0]['bank_name'];
+        $title['description'] = "Here you can find ".$records[0]['bank_name']. " branch details & contact numbers of ".$records[0]['branch_name']. " NEFT, RTGS, ESC";
+        
+        	
+        $this->view->Detail = $title;
         
     }
     
@@ -335,10 +343,13 @@ class IndexController extends App_Controller_BaseController {
     	$micr = $this->Model->getBankValues($Params);
     	$row = $micr[0];
         $code = $row['micr_code']; 
-        $city = $row['city'];   
+       
+    	$city = $row['city'];
+    	$branch = $row['branch_name'];
+    	$bank = $row['bank_name'];
     	$title['keywords'] = "MICR Code: $code,$city, Bank MICR codes, List of MICR codes";
-    	$title['description'] = "MICR Code:$code,$city. We help you find MICR Codes $code, Address $city, for NEFT, RTGS, ECS Transactions.";
-    	$title['title'] ="MICR Code $code,$city" ;
+    	$title['description'] = " Here you can find list of $bank, $branch - $code. We tried to provide $bank contact details, address and IFSC code";
+    	$title['title'] ="MICR Code $code of $bank,$branch,$city " ;
     	
     	$this->view->Detail = $title;
     		
@@ -457,9 +468,11 @@ class IndexController extends App_Controller_BaseController {
     	$row = $ifsc[0];
     	$code = $row['ifsc_code'];
     	$city = $row['city'];
+    	$branch = $row['branch_name'];
+    	$bank = $row['bank_name'];
     	$title['keywords'] = "IFSC Code: $code,$city, Bank IFSC codes, List of IFSC codes";
-    	$title['description'] = "IFSC Code:$code,$city. We help you find IFSC Codes $code, Address $city, MICR,NEFT, RTGS, ECS Transactions.";
-    	$title['title'] ="IFSC Code $code,$city" ;
+    	$title['description'] = " Here you can find list of $bank, $branch - $code. We tried to provide $bank contact details, address and MICR code";
+    	$title['title'] ="IFSC Code $code of $bank,$branch,$city " ;
     	 
     	$this->view->Detail = $title;
     	
@@ -474,7 +487,8 @@ class IndexController extends App_Controller_BaseController {
         $records = $this->Model->getBankValues(array('id'=> $id[0]));
         $this->view->Records = $records[0];
 
-        $title['title'] = "Branch Name: ".$records[0]['bank_name']. " IFSC Code - ".$records['0']['ifsc_code']." - BanksofIndia";
+        $title['title'] = $records[0]['bank_name'].": ".$records['0']['branch_name']."- Branch Details & Contact Numbers of " .$records[0]['bank_name']."," .$records[0]['branch_name'];        	 
+			$title['description'] = "Here you can find ".$records[0]['bank_name']. " branch details & contact numbers of ".$records[0]['branch_name']. " NEFT, RTGS, ESC";;
 
         $this->view->Detail = $title;
          
@@ -493,9 +507,11 @@ class IndexController extends App_Controller_BaseController {
     	$row = $records[0];
     	$code = $row['ifsc_code'];
     	$city = $row['city'];
+    	$branch = $row['branch_name'];
+    	$bank = $row['bank_name'];
     	$title['keywords'] = "IFSC Code: $code,$city, Bank IFSC codes, List of IFSC codes";
-    	$title['description'] = "IFSC Code:$code,$city. We help you find IFSC Codes $code, Address $city, MICR,NEFT, RTGS, ECS Transactions.";
-    	$title['title'] ="IFSC Code $code,$city" ;
+    	$title['description'] = " Here you can find list of $bank, $branch - $code. We tried to provide $bank contact details, address and MICR code";
+    	$title['title'] ="IFSC Code $code of $bank,$branch,$city " ;
     	
     	$this->view->Detail = $title;
     
@@ -513,9 +529,11 @@ class IndexController extends App_Controller_BaseController {
     	$row = $records[0];
     	$code = $row['micr_code'];
     	$city = $row['city'];
-    	$title['keywords'] = "MICR Code: $code,$city, Bank MICR codes, List of MICR codes";
-    	$title['description'] = "MICR Code:$code,$city. We help you find MICR Codes $code, Address $city, for NEFT, RTGS, ECS Transactions.";
-    	$title['title'] ="MICR Code $code,$city" ;
+    	$branch = $row['branch_name'];
+    	$bank = $row['bank_name'];
+    	$title['keywords'] = "MICR Code: $code,$city, Bank IFSC codes, List of MICR codes";
+    	$title['description'] = " Here you can find list of $bank, $branch - $code. We tried to provide $bank contact details, address and IFSC code";
+    	$title['title'] ="MICR Code $code of $bank,$branch,$city " ;
     	 
     	$this->view->Detail = $title;
     	

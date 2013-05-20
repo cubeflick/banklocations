@@ -1,8 +1,8 @@
 <div class="main">
     <div class="inner_container">
-    <div class="breadcrumb"><a href="/">Home</a> <span> &rsaquo; Bank Details</span></div>
+    <div class="breadcrumb"><a href="/">Home</a> <span> &rsaquo; <a href="<?php $bank = str_replace(' ', '_', $this->Records['bank_name']); $bank = strtoupper($bank); echo "/".$bank;?>"><?php if(isset($this->Records['bank_name'])){ $bank = strtolower($this->Records['bank_name']); echo ucwords($bank); } ?></a></span><span> &rsaquo; <?php $branch = strtolower($this->Records['branch_name']); echo ucwords($branch) ?> </span></div>
         <div class="about_container">
-            <div class="About_Us"><?php if($this->Records !=''){echo $this->Records['bank_name']." :: ".$this->Records['branch_name'];} ?> Branch Detail</div>
+            <div class="About_Us"><?php if($this->Records !=''){$bank = strtolower($this->Records['bank_name']);echo ucwords($bank).", ".$this->Records['branch_name'];} ?> Branch Detail</div>
             <div class="text_about">
                 <?php
                 $bank = $this->Records['bank_name'];
@@ -18,7 +18,9 @@
                   
                                 ?>
 					<br/>
-					 NOTE:If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
+					 NOTE:We took utmost care to collect and provide most updated addresses and contact number
+                 details of <?php echo $this->Records['bank_name']; ?> .
+					 If you think there are any discrepancies in this information please let us know (<a href="mailto:mail@demo.com">mail@demo.com</a>)
                  we will verify the information and make necessary changes. Please include all the details of the bank when contacting us.
 
                  <div style="margin-top: 10px;" >

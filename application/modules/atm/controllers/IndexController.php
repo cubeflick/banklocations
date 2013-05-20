@@ -161,6 +161,21 @@ class Atm_IndexController extends App_Controller_Modules_Content_ContentbaseCont
         if (isset($Params['bank_name']) && $Params['bank_name'] != '' && substr($Params['bank_name'] , 0, 6) != 'Select') {
             $this->view->BankName = $Params['bank_name'];
         }
+        
+        //set the meta tags for this page
+        $val = $this->Model->getValuesAtm($Params);
+        $row = $val[0];
+       $city = $row['city'];
+        $bank = $row['bank_name'];
+       
+        $title['description'] = "Here you can find list of $bank, $city - ATM. We took utmost care to 
+        		collect and provide most updated list of <bank name> ATM's in $city listed.";
+        $title['title'] ="$bank ATM List in $city, $bank ATM Locator $city  " ;
+         
+        $this->view->Detail = $title;
+        
+        
+        
     }
 
     public function detailAction() {
@@ -171,6 +186,17 @@ class Atm_IndexController extends App_Controller_Modules_Content_ContentbaseCont
         $id = explode('_', $id);
         $records = $this->Model->getValuesAtm(array('id'=> $id[0]));
         $this->view->Records = $records[0];
+        
+        
+        $row = $records[0];
+        $city = $row['city'];
+        $bank = $row['bank_name'];
+        
+        $title['description'] = "Here you can find list of $bank, $city - ATM. We took utmost care to
+        collect and provide most updated list of <bank name> ATM's in $city listed.";
+        $title['title'] ="$bank ATM in $city, $bank ATM Near $city, $bank ATM Centre In $city" ;
+         
+        $this->view->Detail = $title;
 
     }
 }
