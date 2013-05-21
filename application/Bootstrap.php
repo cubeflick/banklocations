@@ -23,6 +23,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         		'searchOfIndex', new Zend_Controller_Router_Route(':bank_name/:state_name/:district_name/:city_name', array('module'=>'default','controller'=>'index','action'=>'search','bank_name'=>'','state_name'=>'','district_name'=>'','city_name'=>''))
         );
         $router->addRoute(
+        		'searchOfAtm', new Zend_Controller_Router_Route('/atm/:bank_name/:state_name/:district_name/:city_name', array('module'=>'atm','controller'=>'index','action'=>'search','bank_name'=>'','state_name'=>'','district_name'=>'','city_name'=>''))
+        );
+        
+       $router->addRoute(
         		'indexOfHome', new Zend_Controller_Router_Route('/', array('module'=>'default','controller'=>'index','action'=>'index'))
         );
         $router->addRoute(
@@ -37,9 +41,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $router->addRoute(
         		'searchAtm', new Zend_Controller_Router_Route('/atm', array('module'=>'atm','controller'=>'index','action'=>'index'))
         );
-        $router->addRoute(
-            'searchOfAtm', new Zend_Controller_Router_Route('/atm/search', array('module'=>'atm','controller'=>'index','action'=>'search'))
-        );
+       
         $router->addRoute(
             'detailOfAtm', new Zend_Controller_Router_Route('/atm/detail/:id', array('module'=>'atm','controller'=>'index','action'=>'detail'))
         );

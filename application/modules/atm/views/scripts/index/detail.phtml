@@ -1,6 +1,6 @@
 <div class="main">
     <div class="inner_container">
-    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/atm">ATM Location</a><span> &rsaquo; <?php echo $this->Records['bank_name']; ?></span> <span> &rsaquo; <?php echo $this->Records['city']; ?></span></div>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/atm">ATM Location</a><span> &rsaquo; <a href="<?php $bank = str_replace(' ', '_', $this->Records['bank_name']); $bank = strtoupper($bank); echo "/atm/".$bank;?>"><?php if(isset($this->Records['bank_name'])){ $bank = strtolower($this->Records['bank_name']); echo ucwords($bank); } ?></a></span> <span> &rsaquo; <?php echo $this->Records['city']; ?></span></div>
         <div class="about_container">
             <div class="About_Us"><?php if($this->Records !=''){echo $this->Records['bank_name']." ATM in ".$this->Records['area'];} ?></div>
             <div class="text_about">

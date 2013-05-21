@@ -203,10 +203,36 @@
         	alert('Please Select Bank First');
         	}
     	else{
-       
-        $('#search_form').submit();
+    	 if($("#state_name option:selected").text() == 'Please Select')
+        	 {
+    		 var str = $('#bank_name option:selected').text();
+    		 str2 = str.replace(/ /g,"_");
+    		 window.location.href = 'atm/'+str2.toUpperCase();
+        	 }
+    	 else{
+        	  if($("#district_name option:selected").text() == 'Please Select')
+    	 {
+		 var str = $('#bank_name option:selected').text() +"/"+ $('#state_name option:selected').text();
+		 str2 = str.replace(/ /g,"_");
+		 window.location.href = 'atm/'+str2.toUpperCase();
+	    	 }
+        	  else{
+        		  if($("#city_name option:selected").text() == 'Please Select')
+        	    	 {
+        			var str = $('#bank_name option:selected').text() +"/"+ $('#state_name option:selected').text() +"/"+ $("#district_name option:selected").text();
+        			str2 = str.replace(/ /g,"_");
+        			 window.location.href = 'atm/'+str2.toUpperCase();
+        	    	 }
+        		  else{
+        			  var str=$('#bank_name option:selected').text() +"/"+ $('#state_name option:selected').text() +"/"+ $("#district_name option:selected").text() +"/"+ $("#city_name option:selected").text()  ;;
+        			  str2 = str.replace(/ /g,"_");
+        	    	window.location.href = 'atm/'+str2.toUpperCase();
+        		  }
+       	    	 }
+    	 }
     	}
-    });
+    	 
+        });
 
 
     function getVal(value)
