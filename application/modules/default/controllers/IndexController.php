@@ -218,7 +218,7 @@ class IndexController extends App_Controller_BaseController {
 			$this->view->Detail = $title;        	
         }
         
-        $title['title'] = $records[0]['bank_name'].": "."Address, Contact Details, Branch Locations, E-Mail ID of " .$records[0]['bank_name'];
+       $title['title'] = $records[0]['bank_name'].": ".$records['0']['branch_name']."- Branch Details & Contact Numbers of " .$records[0]['bank_name']."," .$records[0]['branch_name'];
         $title['description'] = "Here you can find ".$records[0]['bank_name']. " branch details & contact numbers of ".$records[0]['branch_name']. " NEFT, RTGS, ESC";
         
         	
