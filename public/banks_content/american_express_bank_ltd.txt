@@ -1,10 +1,7 @@
 American express bank has got a great name and fame in this world and it has around 150 years experience in the world of finance. This bank is now known as a global payments firm. Some of the values of this bank include 
-•	Quality
-•	Integrity
-•	Customer service
-•	Security
-These are the values for which this bank gives the main priority and this is the reason why this bank has stood no.1 in the world. This bank is established in the year 1921 and has shown in charm in the world of financial services and world class travel. The American express bank offers the cards which meets all the clients’ requirements. Besides, this bank has divided the credit cards into 2 types in India like international green Amex card and gold Amex card. 
+Quality,Integrity,Customer service,Security
+These are the values for which this bank gives the main priority and this is the reason why this bank has stood no.1 in the world. This bank is established in the year 1921 and has shown in charm in the world of financial services and world class travel. The American express bank offers the cards which meets all the clients' requirements. Besides, this bank has divided the credit cards into 2 types in India like international green Amex card and gold Amex card. 
 Some of the benefits which this bank is offering to its card members are
-•	The members can avail around 4 to 7% discount on the airline tickets
-•	Almost 40% discount will be given in the overseas hotel charges
+The members can avail around 4 to 7% discount on the airline tickets,
+Almost 40% discount will be given in the overseas hotel charges
 Due to all these added benefits this bank has become really popular throughout the world. Apart from offering the various financial services it also participates in the charity works too. 
