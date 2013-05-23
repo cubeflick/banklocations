@@ -487,8 +487,8 @@ class IndexController extends App_Controller_BaseController {
         $records = $this->Model->getBankValues(array('id'=> $id[0]));
         $this->view->Records = $records[0];
 
-        $title['title'] = $records[0]['bank_name'].": ".$records['0']['branch_name']."- Branch Details & Contact Numbers of " .$records[0]['bank_name']."," .$records[0]['branch_name'];        	 
-			$title['description'] = "Here you can find ".$records[0]['bank_name']. " branch details & contact numbers of ".$records[0]['branch_name']. " NEFT, RTGS, ESC";;
+        $title['title'] = $records[0]['bank_name'].": ".$records['0']['branch_name']."- Branch Address & Contact Address of " .$records[0]['bank_name']."," .$records[0]['branch_name'];        	 
+			$title['description'] = "Here you can find ".$records[0]['bank_name']. " branch address & contact address of ".$records[0]['branch_name']. " NEFT, RTGS, ESC";;
 
         $this->view->Detail = $title;
          
