@@ -15,21 +15,6 @@
             
             } ?></div>
             <div class="text_about">
-             <?php
-                $bank = $this->Records['bank_name'];
-                $bank = strtolower($bank);
-                $bank = str_replace(' ', '_', $bank);
-                  $file = file_get_contents( $this->constant->HOSTPATH."banks_content/$bank.txt");
-                 
-                  $filename ="banks_content/$bank.txt";
-                  
-                 if (file_exists($filename)) {
-                  	echo $file;
-                  } 
-                  
-                                ?>
-					<br/>
-            
                 Note:We took utmost care to collect and provide most updated addresses and contact number
                  details of <?php echo $this->Records[0]['bank_name']; ?> . List of <?php echo $this->Records[0]['bank_name']; ?> branches are below.
                  <br/>
@@ -37,7 +22,19 @@
 
 admin@banksofindia.net.
                 
-
+				<br/><br/>
+				             <?php
+                $bank = $this->Records[0]['bank_name'];
+                $bank = strtolower($bank);
+                $bank = str_replace(' ', '_', $bank);
+                $fileUrl =  $this->constant->HOSTPATH."banks_content/$bank.txt";
+                $filePath ="banks_content/$bank.txt";
+                
+                if (file_exists($filePath)) {
+					echo file_get_contents($fileUrl);
+				}
+                
+                ?>
                  
                  <div style="margin-top: 10px;" >
  
