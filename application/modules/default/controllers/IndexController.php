@@ -196,7 +196,7 @@ class IndexController extends App_Controller_BaseController {
         $paginator = Zend_Paginator::factory($records);
         $paginator->setCurrentPageNumber($this->getRequest()->getParam('page', 1));
         $paginator->setPageRange(10);
-        $paginator->setItemCountPerPage(20);
+        $paginator->setItemCountPerPage(100);
         $this->view->paginator = $paginator;
         
         $this->view->host = $this->constant->HOSTPATH;
