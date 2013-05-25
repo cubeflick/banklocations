@@ -341,6 +341,8 @@ class IndexController extends App_Controller_BaseController {
     	
     	//set the meta tags for this page
     	$micr = $this->Model->getBankValues($Params);
+    	if($micr)
+    	{
     	$row = $micr[0];
         $code = $row['micr_code']; 
        
@@ -352,7 +354,7 @@ class IndexController extends App_Controller_BaseController {
     	$title['title'] ="MICR Code $code of $bank,$branch,$city " ;
     	
     	$this->view->Detail = $title;
-    		
+    	}
     }
     
     public function searchifscAction() {
@@ -465,6 +467,8 @@ class IndexController extends App_Controller_BaseController {
     	
     	//set the meta tags for this page
     	$ifsc = $this->Model->getBankValues($Params);
+    	if($ifsc)
+    	{
     	$row = $ifsc[0];
     	$code = $row['ifsc_code'];
     	$city = $row['city'];
@@ -475,7 +479,7 @@ class IndexController extends App_Controller_BaseController {
     	$title['title'] ="IFSC Code $code of $bank,$branch,$city " ;
     	 
     	$this->view->Detail = $title;
-    	
+    	}
     	
     }
 

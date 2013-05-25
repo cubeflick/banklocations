@@ -5,12 +5,12 @@
 </style>
 <div class="main">
     <div class="inner_container">
-    <div class="breadcrumb pt20"><a href="/">Home</a> <span> &rsaquo; <a href="/ifsc"> IFSC Code </a></span><span> &rsaquo; <?php echo $this->Records[0]['ifsc_code']; ?>  </span></div>
+    <div class="breadcrumb pt20"><a href="/">Home</a> <span> &rsaquo; <a href="/ifsc"> IFSC Code </a></span><span> &rsaquo; <?php if(isset($this->Records[0]['ifsc_code'])){ echo $this->Records[0]['ifsc_code'];} ?>  </span></div>
         <div class="about_container">
-            <div class="About_Us"><?php $bank = strtolower($this->Records[0]['bank_name']); echo ucwords($bank) ?></div>
+            <div class="About_Us"><?php if(isset($this->Records[0]['bank_name'])){ $bank = strtolower($this->Records[0]['bank_name']); echo ucwords($bank); }?></div>
             <div class="text_about">
-                Note:Based on IFSC code - <?php echo $this->Records[0]['ifsc_code']; ?>  provided by you, we tried to provide <?php echo $this->Records[0]['bank_name']; ?>  contact details, address and MICR code.
-               If you find any of the information displayed for <?php echo $this->Records[0]['ifsc_code']; ?>  incorrect, please write to us at admin@banksofindia.net.
+                Note:Based on IFSC code - <?php if(isset($this->Records[0]['ifsc_code'])){ echo $this->Records[0]['ifsc_code']; }?>  provided by you, we tried to provide <?php if(isset($this->Records[0]['bank_name'])) {echo $this->Records[0]['bank_name']; }?>  contact details, address and MICR code.
+               If you find any of the information displayed for <?php if(isset($this->Records[0]['ifsc_code'])){ echo $this->Records[0]['ifsc_code']; }?>  incorrect, please write to us at admin@banksofindia.net.
 
                  
                  <div style="margin-top: 10px;" >
