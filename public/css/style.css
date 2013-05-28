@@ -313,7 +313,10 @@ body {
 	position: absolute;
 	top: 26px;
 }
-
+.internal_form
+{
+height: 200px !important;	
+}
 .search_color {
 	width: 978px;
 	margin: auto;

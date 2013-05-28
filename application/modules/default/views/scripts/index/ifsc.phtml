@@ -8,16 +8,11 @@
     <div class="breadcrumb pt20"><a href="/">Home</a> <span> &rsaquo; IFSC Code</span></div>
     <div class="about_container">
         <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."ifsc/search/";?>">
-            <div class="search_bg">
+            <div class="search_bg internal_form">
                 <h2 class="page-title">Search By IFSC Code</h2>
                 <div><img src="images/border.png" width="322" height="1" style="margin:5px 0 0 0;width: 395px;" /></div>
                 
-                
-                      
- 
-              
-               
-                <div class="search_bank1 mainoptions"  id="cityNameHolder" >
+             <div class="search_bank1 mainoptions"  id="cityNameHolder" >
                     <div class="text">IFSC Code :</div>
                     <div class="select_box">
                        <input name="ifsc_code" id="ifsc_code" type="text" />
@@ -25,14 +20,21 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                
+               <div style="margin:15px 0 0 108px;"><a id="submit_link" href="javascript:void(0)"><img src="<?php echo $this->constant->IMAGEPATH;?>/search_button.png" width="104" height="31" border="0" /></a></div>
                
-
-                <div style="margin:15px 0 0 108px;"><a id="submit_link" href="javascript:void(0)"><img src="<?php echo $this->constant->IMAGEPATH;?>/search_button.png" width="104" height="31" border="0" /></a></div>
                
             </div>
             
         </form>
+        <div class="clear"></div>
+        <div>
+               IFSC Code is a bank-branch alphanumeric code. It is used for RTGS (Real Time Gross Settlement) and NEFT (National Electronic Fund Transfer). IFSC means Indian Financial System Code. All type of net banking transactions, the IFSC Code of the destination bank branch is required.  The NEFT & the RTGS systems route the messages to the destination bank braches which complete the entire transaction process ahead.
+
+The IFSC code is an 11-character code which comprises the first four alphabetic characters represents the bank and the last-six represents the branch.  
+
+There is a list of bank-branches participating widely in RTGS/NEFT these days. Bank users can find IFSC codes of all scheduled banks on the website of RBI (Reserve Bank of India), India's central banking institution. 
+               
+               </div>
         <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>
          </div>
         

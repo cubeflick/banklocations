@@ -7,7 +7,7 @@
     <div class="breadcrumb pt20"><a href="/">Home</a> <span> &rsaquo; MICR Code</span></div>
     <div class="about_container">
         <form id="search_form" method="get" action="<?php echo $this->constant->HOSTPATH."micr/search";?>">
-            <div class="search_bg">
+            <div class="search_bg internal_form">
 
                 
             	<h2 class="page-title">Search By MICR Code</h2>
@@ -31,6 +31,18 @@
             </div>
             
         </form>
+         <div class="clear"></div>
+        <div>
+MICR is Magnetic Ink Character Recognition. It facilitates the processing and clearance of cheques and other documents related to banking. The MICR code is located at the bottom of a cheque. MICR Code, also called MICR line, indicates bank account number, bank code, cheque number and other control indicators. All scheduled banks use their MICR Codes in India and get connected on several grounds in order to provide hassle-free banking transactions.
+
+The MICR tells a lot of things about a particular banking operation. It is extremely difficult to process any third party transaction without having a MICR code. Its primary role is to understand all types of financial transactions from one bank to the other.  
+
+The Magnetic Ink Character Recognition code reader allows scan and read the information directly into a data collection device. There is MICR E-13B font. It is ISO1004-1995 certified international standard. A magnetic ink containing iron oxide is used in the printing of MICR Code. 
+
+These days, MICR Code is also being used in other banking applications like credit cards, airline tickets, Sales, promotions, deposit tickets, insurance premium receipts etc. 
+        
+               
+               </div>
         <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>
          </div>
         
