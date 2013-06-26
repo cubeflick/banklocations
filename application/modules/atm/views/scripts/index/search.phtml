@@ -4,8 +4,7 @@
         <div class="about_container">
             <div class="About_Us"><?php $bank = strtolower($this->Records[0]['bank_name']); echo ucwords($bank);  ?> ATM in <?php echo $this->Records[0]['city']; ?> </div>
             <div class="text_about">
-                Note:We took utmost care to collect and provide most updated list of  <?php echo $this->Records[0]['bank_name']; ?> ATM's in  <?php echo $this->Records[0]['city']; ?> listed below:
-</br>
+             
 
                  
                  <div style="margin-top: 10px;" >
@@ -52,7 +51,9 @@
                          <?php echo $this->pagination;?>
                      </div>
                      <div class="clear"></div>
-                     <div>"If you find any of the information displayed for ATM Location incorrect, please write to us at 
+                     <div class="text_about">
+                        Note:We took utmost care to collect and provide most updated list of  <?php echo $this->Records[0]['bank_name']; ?> ATM's in  <?php echo $this->Records[0]['city']; ?> listed below:
+</br>"If you find any of the information displayed for ATM Location incorrect, please write to us at 
 admin@banksofindia.net.</div>
 
                  </div>

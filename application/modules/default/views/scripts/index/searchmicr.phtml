@@ -4,9 +4,6 @@
         <div class="about_container">
             <div class="About_Us"><?php if(isset($this->Records[0]['bank_name'])){ $bank = strtolower($this->Records[0]['bank_name']); echo ucwords($bank); } ?></div>
             <div class="text_about">
-                Note:Based on MICR code - <?php if(isset($this->Records[0]['micr_code'])){ echo $this->Records[0]['micr_code']; }?>  provided by you, we tried to provide <?php if(isset($this->Records[0]['bank_name'])){ echo $this->Records[0]['bank_name']; }?>  contact details, address and IFSC code.
-               If you find any of the information displayed for <?php if(isset($this->Records[0]['micr_code'])){ echo $this->Records[0]['micr_code'];} ?>  incorrect, please write to us at admin@banksofindia.net.
-
                  
                  <div style="margin-top: 10px;" >
                      <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table">
@@ -54,6 +51,15 @@
                      </div>
                  </div>
             </div>
+            <div class="clear"></div>
+             <div class="text_about">
+                Note:Based on MICR code - <?php if(isset($this->Records[0]['micr_code'])){ echo $this->Records[0]['micr_code']; }?>  provided by you, we tried to provide <?php if(isset($this->Records[0]['bank_name'])){ echo $this->Records[0]['bank_name']; }?>  contact details, address and IFSC code.
+               If you find any of the information displayed for <?php if(isset($this->Records[0]['micr_code'])){ echo $this->Records[0]['micr_code'];} ?>  incorrect, please write to us at admin@banksofindia.net.
+
+                 </div>
+            
+            
+            
             <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>            
         </div>
         <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>

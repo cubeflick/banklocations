@@ -15,35 +15,37 @@
             
             } ?></div>
             <div class="text_about">
-                Note:We took utmost care to collect and provide most updated addresses and contact number
-                 details of <?php echo $this->Records[0]['bank_name']; ?> . List of <?php echo $this->Records[0]['bank_name']; ?> branches are below.
+               
                 
-                
-				<br/>
+			
 				             <?php
-                $bank = $this->Records[0]['bank_name'];
-                $bank = strtolower($bank);
-                $bank = str_replace(' ', '_', $bank);
-                $fileUrl =  $this->constant->HOSTPATH."banks_content/$bank.txt";
-                $filePath ="banks_content/$bank.txt";
+//                 $bank = $this->Records[0]['bank_name'];
+//                 $bank = strtolower($bank);
+//                 $bank = str_replace(' ', '_', $bank);
+//                 $fileUrl =  $this->constant->HOSTPATH."banks_content/$bank.txt";
+//                 $filePath ="banks_content/$bank.txt";
                 
-                if (file_exists($filePath)) {
-					echo file_get_contents($fileUrl);
-				}
+//                 if (file_exists($filePath)) {
+// 					echo file_get_contents($fileUrl);
+// 				}
                 
-                ?>
-                 <br/>
-                In case you find any discrepancies in the information of <?php echo $this->Records[0]['bank_name']; ?>, please write to us at 
-
-admin@banksofindia.net.
-                 
+//                 ?>
+                
                  <div style="margin-top: 10px;" >
  
   
 				<div class="search-results">
 				<?php echo $this->render('index/search.ajax.phtml') ?>
 				</div>
+				<br style="clear:both;" />
+ <div class="text_about">
+                Note:We took utmost care to collect and provide most updated addresses and contact number
+                 details of <?php echo $this->Records[0]['bank_name']; ?> . List of <?php echo $this->Records[0]['bank_name']; ?> branches are below.
+                 <br/>
+                In case you find any discrepancies in the information of <?php echo $this->Records[0]['bank_name']; ?>, please write to us at 
 
+admin@banksofindia.net.
+                </div>
         			 <br style="clear:both;" />
                  </div>
             </div>
@@ -51,6 +53,8 @@ admin@banksofindia.net.
         </div>
         <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
         <div class="clear"></div>
+        
+         
     </div>
 
 </div>

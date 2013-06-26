@@ -4,9 +4,7 @@
         <div class="about_container">
             <div class="About_Us"><?php if($this->Records !=''){echo $this->Records['bank_name']." ATM in ".$this->Records['area'];} ?></div>
             <div class="text_about">
-                Note:Get complete list of <?php echo $this->Records['bank_name']; ?> ATM's locations in <?php echo $this->Records['city']; ?>. Use below widget to find and locate <?php echo $this->Records['bank_name']; ?> ATM's in 
-<?php echo $this->Records['city']; ?>. All you need to provide is the Bank name and the location where you are looking for ATM
-
+               
                  <div style="margin-top: 10px;" >
                      <table cellpadding="0" cellspacing="0" border="0" id="result_table" class="result_table" style="margin-bottom: 10px;border:1px solid #95BCE2">
                         <tr>
@@ -40,6 +38,12 @@
                      </div>
                  </div>
             </div>
+            <div class="clear"></div>
+             <div class="text_about">
+                Note:Get complete list of <?php echo $this->Records['bank_name']; ?> ATM's locations in <?php echo $this->Records['city']; ?>. Use below widget to find and locate <?php echo $this->Records['bank_name']; ?> ATM's in 
+<?php echo $this->Records['city']; ?>. All you need to provide is the Bank name and the location where you are looking for ATM
+            </div>
+            
             <?php echo $this->partial('bottomadvertise.phtml', 'default', $this); ?>            
         </div>
         <?php echo $this->partial('rightadvertise.phtml', 'default', $this); ?>
